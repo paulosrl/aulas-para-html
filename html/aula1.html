@@ -252,7 +252,6 @@
         .caor-card h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
         .caor-card h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
         
-        .page-indicator { float: right; font-size: 0.8rem; color: var(--accent); opacity: 0.7; font-weight: 800; }
 
         /* Listas e Tabelas */
         ul { list-style: none; margin-bottom: 1rem; }
@@ -288,7 +287,6 @@
             .content-container { max-width: 100%; }
             .btn-theme { top: 0.9rem; right: 1rem; padding: 8px 12px; font-size: 0.7rem; }
             .caor-card { border-left-width: 6px; padding: 1.2rem; }
-            .page-indicator { float: none; display: block; margin-bottom: 0.8rem; }
             th, td { padding: 10px; font-size: 0.82rem; }
         }
 
@@ -352,7 +350,7 @@
         <div class="content-container">
             
             <section id="p1" class="caor-card">
-                <span class="page-indicator">Página 1</span>
+                <!-- Página 1 -->
                 <h1><i class="fas fa-shield-halved"></i> Engenharia de Prompt para Análises Investigativas</h1>
                 <p><strong>Professor:</strong> Paulo Lima (Datavirtus)</p>
                 <div class="alert-box">
@@ -362,7 +360,7 @@
             </section>
 
             <section id="p2" class="caor-card">
-                <span class="page-indicator">Página 2</span>
+                <!-- Página 2 -->
                 <h2><i class="fas fa-calendar-alt"></i> Agenda da Aula 1</h2>
                 <ul>
                     <li><strong>Contexto e Motivação:</strong> Por que a IA importa para investigadores.</li>
@@ -380,7 +378,7 @@
             </section>
 
             <section id="p3" class="caor-card">
-                <span class="page-indicator">Página 3</span>
+                <!-- Página 3 -->
                 <h2><i class="fas fa-chart-line"></i> Por que a IA Importa: Três Cenários Reais</h2>
                 <div class="table-wrapper">
                     <table>
@@ -413,7 +411,7 @@
             </section>
 
             <section id="p4" class="caor-card">
-                <span class="page-indicator">Página 4</span>
+                <!-- Página 4 -->
                 <h2><i class="fas fa-handshake"></i> IA como Colega, não Decisor</h2>
                 <ul>
                     <li><strong>Capacidades:</strong> A IA analisa, sintetiza e organiza.</li>
@@ -424,7 +422,7 @@
             </section>
 
             <section id="p5" class="caor-card">
-                <span class="page-indicator">Página 5</span>
+                <!-- Página 5 -->
                 <h2><i class="fas fa-network-wired"></i> O que é um LLM e como gera texto?</h2>
                 <ul>
                     <li><strong>Definição:</strong> <em>Large Language Model</em> é uma IA treinada em bilhões de textos para prever a próxima palavra mais provável.</li>
@@ -435,7 +433,7 @@
             </section>
 
             <section id="p6" class="caor-card">
-                <span class="page-indicator">Página 6</span>
+                <!-- Página 6 -->
                 <h2><i class="fas fa-eye-slash"></i> O Que Modelos NÃO Sabem</h2>
                 <ul>
                     <li><strong>Tempo Real:</strong> Treinados até uma data de corte; desconhecem eventos recentes (podem citar fatos desatualizados).</li>
@@ -445,7 +443,7 @@
             </section>
 
             <section id="p7" class="caor-card">
-                <span class="page-indicator">Página 7</span>
+                <!-- Página 7 -->
                 <h2><i class="fas fa-vial"></i> Busca Tradicional vs. IA Generativa</h2>
                 <ul>
                     <li><strong>Motor de Busca:</strong> Encontra e localiza links/documentos existentes; bom para fontes primárias, mas não conecta pontos.</li>
@@ -454,7 +452,7 @@
             </section>
 
             <section id="p8" class="caor-card">
-                <span class="page-indicator">Página 8</span>
+                <!-- Página 8 -->
                 <h2><i class="fas fa-users-slash"></i> Vieses nos Dados de Treinamento</h2>
                 <ul>
                     <li><strong>Herança Cultural:</strong> Modelos herdam preconceitos presentes nos textos da internet.</li>
@@ -464,7 +462,7 @@
             </section>
 
             <section id="p9" class="caor-card">
-                <span class="page-indicator">Página 9</span>
+                <!-- Página 9 -->
                 <h2><i class="fas fa-bug"></i> Alucinações: O Risco de Respostas Falsas</h2>
                 <ul>
                     <li><strong>O que é:</strong> Geração de afirmações factualmente incorretas com aparência de coerência e confiança.</li>
@@ -481,7 +479,7 @@
             </section>
 
             <section id="p10" class="caor-card">
-                <span class="page-indicator">Página 10</span>
+                <!-- Página 10 -->
                 <h2><i class="fas fa-user-cog"></i> O Fator Humano e Limitações Técnicas</h2>
                 <ul>
                     <li><strong>Risco da Desatualização:</strong> Nunca confie em datas automáticas; verifique legislação e precedentes recentes.</li>
@@ -491,7 +489,7 @@
             </section>
 
             <section id="p11" class="caor-card">
-                <span class="page-indicator">Página 11</span>
+                <!-- Página 11 -->
                 <h2><i class="fas fa-pencil-ruler"></i> Fundamentos de Engenharia de Prompt</h2>
                 <ul>
                     <li><strong>Conceito:</strong> Processo interativo de desenvolver e refinar instruções para obter resultados precisos.</li>
@@ -501,7 +499,7 @@
             </section>
 
             <section id="p12" class="caor-card">
-                <span class="page-indicator">Página 12</span>
+                <!-- Página 12 -->
                 <h2><i class="fas fa-dna"></i> Anatomia de um Prompt de Qualidade</h2>
                 <ul>
                     <li><strong>Definição:</strong> Um comando estruturado que inclui contexto, objetivo e restrições (não é uma pergunta casual).</li>
@@ -513,7 +511,7 @@
             </section>
 
             <section id="p13" class="caor-card">
-                <span class="page-indicator">Página 13</span>
+                <!-- Página 13 -->
                 <h2><i class="fas fa-layer-group"></i> Engenharia de Contexto: Elementos Chave</h2>
                 <ol>
                     <li style="margin-left: 15px;"><strong>Persona:</strong> Atribuir um papel à IA.</li>
@@ -525,7 +523,7 @@
             </section>
 
             <section id="p14" class="caor-card">
-                <span class="page-indicator">Página 14</span>
+                <!-- Página 14 -->
                 <h2><i class="fas fa-window-maximize"></i> O Papel do Contexto na IA</h2>
                 <ul>
                     <li><strong>Definição:</strong> Tudo o que é fornecido no momento (pergunta, histórico, arquivos, instruções).</li>
@@ -535,7 +533,7 @@
             </section>
 
             <section id="p15" class="caor-card">
-                <span class="page-indicator">Página 15</span>
+                <!-- Página 15 -->
                 <h2><i class="fas fa-cog"></i> Dinâmica da Janela de Contexto</h2>
                 <ul>
                     <li><strong>Janela de Entrada:</strong> Composta por prompts, textos colados, anexos e histórico.</li>
@@ -545,7 +543,7 @@
             </section>
 
             <section id="p16" class="caor-card">
-                <span class="page-indicator">Página 16</span>
+                <!-- Página 16 -->
                 <h2><i class="fas fa-star"></i> Regras de Ouro para Janelas de Contexto</h2>
                 <ul>
                     <li><strong>Fragmentação:</strong> Não faça upload de arquivos com centenas de páginas; fragmente em blocos temáticos.</li>
@@ -555,7 +553,7 @@
             </section>
 
             <section id="p17" class="caor-card">
-                <span class="page-indicator">Página 17</span>
+                <!-- Página 17 -->
                 <h2><i class="fas fa-memory"></i> Memória da IA: Agora vs. Sempre</h2>
                 <ul>
                     <li><strong>Na Mesa (Janela de Contexto):</strong> Temporária, finita e zera a cada nova conversa. A IA só "vê" o que está sobre esta mesa.</li>
@@ -566,7 +564,7 @@
             </section>
 
             <section id="p18" class="caor-card">
-                <span class="page-indicator">Página 18</span>
+                <!-- Página 18 -->
                 <h2><i class="fas fa-magic"></i> Matriz de Transformação: Do Risco à Precisão</h2>
                 <div class="alert-box">
                     <span class="badge" style="background: #ef4444; color: #fff;">Contexto Fraco (Risco)</span>
@@ -579,7 +577,7 @@
             </section>
 
             <section id="p19" class="caor-card">
-                <span class="page-indicator">Página 19</span>
+                <!-- Página 19 -->
                 <h2><i class="fas fa-exclamation-circle"></i> Como não usar a IA: Três Pilares Faltantes</h2>
                 <ol>
                     <li style="margin-left: 15px;"><strong>Sem Hipótese:</strong> Não use a IA sem uma pergunta de pesquisa definida.</li>
@@ -589,7 +587,7 @@
             </section>
 
             <section id="p20" class="caor-card">
-                <span class="page-indicator">Página 20</span>
+                <!-- Página 20 -->
                 <h2><i class="fas fa-user-tie"></i> Erro 1: Persona Inflada e Calibragem</h2>
                 <ul>
                     <li><strong>Armadilha (Ruído):</strong> Usar adjetivos exagerados ("melhor jurista do universo", "PhD em Harvard"). Gera respostas arrogantes ou imprecisas.</li>
@@ -598,7 +596,7 @@
             </section>
 
             <section id="p21" class="caor-card">
-                <span class="page-indicator">Página 21</span>
+                <!-- Página 21 -->
                 <h2><i class="fas fa-bullseye"></i> Erro 2: Objetivo Genérico</h2>
                 <ul>
                     <li><strong>Vago:</strong> "Analise este documento e me diga o que acha." Resulta em resumos óbvios sem utilidade tática.</li>
@@ -607,7 +605,7 @@
             </section>
 
             <section id="p22" class="caor-card">
-                <span class="page-indicator">Página 22</span>
+                <!-- Página 22 -->
                 <h2><i class="fas fa-layer-group"></i> Erro 3: Misturar Análise com Escrita</h2>
                 <ul>
                     <li><strong>O Caos:</strong> Pedir análise jurídica e redação final rebuscada no mesmo prompt.</li>
@@ -620,7 +618,7 @@
             </section>
 
             <section id="p23" class="caor-card">
-                <span class="page-indicator">Página 23</span>
+                <!-- Página 23 -->
                 <h2><i class="fas fa-minus-circle"></i> Erro 4: Comandos Negativos sem Direção</h2>
                 <ul>
                     <li><strong>O Bloqueio:</strong> "Não faça texto longo", "Não use palavras difíceis". A IA foca nos termos negativos e pode se confundir.</li>
@@ -629,7 +627,7 @@
             </section>
 
             <section id="p24" class="caor-card">
-                <span class="page-indicator">Página 24</span>
+                <!-- Página 24 -->
                 <h2><i class="fas fa-tasks"></i> Erro 5: Excesso de Instruções (Trade-off)</h2>
                 <ul>
                     <li><strong>Princípio:</strong> Quanto mais instruções simultâneas (o "Mega-Prompt"), menor a qualidade da execução individual.</li>
@@ -638,7 +636,7 @@
             </section>
 
             <section id="p25" class="caor-card">
-                <span class="page-indicator">Página 25</span>
+                <!-- Página 25 -->
                 <h2><i class="fas fa-brain"></i> Gestão do Foco Cognitivo</h2>
                 <p>Os 5 erros principais (personas infladas, objetivos genéricos, excesso de instruções, comandos negativos e mistura de tarefas) resultam no <strong>desperdício da janela de contexto</strong> e diluição do poder computacional.</p>
                 <div class="alert-box">
@@ -647,7 +645,7 @@
             </section>
 
             <section id="p26" class="caor-card">
-                <span class="page-indicator">Página 26</span>
+                <!-- Página 26 -->
                 <h2><i class="fas fa-skeleton"></i> Anatomia do Prompt Investigativo</h2>
                 <div class="table-wrapper">
                     <table>
@@ -690,7 +688,7 @@
             </section>
 
             <section id="p27" class="caor-card">
-                <span class="page-indicator">Página 27</span>
+                <!-- Página 27 -->
                 <h2><i class="fas fa-id-badge"></i> Personas Investigativas</h2>
                 <ul>
                     <li><strong>Delegado de Polícia:</strong> Viés estratégico; foco em Direito Penal/Processual e fundamentação jurídica.</li>
@@ -700,7 +698,7 @@
             </section>
 
             <section id="p28" class="caor-card">
-                <span class="page-indicator">Página 28</span>
+                <!-- Página 28 -->
                 <h2><i class="fas fa-terminal"></i> Exemplo Prático de Prompt: Agente de Inteligência</h2>
                 <blockquote>
                     "Aja como um analista de inteligência especializado em crimes financeiros <strong>[PAPEL]</strong>. Estou analisando extratos bancários de uma investigação de corrupção envolvendo múltiplos laranjas <strong>[CONTEXTO]</strong>. Identifique movimentações atípicas, agrupe por beneficiário e sinalize padrões suspeitos <strong>[INSTRUÇÃO]</strong>. Responda em uma tabela com as colunas: Data, Valor, Beneficiário, Motivo de suspeita <strong>[FORMATO]</strong>. Use apenas os dados fornecidos no texto anexo. Não faça suposições além do texto <strong>[RESTRIÇÕES]</strong>."
@@ -708,7 +706,7 @@
             </section>
 
             <section id="p29" class="caor-card">
-                <span class="page-indicator">Página 29</span>
+                <!-- Página 29 -->
                 <h2><i class="fas fa-book"></i> Terminologias Técnicas Essenciais</h2>
                 <ul>
                     <li><strong>Token:</strong> Fragmento de texto; modelos processam tudo em tokens. O limite define quanto a IA lê por vez.</li>
@@ -719,8 +717,8 @@
             </section>
 
             <section id="p30" class="caor-card">
-                <span class="page-indicator">Página 30</span>
-                <h2><i class="fas fa-cubes"></i> Panorama das Ferramentas (Verificado em 11/04/2026)</h2>
+                <!-- Página 30 -->
+                <h2><i class="fas fa-cubes"></i> Panorama das Ferramentas (Verificado em 18/04/2026)</h2>
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -752,7 +750,7 @@
             </section>
 
             <section id="p31" class="caor-card">
-                <span class="page-indicator">Página 31</span>
+                <!-- Página 31 -->
                 <h2><i class="fas fa-user-secret"></i> O que NÃO inserir nos Prompts</h2>
                 <ul>
                     <li>Nomes reais de investigados, vítimas ou testemunhas.</li>
@@ -764,7 +762,7 @@
             </section>
 
             <section id="p32" class="caor-card">
-                <span class="page-indicator">Página 32</span>
+                <!-- Página 32 -->
                 <h2><i class="fas fa-lock"></i> Boas Práticas de Uso e Sigilo</h2>
                 <ul>
                     <li><strong>Anonimize os Dados:</strong> Use pseudônimos como "Pessoa A" ou "Empresa X".</li>
@@ -775,7 +773,7 @@
             </section>
 
             <section id="p33" class="caor-card">
-                <span class="page-indicator">Página 33</span>
+                <!-- Página 33 -->
                 <h2><i class="fas fa-user-shield"></i> Privacidade e Segurança de Dados</h2>
                 <p>Plataformas abertas podem armazenar dados inseridos.</p>
                 <div class="alert-box">
@@ -788,13 +786,13 @@
             </section>
 
             <section id="p34" class="caor-card">
-                <span class="page-indicator">Página 34</span>
+                <!-- Página 34 -->
                 <h2><i class="fas fa-bolt"></i> Zero-shot vs. Few-shot Prompting</h2>
                 <p>Modelos de aprendizado por instrução (Zero-shot) ou por exemplos (Few-shot) para refinar a saída.</p>
             </section>
 
             <section id="p35" class="caor-card">
-                <span class="page-indicator">Página 35</span>
+                <!-- Página 35 -->
                 <h2><i class="fas fa-bullseye"></i> Zero-shot Prompting</h2>
                 <ul>
                     <li><strong>Definição:</strong> Instrução direta sem exemplos. O modelo tenta realizar a tarefa de primeira.</li>
@@ -803,7 +801,7 @@
             </section>
 
             <section id="p36" class="caor-card">
-                <span class="page-indicator">Página 36</span>
+                <!-- Página 36 -->
                 <h2><i class="fas fa-play-circle"></i> Demonstração: Zero-shot em Ação</h2>
                 <div class="alert-box">
                     <span class="badge">Exemplo de Prompt</span>
@@ -814,7 +812,7 @@
             </section>
 
             <section id="p37" class="caor-card">
-                <span class="page-indicator">Página 37</span>
+                <!-- Página 37 -->
                 <h2><i class="fas fa-copy"></i> Few-shot Prompting</h2>
                 <ul>
                     <li><strong>Definição:</strong> Fornecer 1 a 3 exemplos de entrada/saída corretos para o modelo aprender o padrão.</li>
@@ -823,7 +821,7 @@
             </section>
 
             <section id="p38" class="caor-card">
-                <span class="page-indicator">Página 38</span>
+                <!-- Página 38 -->
                 <h2><i class="fas fa-vial"></i> Demonstração: Few-shot em Ação</h2>
                 <div class="alert-box">
                     <span class="badge">Exemplo de Prompt</span>
@@ -837,7 +835,7 @@
             </section>
 
             <section id="p39" class="caor-card">
-                <span class="page-indicator">Página 39</span>
+                <!-- Página 39 -->
                 <h2><i class="fas fa-edit"></i> Exercício Prático: Conflito de Depoimentos</h2>
                 <p><strong>Cenário:</strong> 3 depoimentos (Pessoas A, B e C) com contradições.</p>
                 <div class="alert-box">
@@ -854,7 +852,7 @@
             </section>
 
             <section id="p40" class="caor-card">
-                <span class="page-indicator">Página 40</span>
+                <!-- Página 40 -->
                 <h2><i class="fas fa-rocket"></i> Metaprompting: O Pulo do Gato</h2>
                 <ul>
                     <li><strong>Conceito:</strong> Usar a IA para desenhar seus próprios comandos.</li>
@@ -864,7 +862,7 @@
             </section>
 
             <section id="p41" class="caor-card">
-                <span class="page-indicator">Página 41</span>
+                <!-- Página 41 -->
                 <h2><i class="fas fa-compact-disc"></i> Síntese Estratégica: A Partitura Perfeita</h2>
                 <ul>
                     <li><strong>Iteração:</strong> Itere em etapas (não ajuste tudo de uma vez).</li>
@@ -875,7 +873,7 @@
             </section>
 
             <section id="p42" class="caor-card">
-                <span class="page-indicator">Página 42</span>
+                <!-- Página 42 -->
                 <h2><i class="fas fa-level-up-alt"></i> Evolução do Usuário: Complexidade e Valor</h2>
                 <ol>
                     <li style="margin-left: 15px;"><strong>Iniciantes (Gerar Respostas):</strong> "Resuma os depoimentos."</li>
@@ -885,7 +883,7 @@
             </section>
 
             <section id="p43" class="caor-card">
-                <span class="page-indicator">Página 43</span>
+                <!-- Página 43 -->
                 <h2><i class="fas fa-flag-checkered"></i> Encerramento</h2>
                 <div class="alert-box" style="text-align: center; align-items: center;">
                     <p style="font-size: 1.5rem; color: var(--accent); font-weight: 800;">Dúvidas?</p>

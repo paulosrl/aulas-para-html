@@ -42,6 +42,8 @@ Padronizar a criação das aulas para manter:
 - [ ] Layout testado em desktop e celular.
 - [ ] Tema claro/escuro consistente.
 - [ ] Sem dependências de internet.
+- [ ] Arquivos `.md` sem resíduos técnicos (`[cite_start]`, `[cite: ...]`).
+- [ ] Títulos em `.md` sem marcação `*Página X*`.
 - [ ] (Para páginas práticas) botões de copiar e testar prompts funcionando.
 - [ ] (Para páginas práticas) prompts dentro da caixa sem overflow horizontal.
 - [ ] (Para páginas práticas) tabelas de avaliação com interação preenchível.
