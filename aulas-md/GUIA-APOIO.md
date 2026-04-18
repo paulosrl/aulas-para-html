@@ -31,13 +31,17 @@ Padronizar a criação das aulas para manter:
 - CSS e JS devem ficar embutidos no próprio HTML.
 - Não usar bibliotecas remotas (ex.: Font Awesome CDN).
 - Ícones devem ser locais (Unicode/SVG embutido).
+- Novos arquivos HTML devem ser salvos em `html/`.
 
 ## Checklist antes de fechar a aula
 
 - [ ] Menu lateral atualizado.
+- [ ] Item `Práticas` inserido no fim da seção da Aula 1 (quando houver prática).
 - [ ] Subtópicos da aula funcionando.
 - [ ] Aulas futuras bloqueadas (quando ainda sem conteúdo).
 - [ ] Layout testado em desktop e celular.
 - [ ] Tema claro/escuro consistente.
 - [ ] Sem dependências de internet.
-
+- [ ] (Para páginas práticas) botões de copiar e testar prompts funcionando.
+- [ ] (Para páginas práticas) prompts dentro da caixa sem overflow horizontal.
+- [ ] (Para páginas práticas) tabelas de avaliação com interação preenchível.
