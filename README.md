@@ -1,4 +1,4 @@
-# Aulas Engenharia Prompt
+# aulas-engenharia-prompt
 
 Projeto para produzir aulas completas em Markdown e convertê-las depois para páginas HTML finais, com entrega 100% offline e publicação pública via GitHub Pages.
 
