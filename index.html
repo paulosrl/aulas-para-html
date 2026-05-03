@@ -500,11 +500,11 @@
             <hr class="nav-divider-line">
             <div class="nav-group-title">Aulas</div>
             <a href="html/aula1.html" class="nav-l"><span class="nav-icon">📝</span> Aula 1</a>
+            <a href="html/aula2.html" class="nav-l"><span class="nav-icon">📝</span> Aula 2</a>
             <a href="html/aula1-pratica-html.html" class="nav-l nav-child"><span class="nav-icon">🧪</span> Prática Aula 1</a>
 
             <hr class="nav-divider-line">
             <div class="nav-group-title">Próximas Aulas</div>
-            <span class="nav-l nav-locked"><span class="nav-icon">🔒</span> Aula 2</span>
             <span class="nav-l nav-locked"><span class="nav-icon">🔒</span> Aula 3</span>
             <span class="nav-l nav-locked"><span class="nav-icon">🔒</span> Aula 4</span>
         </nav>
@@ -550,6 +550,15 @@
                         <span class="aula-action">→</span>
                     </a>
 
+                    <a class="aula-card" href="html/aula2.html">
+                        <span class="aula-number">02</span>
+                        <span>
+                            <span class="aula-title">Aula 2</span>
+                            <span class="aula-desc">Anatomia do Prompt Investigativo, Ferramentas e Exercício Prático</span>
+                        </span>
+                        <span class="aula-action">→</span>
+                    </a>
+
                     <a class="aula-card" href="html/aula1-pratica-html.html">
                         <span class="aula-number">P1</span>
                         <span>
@@ -567,12 +576,9 @@
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
-            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
         }
 
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
+        document.body.classList.add('dark-mode');
 
         const menuButton = document.getElementById('menu-toggle');
         const mobileOverlay = document.getElementById('mobile-overlay');

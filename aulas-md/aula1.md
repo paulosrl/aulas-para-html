@@ -6,19 +6,40 @@ Exclusivo para agentes da lei.
 
 ---
 
+# Menu
+
+## Aula 1
+
+1. [Início](#engenharia-de-prompt-para-análises-investigativas)
+2. [Agenda](#agenda-da-aula-1)
+3. [Por que a IA Importa](#por-que-a-ia-importa-três-cenários-reais)
+4. [IA como Colega](#ia-como-colega-não-decisor)
+5. [O que é LLM](#o-que-é-um-llm-e-como-gera-texto)
+6. [O Que Modelos NÃO Sabem](#o-que-modelos-não-sabem)
+7. [Busca vs. IA](#busca-tradicional-vs-ia-generativa)
+8. [Vieses](#vieses-nos-dados-de-treinamento)
+9. [Alucinações](#alucinações-o-risco-de-respostas-falsas)
+10. [Engenharia de Prompt](#fundamentos-de-engenharia-de-prompt)
+11. [Anatomia do Prompt](#anatomia-de-um-prompt-de-qualidade)
+12. [Engenharia de Contexto](#engenharia-de-contexto-elementos-chave)
+13. [Como não usar](#como-não-usar-a-ia-três-pilares-faltantes)
+
+## Aula 2
+
+1. [Prompt Investigativo](../html/aula2.html#p26)
+2. [Ferramentas](../html/aula2.html#p30)
+3. [Sigilo e Segurança](../html/aula2.html#p31)
+4. [Zero vs. Few-shot](../html/aula2.html#p34)
+5. [Exercício Prático](../html/aula2.html#p39)
+
+---
+
 # Agenda da Aula 1
 
 1.  **Contexto e Motivação:** Por que a IA importa para investigadores.
 2.  **O que são LLMs:** Funcionamento, geração de texto, vieses e alucinações.
 3.  **Fundamentos:** Engenharia de Prompt e Engenharia de Contexto.
 4.  **Erros Comuns:** Como não usar a IA.
-5.  **Anatomia do Prompt Investigativo:** Personas e exemplos práticos.
-6.  **Terminologia:** Termos técnicos essenciais.
-7.  **Panorama de Ferramentas:** Claude, Copilot e Gemini.
-8.  **Uso Responsável:** Sigilo, o que não inserir e boas práticas.
-9.  **Técnicas Aplicadas:** Prompts Zero-shot e Few-shot.
-10. **O Pulo do Gato:** Use a IA a seu favor.
-11. **Exercício Prático.**
 
 ---
 
