@@ -1,0 +1,8 @@
+**DEPOIMENTO 1: Ricardo Souza (Gerente da Agência)**
+"Eu lembro que no dia 10 de março de 2024, uma tal de Sandra Lima veio aqui na minha mesa, no Banco Sul. Ela abriu uma conta usando documentos que pareciam legítimos. Ela estava acompanhada de um homem alto que não se identificou, mas que não saiu do lado dela. Eu assinei a abertura. Mais tarde, no dia 20 de março, eu soube que o sistema travou a conta por suspeita de fraude às 14:00h, mas eu estava de férias em Salvador, então não vi quem estava operando o terminal."
+
+**DEPOIMENTO 2: Beatriz Mendes (Analista de TI)**
+"O alerta de segurança disparou no dia 20 de março de 2024, mas o sistema registrou o travamento às 16:30h, e não às 14:00h como disseram. Alguém tentou transferir R$ 50.000,00 da conta da Sandra Lima. A operação foi feita por um terminal físico aqui na nossa unidade do Banco Sul. Eu liguei imediatamente para o gerente Ricardo, mas ele não atendeu. Suspeitamos que o homem que acompanhou a Sandra na abertura da conta — que para nós é o mentor do golpe — tenha feito o acesso, mas as câmeras falharam."
+
+**DEPOIMENTO 3: Vigilante de Turno (Marcos Santos)**
+"Eu vi a movimentação no dia 20. Um homem com as mesmas características daquele que veio no dia 10 (alto e de casaco escuro) entrou na agência pouco antes do sistema travar. Ele saiu apressado logo depois. Não consegui ver o rosto, mas ele usou o terminal 04. A Dona Sandra não estava com ele dessa vez. Eu anotei tudo no meu relatório de turno, mas perdi a folha com o horário exato."

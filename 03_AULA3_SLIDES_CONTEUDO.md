@@ -48,7 +48,15 @@ Documentos investigativos (depoimentos, laudos, comunicações) chegam frequente
 
 Converter esse caos em **informação estruturada e verificável** que suporte análise investigativa.
 
-### Técnica de Prompt: Persona + Estruturação com Restrição
+### 🔑 Técnica Empregada: Persona + Estruturação com Restrição
+
+**O que:** Combine 3 elementos — (1) atribua especialidade ao modelo, (2) defina formato exato, (3) restrinja a informações explícitas.
+
+**Por que funciona aqui:** Depoimentos chegam desorganizados. Persona força qualidade analítica. Estruturação cria uniformidade (mesma resposta para qualquer documento). Restrição evita alucinações (modelo não deve inventar dados).
+
+---
+
+### Técnica de Prompt: Detalhamento Completo
 
 **O que é:**
 - **Persona/Role Prompting:** Instruir modelo a agir como especialista ("Você é analista investigativo...")
@@ -73,38 +81,98 @@ Converter esse caos em **informação estruturada e verificável** que suporte a
 
 ### Exemplo Prático
 
-**Depoimento (desorganizado):**
+## Resumo do caso
+
+O caso resume-se a uma suposta fraude de R$ 50 mil no Banco Sul.
+
+Em 10/03, Sandra Lima abriu uma conta acompanhada por um homem não identificado. No dia 20/03, houve uma tentativa de transferência desse valor em um terminal físico, o que causou o bloqueio automático da conta.
+
+Os pontos centrais da investigação são:
+
+- **Conflito de horários:** O gerente relata o bloqueio às 14h, enquanto a TI registrou às 16h30.
+- **Falhas de registro:** As câmeras da agência não funcionaram e o vigilante perdeu as anotações com os horários exatos da movimentação.
+- **Ausência de comando:** O gerente estava em viagem, e o homem que acompanhava Sandra foi visto saindo apressado da agência logo após o travamento do sistema.
+
+
+**Três depoimentos (desorganizados):**
 ```
-Prestei queixa sobre falsificação de documentos em meu nome. 
-Descobri em 15 de janeiro de 2024 que meu CPF foi utilizado para abrir 
-uma conta bancária. A documentação foi entregue em 8 de janeiro segundo 
-o gerente. Vi que meu RG era falso (assinatura diferente). 
-O gerente passa contato de intermediário chamado Sr. José. 
-Sr. José disse que Marisa entregou os documentos. 
-Marisa mencionou conhecer tabelião em Santos que facilitava falsificação.
+
+**DEPOIMENTO 1: Ricardo Souza (Gerente da Agência)**
+"Eu lembro que no dia 10 de março de 2024, uma tal de Sandra Lima veio aqui na minha mesa, no Banco Sul. Ela abriu uma conta usando documentos que pareciam legítimos. Ela estava acompanhada de um homem alto que não se identificou, mas que não saiu do lado dela. Eu assinei a abertura. Mais tarde, no dia 20 de março, eu soube que o sistema travou a conta por suspeita de fraude às 14:00h, mas eu estava de férias em Salvador, então não vi quem estava operando o terminal."
+
+**DEPOIMENTO 2: Beatriz Mendes (Analista de TI)**
+"O alerta de segurança disparou no dia 20 de março de 2024, mas o sistema registrou o travamento às 16:30h, e não às 14:00h como disseram. Alguém tentou transferir R$ 50.000,00 da conta da Sandra Lima. A operação foi feita por um terminal físico aqui na nossa unidade do Banco Sul. Eu liguei imediatamente para o gerente Ricardo, mas ele não atendeu. Suspeitamos que o homem que acompanhou a Sandra na abertura da conta — que para nós é o mentor do golpe — tenha feito o acesso, mas as câmeras falharam."
+
+**DEPOIMENTO 3: Vigilante de Turno (Marcos Santos)**
+"Eu vi a movimentação no dia 20. Um homem com as mesmas características daquele que veio no dia 10 (alto e de casaco escuro) entrou na agência pouco antes do sistema travar. Ele saiu apressado logo depois. Não consegui ver o rosto, mas ele usou o terminal 04. A Dona Sandra não estava com ele dessa vez. Eu anotei tudo no meu relatório de turno, mas perdi a folha com o horário exato."
+
 ```
 
 **Prompt de Extração:**
 ```
-Você é analista investigativo especializado em síntese de depoimentos.
+# PERSONA
+Você é um Analista de Inteligência Investigativa sênior. Sua função é processar depoimentos brutos, cruzar informações e identificar pontos de divergência para auditoria.
 
-Leia o depoimento abaixo e extraia:
+# TAREFA
+1. Extraia eventos, datas, pessoas e locais dos depoimentos fornecidos em uma tabela consolidada.
+2. Identifique contradições diretas entre os depoimentos e gere uma tabela secundária de conflitos.
 
-1. CRONOLOGIA: [Data] — [Horário se houver] — [Evento]
-2. PESSOAS: [Nome] — [Papel/função] — [Evidência]
-3. LOCAIS: [Local] — [Tipo] — [Atividade]
-4. INCONSISTÊNCIAS E LACUNAS
+# REGRAS DE STATUS (TABELA 1)
+- EXPLÍCITO: Informação literal no texto.
+- INFERIDO: Dedução lógica baseada no contexto (deve ser sinalizada).
+- [NÃO INFORMADO]: Para dados ausentes.
 
-Use APENAS informações explícitas. Se tiver dúvida, marque [INFERIDO].
+# REGRAS DE CONFLITOS (TABELA 2)
+Se dois ou mais depoentes fornecerem informações diferentes sobre o mesmo fato (horários, nomes, sequências), liste-os na tabela "CONFLITOS IDENTIFICADOS".
+
+# FORMATO DE SAÍDA
+
+### TABELA 1: CRONOLOGIA CONSOLIDADA
+| DATA | EVENTO | PESSOA(S) | LOCAL | STATUS |
+| :--- | :--- | :--- | :--- | :--- |
+
+### TABELA 2: CONFLITOS IDENTIFICADOS
+| ASPECTO | DEPOENTE 1 | DEPOENTE 2 | CLASSIFICAÇÃO |
+| :--- | :--- | :--- | :--- |
 ```
 
 **Resultado Esperado (Estruturado):**
 
-| DATA | EVENTO | PESSOA(S) | LOCAL |
-|------|--------|-----------|-------|
-| 8 de janeiro de 2024 | Documentação falsificada entregue | Marisa Oliveira → Banco | Agência Banco XYZ, Itaim |
-| 15 de janeiro de 2024 | Vítima descobre fraude | Clara Silva | — |
-| [DATA NÃO ESPECIFICADA] | Vítima contata Sr. José | Sr. José da Silva | Telefone |
+# RELATÓRIO DE INTELIGÊNCIA INVESTIGATIVA
+
+**Analista Responsável:** Sênior
+**Caso:** Suspeita de Fraude - Banco Sul (Sandra Lima)
+
+---
+
+### TABELA 1: CRONOLOGIA CONSOLIDADA
+
+| DATA | EVENTO | PESSOA(S) | LOCAL | STATUS |
+| :--- | :--- | :--- | :--- | :--- |
+| 10/03/2024 | Abertura de conta bancária | Sandra Lima, Homem Alto (não identificado) e Ricardo Souza | Banco Sul (Agência) | EXPLÍCITO |
+| 20/03/2024 | Tentativa de transferência de R$ 50.000,00 | Sandra Lima (Conta Origem) | Banco Sul (Terminal Físico) | INFERIDO |
+| 20/03/2024 | Disparo do alerta e travamento do sistema | Sandra Lima e Homem Alto (Suspeito) | Banco Sul (Terminal 04) | EXPLÍCITO |
+| 20/03/2024 | Tentativa de comunicação frustrada com gerência | Beatriz Mendes e Ricardo Souza | [NÃO INFORMADO] | EXPLÍCITO |
+| 20/03/2024 | Ausência do Gerente por período de férias | Ricardo Souza | Salvador | EXPLÍCITO |
+
+---
+
+### TABELA 2: CONFLITOS IDENTIFICADOS
+
+| ASPECTO | DEPOENTE 1 (Ricardo Souza) | DEPOENTE 2 (Beatriz Mendes) | CLASSIFICAÇÃO |
+| :--- | :--- | :--- | :--- |
+| **Horário do Incidente** | Afirma que a conta foi travada às 14:00h. | Afirma que o sistema registrou o travamento às 16:30h. | **Divergência Temporal Crítica** |
+| **Comunicação** | Não menciona tentativa de contacto; afirma estar em Salvador. | Afirma ter ligado imediatamente para o gerente Ricardo. | **Divergência de Conduta** |
+
+---
+
+### NOTAS DE AUDITORIA
+
+1.  **Lacuna de Horário:** Existe uma discrepância de 2h30min entre o horário citado pelo gerente (14:00) e o log técnico da TI (16:30). É vital auditar os logs do sistema para verificar se houve acesso remoto ou tentativa de encobrimento.
+2.  **Identificação Visual:** O vigilante confirma que o mesmo indivíduo do dia 10 (abertura) estava no Terminal 04 no dia 20. A "falha" simultânea das câmeras de segurança é um forte indício de sabotagem interna.
+3.  **Localização Geográfica:** Recomenda-se a validação das passagens aéreas ou comprovantes de estadia do Gerente Ricardo Souza em Salvador para confirmar o álibi.
+
+
 
 ### Por Que Isso Funciona
 
@@ -139,7 +207,15 @@ Investigações frequentemente exigem entender **quem conhece quem**, **quem tra
 
 Em casos complexos com 20–50 pessoas e centenas de interações, a rede fica caótica. Como estruturar para que padrões fiquem visíveis?
 
-### Técnica de Prompt: Role Prompting Especializado + Taxonomia de Vínculos
+### 🔑 Técnica Empregada: Role Prompting + Taxonomia + Força do Vínculo
+
+**O que:** (1) Atribua identidade especializada ao modelo, (2) crie categorias pré-definidas (COLEGUISMO, TRANSAÇÃO, etc.), (3) marque certeza (DIRETA vs INDIRETA).
+
+**Por que funciona aqui:** Redes caóticas precisam de ordem. Taxonomia diferencia tipos (não confunde parentesco com corrupção). Força DIRETA/INDIRETA documenta confiança. Evidência citada torna cada vínculo verificável.
+
+---
+
+### Técnica de Prompt: Detalhamento Completo
 
 **O que é:**
 - **Role Prompting:** Atribuir "identidade especializada" ao modelo ("Você é analista de inteligência...")
@@ -173,79 +249,110 @@ Sr. Carlos é gerente do Banco XYZ.
 Sr. José intermediou abertura de conta envolvendo Marisa.
 Marisa é amiga de infância da esposa do tabelião em Santos.
 Sr. Carlos recebeu Marisa na agência em 30/12/2023.
+
+Neste exemplo, iremos usar um arquivo com os dados em formato csv, simulando um arquivo que você poderia receber de um setor de inteligência.
+Este arquivo pode ser baixado clicando diretamente no link abaixo:
+
+inserir LINK
+
 ```
 
-**Prompt de Mapeamento:**
+**Prompt de Mapeamento — VERSÃO OTIMIZADA:**
 ```
 Você é analista de inteligência especializado em mapeamento de redes.
 
-INSTRUÇÃO: Para CADA frase abaixo, identifique TODAS as pessoas mencionadas e o tipo de vínculo EXPLÍCITO entre elas.
+INSTRUÇÃO:
+Para CADA frase abaixo, identifique TODAS as pessoas mencionadas e TODOS os vínculos EXPLÍCITOS entre elas.
 
-PASSO 1: Processe cada frase sequencialmente
-PASSO 2: Extraia vínculos DIRETOS (ditos explicitamente) ANTES de inferências
-PASSO 3: Use a estrutura exata abaixo
+PASSO 1: Processe cada frase sequencialmente.
+PASSO 2: Extraia vínculos DIRETOS, ditos explicitamente, antes de qualquer vínculo indireto.
+PASSO 3: Não invente pessoas, vínculos, datas, locais ou relações.
+PASSO 4: Quando houver pessoa mencionada sem nome próprio ou não identificada completamente, use exatamente: [PESSOA NÃO IDENTIFICADA].
+PASSO 5: Quando a frase não tiver vínculo interpessoal explícito, registre a frase com os demais campos preenchidos como [SEM VÍNCULO].
+PASSO 6: Entregue a resposta exclusivamente em formato CSV, sem comentários antes ou depois.
+PASSO 7: Além de gerar o CSV no corpo da resposta, crie e disponibilize um arquivo baixável em formato .csv com o nome: vinculos_extraidos.csv.
 
-ESTRUTURA OBRIGATÓRIA para cada vínculo:
-[Pessoa A] ↔ [TIPO] ↔ [Pessoa B]
-Força: DIRETA / INDIRETA
-Evidência: [citação exata da frase]
+TIPOS DE VÍNCULO, use EXATAMENTE um destes:
+COLEGUISMO = trabalho/relação profissional, exemplo: "trabalha com", "supervisionava", "assessora de", "contratado por"
+INTERMEDIAÇÃO = mediação/facilitação de negócio ou operacional
+TRANSAÇÃO = troca, pagamento, recebimento, entrega ou transferência presencial ou documental
+COMUNICAÇÃO = ligação, conversa, contato verbal, WhatsApp, Telegram, mensagem ou orientação por chamada
+PARENTESCO = família ou laço pessoal, exemplo: "amiga de infância", "esposa", "filha", "mãe", "primo", "padrinha"
+ACOMPANHAMENTO = presença conjunta, encontro, reunião, viagem, jantar, frequência no mesmo local ou deslocamento conjunto
+FACILITAÇÃO ILÍCITA = facilitação de crime, fraude, falsificação, uso ilícito de documento, ocultação ou ação operacional ilícita
 
-TIPOS DE VÍNCULO (use EXATAMENTE um destes):
-- COLEGUISMO = trabalho/relação profissional
-- INTERMEDIAÇÃO = mediação/facilitação de negócio
-- TRANSAÇÃO = troca/recebimento presencial
-- COMUNICAÇÃO = ligação/contato verbal
-- PARENTESCO = família/laço pessoal
-- ACOMPANHAMENTO = presença juntas
-- FACILITAÇÃO ILÍCITA = facilita crime
+REGRAS DE FORÇA:
+DIRETA = o vínculo está expresso literalmente entre as pessoas na frase.
+INDIRETA = o vínculo é textual, mas depende de relação intermediária explícita na própria frase.
+Não use inferências externas à frase.
 
-IMPORTANTES:
-✅ Foque em vínculos DIRETOS primeiro
-✅ Marque [PESSOA NÃO IDENTIFICADA] se alguém não tiver nome
-❌ Não invente pessoas ou vínculos que não existam
+FORMATO OBRIGATÓRIO DE SAÍDA:
+A saída deve ser um CSV válido, usando vírgula como separador, com cabeçalho exatamente assim:
+
+Frase,Pessoa A,Tipo,Pessoa B,Força,Evidência
+
+REGRAS DO CSV:
+1. Cada vínculo deve ocupar uma linha.
+2. Se uma frase tiver mais de um vínculo, crie uma linha para cada vínculo.
+3. A coluna Frase deve conter apenas o número da frase.
+4. A coluna Tipo deve conter apenas um dos tipos permitidos.
+5. A coluna Força deve conter apenas DIRETA ou INDIRETA.
+6. A coluna Evidência deve conter uma citação curta, literal e exata da frase original.
+7. Todos os campos textuais devem estar entre aspas duplas.
+8. Se a evidência tiver aspas internas, escape-as duplicando as aspas, padrão CSV.
+9. Não use markdown.
+10. Não use tabela visual.
+11. Não explique o resultado.
+12. Não inclua observações finais.
+13. O arquivo .csv baixável deve conter exatamente as mesmas colunas e linhas da resposta.
+
+EXEMPLO DE SAÍDA:
+"Frase","Pessoa A","Tipo","Pessoa B","Força","Evidência"
+"1","Roberto Mendes","COLEGUISMO","Carlos Henrique","DIRETA","trabalha diretamente com o gerente de operações Carlos Henrique"
+"3","Patricia Gonçalves","COLEGUISMO","Carlos Henrique","DIRETA","Patricia Gonçalves, assessora de Carlos"
+"3","Patricia Gonçalves","TRANSAÇÃO","João da Silva","DIRETA","recebeu pessoalmente os documentos falsificados de um courier identificado como ""João da Silva"""
+"14","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]"
+
+DADOS PARA PROCESSAR:
+
 ```
 
 **Resultado Esperado (Rede):**
 
+Um arquivo em formato CSV será gerado com a relação de vínculos entre pessoas.
+
+A estrutura do arquivo csv é a seguinte:  
+1. Frase
+2. Pessoa A
+3. Tipo de vínculo
+4. Pessoa B
+5. Força do vínculo
+6. Evidência
+
+O prompt acima é um bom exemplo de como usar o role prompt para obter informações estructuradas de um texto. 
+
+Usando a técnica de prompt anterior, obteremos um arquivo em formato CSV com a relação de vínculos entre pessoas
+
+Com este arquivo poderemos importar para o i2 analysts notebook, software de análise de dados em rede. A visualização em rede facilita o entendimento da estrutura da organização.  
 ```
-1. Sr. Carlos ↔ COLEGUISMO ↔ Sr. José da Silva
-   Força: DIRETA
-   Evidência: "trabalha com Sr. José da Silva há 10 anos"
+Entrada:
 
-2. Sr. José da Silva ↔ INTERMEDIAÇÃO ↔ Marisa Oliveira
-   Força: DIRETA
-   Evidência: "Sr. José intermediou a abertura de conta que envolveu Marisa Oliveira"
+Frase 1: Roberto Mendes é sócio do Banco Fiduciário desde 2018 e trabalha diretamente com o gerente de operações Carlos Henrique.
+Frase 2: Carlos Henrique intermediou a abertura de 12 contas fictícias em nome de terceiros entre janeiro e março de 2024.
+Frase 3: Patricia Gonçalves, assessora de Carlos, recebeu pessoalmente os documentos falsificados de um courier identificado como "João da Silva" em 15/02/2024.
+Frase 4: João da Silva trabalha como entregador autônomo há 8 anos e foi recrutado por Marisa Oliveira, ex-funcionária do Tabelionato de Santos.
 
-3. Sr. Carlos ↔ TRANSAÇÃO ↔ Marisa Oliveira
-   Força: DIRETA (presencial)
-   Evidência: "Sr. Carlos recebeu Marisa na agência em 30/12/2023"
+...
 
-4. Marisa Oliveira ↔ PARENTESCO ↔ Esposa do Tabelião
-   Força: INDIRETA [VÍNCULO INFERIDO]
-   Evidência: "Marisa é amiga de infância da esposa do tabelião"
+Saída:
 
-5. Marisa Oliveira ↔ ACOMPANHAMENTO ↔ [PESSOA NÃO IDENTIFICADA]
-   Força: DIRETA
-   Evidência: "Marisa estava acompanhada de uma pessoa não identificada"
+Frase,"Pessoa A","Tipo","Pessoa B","Força","Evidência"
+1,"Roberto Mendes","COLEGUISMO","Carlos Henrique","DIRETA","trabalha diretamente com o gerente de operações Carlos Henrique"
+2,"Carlos Henrique","INTERMEDIAÇÃO","[PESSOA NÃO IDENTIFICADA]","DIRETA","intermediou a abertura de 12 contas fictícias em nome de terceiros"
+3,"Patricia Gonçalves","COLEGUISMO","Carlos Henrique","DIRETA","Patricia Gonçalves, assessora de Carlos"
+3,"Patricia Gonçalves","TRANSAÇÃO","João da Silva","DIRETA","recebeu pessoalmente os documentos falsificados de um courier identificado como ""João da Silva"""
+4,"João da Silva","COLEGUISMO","Marisa Oliveira","DIRETA","foi recrutado por Marisa Oliveira"
 
-6. Tabelião em Santos ↔ FACILITAÇÃO ILÍCITA ↔ (atividade de falsificação)
-   Força: DIRETA
-   Evidência: "facilitava falsificação de documentos"
-```
-
-### Visualização Conceitual
-
-```
-    Sr. Carlos
-        ↓ (coleguismo)
-    Sr. José ←→ Marisa
-        ↓              ↓
-   [Intermediação]  [Amiga de infância]
-                        ↓
-                  Esposa do Tabelião
-                        ↓
-                    Tabelião em Santos
-                   (falsificação)
 ```
 
 ### Por Que Isso Funciona
@@ -265,7 +372,7 @@ IMPORTANTES:
 - "Rede internacional de falsificação" — pura especulação
 
 ✅ **Marcar como INFERIDO:**
-- Relações que são dedução lógica mas não explícitas
+- Relações que são deduções lógicas mas não explícitas
 - Força INDIRETA para conexões via terceiros
 
 ---
@@ -279,12 +386,17 @@ Investigações dependem de **entender ordem dos eventos**. Problemas comuns:
 - Há períodos sem dados (lacunas)
 - Datas conflitam entre fontes
 - Sequência temporal revela causalidade
+A tarefa é **organizar**, **questionar lacunas**, e **apontar contradições** — exatamente o que PROMPT 3 ensina.
 
-### O Desafio
+### 🔑 Técnica Empregada: Chain-of-Thought + Marcação de Certeza + Validação
 
-Com 15–20 eventos e datas parciais, como reconstituir timeline que revele padrão?
+**O que:** (1) Force raciocínio passo-a-passo (PASSO 1 → 2 → 3...), (2) diferencie [DATA CERTA] vs [APROXIMADA] vs [INCERTA], (3) valide se sequência é internamente consistente.
 
-### Técnica de Prompt: Chain-of-Thought + Marcação de Nível de Certeza
+**Por que funciona aqui:** Eventos chegam fora de ordem. CoT força ordem sistemática. Marcação diferencia fatos de deduções. Validação detecta contradições antes de conclusions. Lacunas marcadas mostram exatamente onde investigação tem gaps.
+
+---
+
+### Técnica de Prompt: Detalhamento Completo
 
 **O que é:**
 - **Chain-of-Thought (CoT):** Forçar modelo a raciocinar em etapas ("Primeiro, identifique; depois, ordene; depois, valide")
@@ -309,75 +421,267 @@ Com 15–20 eventos e datas parciais, como reconstituir timeline que revele padr
 4. **Validar consistência** (se A ocorreu antes de B, dedução X faz sentido?) (passo 4)
 5. **Nível de certeza** por data: [DATA CERTA] vs [DATA APROXIMADA] vs [DATA INCERTA] (passo 5)
 
-### Exemplo Prático
+### Estudo de Caso: Fraude Bancária em Rede
 
-**Eventos (fora de ordem):**
-```
-- Vítima foi para delegacia e prestou queixa
-- Conta bancária foi aberta
-- Marisa entregou documentação falsificada
-- Vítima recebeu ligação de Sr. José confirmando intermediação
-- Vítima abriu conta e descobriu uso indevido
-- Vítima pediu cópias dos documentos ao gerente
+Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O aspecto crítico: **a investigação demorou 51 dias para começar**, e quando começou, ficou parada por 8 dias enquanto os criminosos continuavam ativos.
 
-Datas mencionadas:
-- 30 de dezembro de 2023 (documentação entregue)
-- 2 de janeiro de 2024 (vítima descobriu)
-- Depois de 2 de janeiro (ligação Sr. José)
-- Algum momento inicial (vítima foi para delegacia)
-```
+Este é um caso real de investigação deficiente onde as autoridades falharam em comunicação e resposta rápida — exatamente o tipo de cenário que um investigador moderno enfrenta: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas.
+
+---
+
+#### Os Envolvidos
+
+**Criminosos:**
+- **Sr. José da Silva** — O operador. Faz as chamadas telefônicas oferecendo crédito pré-aprovado. Obtém os documentos pessoais das vítimas (CPF, RG) enganando-as sobre a suposta oferta de crédito.
+- **Marisa Oliveira** — A executora. Usa os documentos fornecidos para abrir contas bancárias falsificadas em nome das vítimas. Depois realiza os saques nas agências ou caixas eletrônicos.
+
+**Vítimas:**
+- **Anderson Silva** — Vítima 1. Ligação de Sr. José em 30 de dezembro. Envia documentos em 31 de dezembro. Descobre saque em sua conta em 2 de janeiro.
+- **Clara Silva** — Vítima 2. Conta aberta em seu nome em 10 de janeiro. Descobre múltiplos saques em 17 de janeiro (total R$ 3.700).
+- **Miguel Santos** — Vítima 3. Descobre saques em 31 de janeiro (total R$ 5.200 em 5 saques diferentes).
+
+**Instituições:**
+- **Banco XYZ** — Detecta anomalias quando o gerente Sr. Carlos nota. Tem informação completa em 7 de fevereiro (depoimento + perícia). MAS só alerta a polícia em 20 de fevereiro — 13 dias depois.
+- **Polícia Civil** — Recebe denúncia em 20 de fevereiro. Abre inquérito em 22 de fevereiro. Não progride. Polícia Federal assume em 1º de março.
+
+---
+
+#### Como o Crime Funcionou (Sequência Real)
+
+**Dezembro 2023 — Início:**
+Sr. José faz ligações para pessoas desconhecidas oferecendo crédito pré-aprovado (golpe clássico). A vítima, confiante, envia seus documentos pessoais.
+
+**Janeiro 2024 — Execução:**
+Marisa recebe os documentos e usa-os para abrir contas bancárias em nome das vítimas. Ela não é uma estranha — ela realmente entra na agência, abre contas, e consegue aprovação (falha do banco aqui: documentação falsificada não foi detectada imediatamente).
+
+Marisa então vai aos caixas eletrônicos e saca dinheiro usando os cartões gerados para essas contas falsificadas.
+
+**Três saques documentados:**
+- Anderson: saque de R$ 1.500 em 2 de janeiro
+- Clara: saque de R$ 2.000 em 11 de janeiro + outros (total R$ 3.700)
+- Miguel: cinco saques não autorizados (total R$ 5.200)
+
+**Janeiro-Fevereiro — Descoberta Lenta:**
+As vítimas só descobrem quando checam seus extratos bancários. Não é detecção automática. Isso leva dias ou semanas.
+
+Anderson descobre em 2 de janeiro. Clara descobre em 17 de janeiro (15 dias depois). Miguel descobre em 31 de janeiro (29 dias depois).
+
+**Fevereiro — Denúncia e Investigação Falha:**
+As vítimas registram boletim de ocorrência. O banco convida todas para depoimento em 5 de fevereiro e recebe depoimento em 7 de fevereiro. Perícia examina os documentos falsificados em 10 de fevereiro. Auditoria interna identifica que TODAS as contas foram abertas por Marisa em 11 de fevereiro.
+
+O banco tem tudo. Tem provas. Tem o padrão (todas as contas abiertas pela mesma pessoa). Tem os dados das vítimas.
+
+**MAS a polícia só descobre em 20 de fevereiro — 13 dias depois.**
+
+Por quê? Ninguém sabe. Aparentemente o banco não alertou imediatamente. Falha de comunicação.
+
+**Março — Sem Progresso:**
+Delegacia de Polícia Civil abre inquérito em 22 de fevereiro. Nada acontece pelos próximos 8 dias. Em 1º de março, Polícia Federal assume porque "pode envolver rede interstadual". 
+
+Durante esses 8 dias e depois, Sr. José continua fazendo ligações (última ligação conhecida é ~início de março para novo alvo que recusou).
+
+Marisa desaparece ~meados de fevereiro. Nunca é localizada no caso.
+
+---
+
+#### O Que Precisa Ser Analisado com PROMPT 3
+
+Ler **todos os eventos deste caso**, mas **completamente fora de ordem**. Eventos são:
+- Datas de ligações
+- Datas de saques
+- Datas de descobertas
+- Datas de depoimentos
+- Datas de análises forenses
+- Datas de comunicação entre instituições
+- Algumas datas faltando completamente (quando Marisa desapareceu? quando Sr. José fez a última ligação exatamente?)
+
+**A tarefa do PROMPT é:**
+
+1. **Reconstruir a sequência correta** — Colocar os 55 eventos em ordem cronológica, do primeiro ao último.
+
+2. **Identificar lacunas** — Entre o evento A e o evento B, quantos dias passaram SEM informação? Por exemplo:
+   - Entre "Clara descobre fraude (17 de janeiro)" e "Clara registra denúncia (30 de janeiro)" há 13 dias. O que Clara fez nesse tempo? Por que esperou?
+   - Entre "Banco tem informação completa (7 de fevereiro)" e "Polícia é alertada (20 de fevereiro)" há 13 dias. Por quê?
+   - Entre "Inquérito aberto (22 de fevereiro)" e "PF assume (1º de março)" há 8 dias. O que aconteceu?
+
+3. **Detectar contradições** — O caso tem problemas internos:
+   - Um evento diz que Marisa saca R$ 1.500 em 4 de janeiro, mas outro evento diz que ela abre a conta em 10 de janeiro. Como saca ANTES de abrir?
+   - Marisa desaparece ~meados de fevereiro, mas Sr. José continua ligando em março. Como um desaparece e o outro não?
+
+4. **Formular questões investigativas** — Para cada lacuna, pergunte:
+   - Por que existe essa lacuna?
+   - O que deveria ter acontecido nesse período?
+   - O que o investigador deveria verificar?
+
+**Você NÃO está julgando** ("isso foi negligência"). Você está **perguntando** ("por que isso aconteceu? o que falta saber?").
+
+---
 
 **Prompt de Reconstrução:**
 ```
-Você é analista de cronologia especializado em investigação.
+Você é um ANALISTA INVESTIGATIVO EXPERIENTE com 15 anos de experiência 
+em reconstrução de cronologias para casos complexos de fraude, corrupção 
+e crimes financeiros.
 
-Você recebeu eventos FORA DE ORDEM. Sua tarefa:
+Sua especialidade é pegar informações fragmentadas, desorganizadas e muitas 
+vezes contraditórias — como você recebe de depoimentos, extratos bancários, 
+comunicações e perícias — e transformá-las em uma SEQUÊNCIA TEMPORAL COERENTE 
+que revela padrões, lacunas críticas e inconsistências.
 
-1. ORDENAR cronologicamente (antigo → recente)
-2. MARCAR períodos sem informação: [LACUNA: X dias]
-3. VALIDAR consistência (algo não faz sentido?)
-4. INDICAR certeza:
-   - [DATA CERTA] = explicitamente mencionada
-   - [DATA APROXIMADA] = inferida de contexto
-   - [DATA INCERTA] = ambígua
+Você trabalha para autoridades investigativas que precisam entender:
+- O QUÊ aconteceu e em que ordem
+- ONDE estão os gaps (informação faltando)
+- QUAIS contradições indicam dados errados ou falha de processo
+- POR QUÊ certos períodos têm silêncio investigativo
+
+Você é metódico, não faz julgamentos precipitados, e diferencia SEQUÊNCIA 
+TEMPORAL (ordem dos eventos) de CAUSALIDADE (relação causa-efeito).
+
+---
+
+PROCEDIMENTO:
+
+PASSO 1: Listar TODAS as datas mencionadas
+Extraia cada data ou referência temporal do material fornecido, mantendo 
+a classificação original: é uma data exata, uma aproximação, ou é incerta?
+
+PASSO 2: Ordenar cronologicamente
+Coloque todos os eventos em sequência do mais antigo para o mais recente.
+Marque eventos sem data clara para análise posterior.
+
+PASSO 3: Marcar LACUNAS
+Entre cada evento sucessivo, calcule quantos dias passaram sem informação.
+- [LACUNA: X dias] = intervalo com duração conhecida
+- [LACUNA: ~X dias] = intervalo aproximado
+
+PASSO 4: Classificar CERTEZA de cada data
+Para cada evento, classifique como:
+- [DATA CERTA] = explicitamente mencionada ("7 de fevereiro")
+- [DATA APROXIMADA] = inferida de contexto ("alguns dias depois", "uma semana após")
+- [DATA INCERTA] = ambígua ou não mencionada ("data desconhecida")
+
+PASSO 5: Validar ordem e causalidade
+Pergunta-se:
+- Evento A realmente ocorreu antes de Evento B?
+- Há contradições lógicas? (Exemplo: saque antes de abertura de conta?)
+- A sequência faz sentido narrativamente?
+
+NOTA IMPORTANTE: Sequência temporal ≠ Causalidade
+Exemplo: "Vítima descobriu fraude em 17 de janeiro, polícia foi alertada em 20 de fevereiro"
+- SEQUÊNCIA: Verdadeira (um antes do outro)
+- CAUSALIDADE: Não há — a descoberta NÃO causou o alerta imediato da polícia
+
+PASSO 6: Formatar timeline reconstituída
+Apresente a cronologia em formato claro com:
+- Data (classificação)
+- Evento
+- Lacuna até o próximo evento
+
+PASSO 7: Análise investigativa profunda
+Para cada lacuna significativa (> 3 dias), questione:
+- O que se sabe ANTES dessa lacuna?
+- O que se sabe DEPOIS dessa lacuna?
+- QUESTÃO INVESTIGATIVA: Por que existe esse gap? O que deveria ter acontecido?
+- Como isso afetou a investigação?
+
+Identifique todas as contradições encontradas e relate quais precisam verificação.
+
+CONCLUSÃO: A sequência temporal é coerente? Quais pontos precisam clarificação?
+Quais lacunas são "normais" vs quais indicam falha de processo?
+
+---
+
+OUTPUT ESPERADO:
+
+1. Timeline cronológica formatada (eventos + datas + lacunas)
+2. Tabela de lacunas significativas (duração + questões)
+3. Lista de contradições detectadas
+4. Análise: sequência é coerente ou há problemas?
+5. Próximas etapas investigativas sugeridas (o que verificar)
+
+Lembre-se: Você está QUESTIONANDO, não julgando. Você está EXPONDO GAPS,
+não acusando de negligência. Sua função é fazer o investigador humano
+entender o que falta saber.
 ```
 
-**Resultado Esperado (Timeline):**
+**RO Que Esperamos do Resultado**
 
 ```
-[DATA CERTA] 30 de dezembro de 2023
-→ Marisa Oliveira entrega documentação falsificada ao Banco XYZ
+## 📋 Output Principal: Timeline Reconstruída
 
-[LACUNA: 3 dias]
+- **52 de 55 eventos** ordenados cronologicamente (do mais antigo ao mais recente)
+- Cada evento com **classificação de data:**
+  - [DATA CERTA] = mencionada explicitamente
+  - [DATA APROXIMADA] = inferida do contexto
+  - [DATA INCERTA] = não mencionada
+- **Lacunas marcadas** entre cada evento (duração em dias)
 
-[DATA CERTA] 2 de janeiro de 2024
-→ Vítima toma conhecimento de abertura fraudulenta
-→ Vítima pede cópias dos documentos ao gerente
+---
 
-[LACUNA: data não especificada]
+## ❌ Contradições a Detectar (2 críticas)
 
-[DATA APROXIMADA] Dias/semana após 2 de janeiro
-→ Vítima recebe ligação de Sr. José confirmando intermediação
+- **Contradição 1:** Saque em 4 de janeiro, mas conta abre em 10 de janeiro
+  - Questão: Qual data está correta?
+  
+- **Contradição 2:** Marisa desaparece ~meados de fevereiro, mas Sr. José continua ativo até ~março
+  - Questão: Como um desaparece e o outro não?
 
-[LACUNA: data não especificada, presumível logo após descoberta]
+---
 
-[DATA INCERTA] Data não mencionada
-→ Vítima comparece a delegacia de polícia para prestação de queixa
+## ⚠️ Lacunas Significativas a Identificar
 
-ANÁLISE DE CONSISTÊNCIA:
-✅ Sequência faz sentido: Falsificação (30/12) → Descoberta (2/1) → Investigação (após)
-⚠️ LACUNA CRÍTICA: Quando vítima foi à delegacia? Dias após descoberta? Semanas?
-⚠️ LACUNA: Como gerente Sr. Carlos contatou vítima para confirmar fraude?
+- **Lacuna 1 (5 dias):** Gerente vê irregularidade (5/1) mas conta abre normalmente (10/1)
+  
+- **Lacuna 2 (15-29 dias):** Vítimas descobrem em momentos completamente diferentes
+  
+- **Lacuna Crítica 3 (13 dias):** Banco tem prova completa (11/2) → Polícia alerta (20/2)
+  - 🔴 Crime continua ativo nesse período
+  
+- **Lacuna Crítica 4 (8 dias):** Inquérito aberto (22/2) → PF assume (1/3)
+  - 🔴 Sem progresso documentado
+
+---
+
+## 💡 Análise Investigativa Esperada
+
+- **Questões "Por quê?"** para cada lacuna (sem julgamentos)
+  - "Por que banco esperou 13 dias?"
+  - "O que foi feito nesses 8 dias?"
+  
+- **Diferença sequência vs causalidade:**
+  - Sequência: cronologicamente correto
+  - Causalidade: relação causa-efeito existe?
+  
+- **Conclusão:** A sequência revela onde o sistema falhou
+
+---
+
+## ✅ Critérios de Sucesso
+
+- ✅ Ordena ≥95% dos eventos
+- ✅ Identifica ≥5 lacunas com duração
+- ✅ Classifica datas com ≥90% acurácia
+- ✅ Detecta ambas as contradições
+- ✅ Questiona investigativamente (sem julgamentos)
+- ✅ Diferencia sequência de causalidade
+- ✅ Sugere 8+ próximas etapas de investigação
+
+---
+
+## 🎯 Resultado Final
+
+**PROMPT 3 PASSOU quando:** Descobre naturalmente (a partir dos dados caóticos) que há falhas de comunicação críticas entre banco e polícia, investigação parada por 8 dias, e dados contraditórios que indicam erros de processo.
+
 ```
 
-### Por Que Isso Funciona
+#### Por que Este Exercício Importa
 
-| Elemento | Benefício |
-|----------|-----------|
-| **Ordem cronológica clara** | Revela causalidade |
-| **Lacunas marcadas** | Indica onde investigação tem gaps |
-| **Certeza indicada** | Diferencia fato de inferência |
-| **Validação de consistência** | Detecta contradições |
+No mundo real, um investigador recebe:
+- Depoimentos (desorganizados)
+- Extratos bancários (com datas)
+- Comunicações (emails, mensagens)
+- Perícias (com datas)
+- Histórico de ligações (com datas)
 
 ### Limitações
 
@@ -388,342 +692,4 @@ ANÁLISE DE CONSISTÊNCIA:
 ✅ **Marcar incertezas:**
 - Datas aproximadas recebem [DATA APROXIMADA]
 - Lacunas recebem [LACUNA: X dias]
-
 ---
-
-## TÓPICO 4: Validação Crítica de Respostas Geradas
-
-### Contexto
-
-IA pode:
-- ✅ **Reproduzir informações explícitas** (VERIFICÁVEL)
-- ⚠️ **Deduzir logicamente** (INFERIDO) — pode estar correto ou não
-- ❌ **Inventar** (ESPECULATIVO/ALUCINAÇÃO) — sempre problema em investigação
-
-### O Desafio
-
-Você recebeu uma resposta de IA. Como saber se é segura usar em relatório oficial?
-
-### Técnica de Prompt: Metacognição (Self-Critique) + Taxonomia de Confiabilidade
-
-**O que é:**
-- **Metacognição:** Pedir ao modelo que **questione sua própria resposta** (modelo critica modelo)
-- **Taxonomia V/I/E:** Classificar cada afirmação em VERIFICÁVEL / INFERIDO / ESPECULATIVO
-- **Confiança diferenciada:** Marcar ALTA / MÉDIA / BAIXA para cada afirmação
-- **Rastreamento de certeza:** Documentar exatamente por que confia ou não em cada conclusão
-
-**Como funciona:**
-1. Metacognição → Modelo não apenas responde, mas questiona suas próprias conclusões
-2. Taxonomia V/I/E → Diferencia fatos verificáveis de especulações (reduz alucinações)
-3. Confiança → Marca risco de cada afirmação para próximo analista decidir usar ou não
-4. Rastreamento → Transparência: "Por que é ESPECULATIVO? Porque X não está nos dados"
-
-**Por que funciona para validação crítica:**
-- IA frequentemente alucina sem avisar → Metacognição força auto-crítica
-- Difícil distinguir VERIFICÁVEL de ESPECULATIVO visualmente → Taxonomia explícita protege
-- Relatórios oficiais exigem rastreabilidade → Confiança documentada prova rigor
-- Segurança investigativa exige desconfiança saudável → Modelo critica a si mesmo
-
-**Estratégia:**
-1. Executa análise normalmente
-2. **Questiona cada afirmação** contra documento original
-3. **Classifica por tipo:**
-   - ✅ VERIFICÁVEL = explícito no documento
-   - ⚠️ INFERIDO = dedução lógica, mas não explícito
-   - ❌ ESPECULATIVO = além dos dados, possível alucinação
-4. **Atribui confiança:**
-   - ALTA = suportado por evidência clara
-   - MÉDIA = lógica válida mas indireta
-   - BAIXA = muita incerteza ou dependência de premissas frágeis
-
-### Exemplo Prático
-
-**Resposta de IA (com erros intencionais):**
-```
-CRONOLOGIA:
-- 30/12/2023: Marisa Oliveira, agindo como agente de esquema criminoso 
-  profissional, entregou documentação falsificada ao Banco XYZ
-- 2/1/2024: Vítima descobriu fraude e acionou Polícia Federal
-- 5/1/2024: Investigação foi aberta pela PF com prioridade máxima
-- 10/1/2024: Marisa Oliveira foi presa em operação conjunta
-
-PESSOAS:
-- Marisa Oliveira: Criminosa profissional
-- Sr. José da Silva: Corrupto que facilitava esquema (recebendo propina)
-- Sr. Carlos: Gerente conivente que permitiu fraude
-```
-
-**Validação Crítica:**
-```
-Você é supervisor de qualidade de análise investigativa.
-
-Leia esta resposta que foi gerada por IA e o DOCUMENTO ORIGINAL.
-
-Para CADA afirmação:
-✅ VERIFICÁVEL = explícito no documento
-⚠️ INFERIDO = dedução válida, não explícita
-❌ ESPECULATIVO = além dos dados (possível alucinação)
-
-Depois: CONFIANÇA alta/média/baixa
-```
-
-**Resultado de Validação:**
-
-| Afirmação | Status | Confiança | Justificativa |
-|-----------|--------|-----------|---|
-| "30/12 Marisa entregou documento" | ✅ VERIFICÁVEL | ALTA | Explícito em depoimento |
-| "Marisa = criminosa **profissional**" | ❌ ESPECULATIVO | BAIXA | Apenas intermediou 1 vez; "profissional" é invenção |
-| "2/1 vítima acionou **Polícia Federal**" | ❌ ESPECULATIVO | MUITO BAIXA | Depoimento diz "prestei queixa" em delegacia, não PF; data confirmada mas órgão inventado |
-| "5/1 investigação aberta pela PF" | ❌ ESPECULATIVO | NENHUMA | Data completamente inventada |
-| "10/1 Marisa foi presa" | ❌ ESPECULATIVO | NENHUMA | Sem qualquer menção a prisão |
-| "José = corrupto recebendo propina" | ❌ ESPECULATIVO | BAIXA | "Intermediador" é correto; "corrupto" e "propina" são invenções |
-| "Carlos = gerente conivente" | ⚠️ INFERIDO | MÉDIA | Carlos recebeu documentação, mas depoimento não diz se sabia ser falsa |
-
-### Conclusão da Validação
-
-🚨 **ALUCINAÇÕES DETECTADAS:**
-- Datas inventadas (5/1, 10/1)
-- Órgão inverso (PF vs delegacia local)
-- Eventos não mencionados (prisão)
-- Escalação absurda (intermediador → criminosa profissional)
-
-✅ **USAR APENAS:**
-- Datas e nomes VERIFICÁVEIS
-- Papéis básicos (intermediador, entregador)
-
-❌ **REMOVER:**
-- Todas as inferências sobre motivação/criminosidade
-- Todas as datas não suportadas
-- Qualquer escalação sem evidência
-
-### Por Que Isso Funciona
-
-| Elemento | Benefício |
-|----------|-----------|
-| **Metacognição** | Força modelo a questionar a si mesmo |
-| **Classificação (V/I/E)** | Diferencia certeza de especulação |
-| **Confiança indicada** | Marca risco de cada afirmação |
-| **Proteção contra alucinação** | Previne conclusões prematuras em relatório oficial |
-
-### Limitações
-
-⚠️ **Modelo pode errar na validação também:**
-- Às vezes marca VERIFICÁVEL quando está INFERIDO
-- Use como **primeira passagem**; sempre revise manualmente contra documento original
-
-✅ **Usar como procedimento em investigação:**
-- Toda resposta de IA recebe validação crítica antes de uso
-- Documentar: O que foi verificado? O que falta investigar?
-
----
-
-## TÓPICO 5: Integração — Exercício Prático Intensivo
-
-### Objetivo
-
-Aplicar **TODAS as 4 técnicas em sequência** em cenário realista.
-
-### Técnicas Usadas em Cada Etapa
-
-| Etapa | Técnica | Por Quê |
-|-------|---------|---------|
-| **1. Extração** | Persona + Estruturação + Restrição | Torna caos em ordem; reduz alucinações |
-| **2. Vínculos** | Role Prompting + Taxonomia + Marcação de Força | Diferencia tipos de vínculo; marca certeza |
-| **3. Cronologia** | Chain-of-Thought + Marcação de Certeza + Validação | Força raciocínio passo-a-passo; detecta inconsistências |
-| **4. Validação** | Metacognição + Taxonomia V/I/E + Confiança | Modelo questiona a si mesmo; detecta alucinações |
-
-### Fluxo Integrado
-
-```
-[1. EXTRAÇÃO]
-    Persona + Estruturação + Restrição
-    ↓
-Estruturar informações de múltiplos documentos
-    ↓
-[2. MAPEAMENTO DE VÍNCULOS]
-    Role Prompting + Taxonomia + Força
-    ↓
-Conectar pessoas/empresas/eventos
-    ↓
-[3. RECONSTRUÇÃO CRONOLÓGICA]
-    Chain-of-Thought + Nível de Certeza + Validação
-    ↓
-Ordenar fatos, identificar lacunas
-    ↓
-[4. VALIDAÇÃO CRÍTICA]
-    Metacognição + Taxonomia V/I/E + Confiança
-    ↓
-Questionar cada conclusão antes de relatório
-    ↓
-[PRODUTO FINAL]
-    ↓
-Relatório analítico estruturado e verificado
-```
-
-### Exemplo de Caso Integrado
-
-**Cenário:** Operação de falsificação de documentação bancária
-
-**Dataset fornecido:**
-- Depoimento de vítima (Clara Silva)
-- Depoimento de gerente bancário (Rafael Torres)
-- Registros de movimentação bancária (saques + transferência)
-- Boletim de ocorrência (Maria Silva — possível vítima adicional)
-
-**Tarefa (em dupla — 18 min):**
-1. Estruturar informações (5 min)
-2. Mapear vínculos (5 min)
-3. Reconstituir timeline (4 min)
-4. Validar criticamente (2 min)
-5. Redigir síntese (2 min)
-
-### Síntese Esperada
-
-```
-RELATÓRIO ANALÍTICO — OPERAÇÃO DE FALSIFICAÇÃO
-
-Entre 8 e 15 de janeiro de 2024, pessoa identificada como Patricia Mendes 
-utilizou documentação (incluindo procuração presumivelmente falsificada) para 
-abrir conta bancária em nome de Clara Silva no Banco Credito Legal, São Paulo, 
-realizando saques sucessivos totalizando R$ 3.700 antes de ser bloqueada.
-
-Investigação inicial indica possível padrão similar envolvendo vítima adicional 
-(Maria Silva) com roubo de documentos em mesma região.
-
-PRÓXIMOS PASSOS:
-1. Localizar Patricia Mendes
-2. Investigar vínculo entre Clara e Maria Silva
-3. Análise CCTV de ATMs utilizados
-4. Rastreamento de origem de procuração falsificada
-```
-
-### Competências Integradas
-
-| Competência | Técnica Usada |
-|-------------|---------------|
-| Saber o que é importante | EXTRAÇÃO (filtra o relevante) |
-| Entender relações | MAPEAMENTO (conecta pessoas/eventos) |
-| Ver padrão temporal | CRONOLOGIA (ordem revela causalidade) |
-| Não confiar cegamente | VALIDAÇÃO (questiona antes de concluir) |
-
----
-
-## Resumo: Os 4 Pilares
-
-| Pilar | Pergunta | Técnica | Benefício |
-|-------|----------|---------|-----------|
-| **1. Extração** | O QUÊ aconteceu? | Estruturação + Persona | Informação clara, verificável |
-| **2. Vínculos** | QUEM estava envolvido? | Mapeamento de rede | Relações visíveis, padrões |
-| **3. Cronologia** | QUANDO aconteceu? | Timeline ordenada | Sequência → causalidade |
-| **4. Validação** | POSSO confiar? | Metacognição | Segurança antes de relatório |
-
----
-
-## Erros Comuns a Evitar
-
-### ❌ Erro 1: Confiar cegamente em resposta de IA
-
-```
-❌ ERRADO:
-IA gera análise → Você copia para relatório oficial
-
-✅ CORRETO:
-IA gera análise → Você valida criticamente → Você refina → Você aprova
-```
-
-### ❌ Erro 2: Inferir além dos dados
-
-```
-❌ ERRADO:
-"Pessoa recebeu ligação" → "Pessoa é corrupta" (inferência sem evidência)
-
-✅ CORRETO:
-"Pessoa recebeu ligação" → [FATO VERIFICÁVEL]
-"Dedução: Pessoa pode estar envolvida" → [INFERIDO — requer investigação]
-```
-
-### ❌ Erro 3: Esquecer lacunas
-
-```
-❌ ERRADO:
-Timeline com 10 eventos → Parece sequência completa → Confiança falsa
-
-✅ CORRETO:
-Timeline com 10 eventos + [LACUNAS: X dias sem informação]
-→ Indica onde investigação tem gaps
-```
-
-### ❌ Erro 4: Não documentar processo
-
-```
-❌ ERRADO:
-"Resultado: Pessoa X é criminosa" (sem rastrear onde veio informação)
-
-✅ CORRETO:
-"Análise indica: Pessoa X pode estar envolvida em:
- ✅ [VERIFICÁVEL] Intermediação de conta
- ⚠️ [INFERIDO] Relacionamento com falsificador
- ❌ [ESPECULATIVO] Recebimento de propina (requer investigação)"
-```
-
----
-
-## Princípios Aplicáveis a Toda Análise Investigativa com IA
-
-1. **IA é ferramenta de apoio, nunca substituta**
-   - Seu julgamento técnico/jurídico permanece em primeiro lugar
-   - IA acelera processamento, você valida conclusões
-
-2. **Verificabilidade é critério essencial**
-   - Toda afirmação deve citar origem (sentença exata, documento)
-   - Se não pode verificar contra fonte, marque como [INFERIDO] ou [ESPECULATIVO]
-
-3. **Lacunas são informação**
-   - Não suprima datas faltantes ou pessoas não nomeadas
-   - Lacunas indicam próximos passos investigativos
-
-4. **Incerteza é honestidade**
-   - Marque [INFERIDO] quando deduz
-   - Marque [INCERTO] quando há ambiguidade
-   - Nunca force certeza onde não há suporte
-
-5. **Documentar é responsabilidade**
-   - Quem decidiu que X era relevante?
-   - Qual evidência suporta conclusão Y?
-   - Quais premissas foram usadas para dedução Z?
-
----
-
-## Conexão com Próximas Aulas
-
-**Aula 4 (11/11):** Fluxos Analíticos, Integração e Responsabilidade
-
-Aula 3 domina **técnicas isoladamente**.  
-Aula 4 ensina:
-- **Encadear prompts** (prompt chaining) para fluxos complexos
-- **Ética e responsabilidade** (quando NÃO usar IA)
-- **Conformidade institucional** (LGPD, sigilo processual)
-- **Auditoria de prompts** (rastrear decisões de IA)
-
----
-
-## Glossário — Termos-Chave (para referência rápida)
-
-| Termo | Definição |
-|-------|-----------|
-| **Alucinação** | Informação inventada pelo modelo que não existe nos dados |
-| **Verificável** | Informação explícita no documento original |
-| **Inferido** | Dedução lógica a partir de dados, mas não explícita |
-| **Especulativo** | Informação além dos dados; risco de alucinação |
-| **Persona/Role Prompting** | Instruir modelo a agir como especialista (ex: "Você é perito criminal") |
-| **Chain-of-Thought** | Forçar modelo a raciocinar passo-a-passo antes de responder |
-| **Restrição de Domínio** | Delimitar escopo (ex: "Considere APENAS período de X a Y") |
-| **Metacognição** | Pedir ao modelo que questione sua própria resposta |
-| **Token** | Fragmento de texto (palavra ou sub-palavra) que modelo processa |
-| **Context Window** | Quantidade total de texto que modelo consegue processar por vez |
-
----
-
-**Última atualização:** 03/05/2026  
-**Material de referência:** Para alunos antes/durante/após Aula 3
-
