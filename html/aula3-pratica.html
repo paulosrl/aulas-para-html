@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENGENHARIA DE PROMPT PARA ANÁLISES INVESTIGATIVAS - Práticas - Aula 02</title>
+    <title>ENGENHARIA DE PROMPT PARA ANÁLISES INVESTIGATIVAS - Práticas - Aula 03</title>
     <style>
         :root {
             --bg-main: #f3f4f6;
@@ -367,7 +367,7 @@
 <body>
     <header class="mobile-header">
         <button class="btn-menu" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">☰</button>
-        <span class="mobile-header-title">Aula 2 - Práticas</span>
+        <span class="mobile-header-title">Aula 3 - Práticas</span>
     </header>
     <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
 
@@ -404,7 +404,7 @@
             <a href="aula2.html#p30" class="nav-l"><i class="fas fa-desktop"></i> Ferramentas</a>
             <a href="aula2.html#p31" class="nav-l"><i class="fas fa-user-secret"></i> Sigilo e Segurança</a>
             <a href="aula2.html#p34" class="nav-l"><i class="fas fa-bolt"></i> Zero vs Few-shot</a>
-            <a href="aula1-pratica-html.html" class="nav-l nav-aula current"><i class="fas fa-tasks"></i> Práticas</a>
+            <a href="aula3-pratica.html" class="nav-l nav-aula current"><i class="fas fa-tasks"></i> Práticas</a>
             <hr class="nav-divider-line">
             <div class="nav-group-title">Aulas</div>
             <a href="aula2.html" class="nav-l"><i class="fas fa-book"></i> Aula 2</a>
@@ -423,450 +423,467 @@
   <div class="line1">ENGENHARIA DE PROMPT PARA ANÁLISES INVESTIGATIVAS</div>
   <div class="line2">Datavirtus</div>
   <div class="line3">Prof. Paulo Lima</div>
-  <div class="line4">Práticas - Aula 02</div>
+  <div class="line4">Práticas - Aula 03</div>
 </div>
-<h2>PROMPT 1: Zero-shot Básico – Extração de Datas e Locais</h2>
-<pre><code>Você é um analista investigativo especializado em fraudes.
+<h2>Exercício Prático Intensivo - Aula 3</h2>
+<pre><code>
+# Exercício Prático Intensivo – Aula 3
+## Aplicação Integrada de Técnicas
 
-Leia o depoimento abaixo e extraia uma lista numerada com TODAS as datas, horários e locais mencionados.
+---
 
-Para cada item, incluir:
-1. Data/horário/local encontrado
-2. Sentença exata do texto original
+## Estrutura do Exercício
 
----DEPOIMENTO---
-Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
----FIM---</code></pre>
-<textarea id="prompt-1" style="position:absolute;left:-9999px;top:-9999px;">Você é um analista investigativo especializado em fraudes.
+**Nível:** Avançado (integração de 4 técnicas)  
+**Tempo em Aula:** 12 minutos (duplas completam TAREFAS 1–2)  
+**Tempo Extra/Casa:** 6–8 minutos (TAREFAS 3–5 são opcionais)  
+**Objetivo:** Aplicar extração, reconhecimento de vínculos, reconstrução cronológica e validação crítica em caso realista.  
+**Formato:** Duplas  
+**Entrega Aula:** Estruturação + Mapeamento de Vínculos  
+**Entrega Casa (Opcional):** Timeline + Validação + Relatório
 
-Leia o depoimento abaixo e extraia uma lista numerada com TODAS as datas, horários e locais mencionados.
+---
 
-Para cada item, incluir:
-1. Data/horário/local encontrado
-2. Sentença exata do texto original
+## CENÁRIO
 
----DEPOIMENTO---
-Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
----FIM---</textarea>
-<div class="prompt-tools">
-<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-1', this)">Copiar Prompt</button>
-<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-1')">Testar no Gemini</a>
-<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-1')">Testar no Claude</a>
-<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-1')">Testar no Copilot</a>
-<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-1')">Testar no ChatGPT</a>
-</div>
-<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
-<h3>Checklist de Resultado</h3>
-<p>A resposta esperada deve conter <strong>pelo menos</strong> os 6 itens abaixo:</p>
-<ul>
-<li>[ ] <strong>10 de abril, 19 horas</strong> (casa) — Sentença citada corretamente</li>
-<li>[ ] <strong>18:30</strong> (banco) — Sentença citada corretamente  </li>
-<li>[ ] <strong>11 de abril</strong> (delegacia) — Sentença citada corretamente</li>
-<li>[ ] <strong>15 de abril, 15 horas</strong> (café da Avenida Paulista) — Sentença citada corretamente</li>
-<li>[ ] <strong>Local: delegacia</strong> — Mencionado com data</li>
-<li>[ ] <strong>Local: café da Avenida Paulista</strong> — Mencionado com horário</li>
-</ul>
-<h3>Avaliação</h3>
-<table class="interactive-table">
-<thead><tr><th>Critério</th><th>Status</th><th>Notas</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col">Extrai todas as 6 informações?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col">Cita sentença exata (não parafraseia)?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col">Usa formato estruturado (lista numerada)?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>APROVADO?</strong></td>
-<td class="data-col">[ ] ✅ Sim / [ ] ⚠️ Com ressalvas</td>
-<td class="data-col"></td>
-</tr>
-</tbody></table>
-<hr>
-<h2>PROMPT 2: Few-shot com Exemplos – Formatação de Cronologia</h2>
-<pre><code>Você é um analista investigativo especializado em reconstrução de eventos.
+Você é analista investigativo de órgão de combate a fraudes.
 
-Extraia a cronologia de eventos de um depoimento. Use EXATAMENTE este formato:
+Recebeu um conjunto de documentos sobre **operação de falsificação de documentação bancária**. Os documentos chegaram desorganizados e incompletos. Sua tarefa é:
 
----EXEMPLOS---
+1. **Estruturar informações** (datas, nomes, locais)
+2. **Mapear vínculos** entre envolvidos
+3. **Reconstruir timeline** de eventos
+4. **Validar criticamente** antes de usar em relatório oficial
 
-EXEMPLO 1:
-Entrada: &quot;Fui para a casa do João em 5 de março. Lá ele me mostrou uns documentos. Depois fomos ao banco às 14h.&quot;
-Saída:
-- 5 de março, horário não especificado: ir para casa do João
-- 5 de março, 14 horas: ir ao banco
+---
 
-EXEMPLO 2:
-Entrada: &quot;O suspeito ligou para mim no dia 2 de janeiro. Eu não atendi. No dia 3, ele ligou novamente.&quot;
-Saída:
-- 2 de janeiro: suspeito ligou
-- 3 de janeiro: suspeito ligou novamente
+## DATASET COMPLETO
 
----FIM DOS EXEMPLOS---
+### DOCUMENTO 1: Depoimento de Vítima (Parcial)
 
-Agora extraia do depoimento abaixo, USANDO O MESMO FORMATO:
+```
+DEPOIMENTO DE CLARA SILVA
 
----DEPOIMENTO---
-Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
----FIM---</code></pre>
-<textarea id="prompt-2" style="position:absolute;left:-9999px;top:-9999px;">Você é um analista investigativo especializado em reconstrução de eventos.
+Sou Clara Silva, CPF XXX.XXX.XXX-XX, residente em São Paulo.
 
-Extraia a cronologia de eventos de um depoimento. Use EXATAMENTE este formato:
+Descobri em 15 de janeiro de 2024 que meu CPF foi utilizado para abrir 
+uma conta corrente no Banco Credito Legal, agência Pinheiros, São Paulo. 
+A conta foi aberta em 8 de janeiro de 2024 segundo informações do banco.
 
----EXEMPLOS---
+Recebi ligação do gerente Sr. Rafael (não obtive sobrenome) na data de 
+20 de janeiro, informando sobre a conta. Ele perguntou se tinha autorizado 
+aquela abertura. Falei que não. Sr. Rafael informou que a documentação 
+(RG e comprovante de residência) foi entregue por uma pessoa que se 
+apresentou como representante meu, chamada Patricia Mendes.
 
-EXEMPLO 1:
-Entrada: &quot;Fui para a casa do João em 5 de março. Lá ele me mostrou uns documentos. Depois fomos ao banco às 14h.&quot;
-Saída:
-- 5 de março, horário não especificado: ir para casa do João
-- 5 de março, 14 horas: ir ao banco
+Quando pedi cópias para análise, vi que:
+- RG era meu documento original (não falsificado, surpreendentemente)
+- Comprovante de residência era falso (endereço parcialmente correto, 
+  assinatura não minha)
+- Há suspeita de que alguém roubou meu RG de uma carteira em dezembro
 
-EXEMPLO 2:
-Entrada: &quot;O suspeito ligou para mim no dia 2 de janeiro. Eu não atendi. No dia 3, ele ligou novamente.&quot;
-Saída:
-- 2 de janeiro: suspeito ligou
-- 3 de janeiro: suspeito ligou novamente
+Liguei para São Paulo (onde moro) em 21 de janeiro para prestar queixa 
+na delegacia sobre roubo de documentos. Fui informada que já existia 
+queixa anterior de pessoa com mesmo sobrenome (Silva) em 18 de janeiro.
+```
 
----FIM DOS EXEMPLOS---
+---
 
-Agora extraia do depoimento abaixo, USANDO O MESMO FORMATO:
+### DOCUMENTO 2: Depoimento de Gerente Bancário
 
----DEPOIMENTO---
-Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
----FIM---</textarea>
-<div class="prompt-tools">
-<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-2', this)">Copiar Prompt</button>
-<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-2')">Testar no Gemini</a>
-<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-2')">Testar no Claude</a>
-<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-2')">Testar no Copilot</a>
-<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-2')">Testar no ChatGPT</a>
-</div>
-<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
-<h3>Resultado Esperado</h3>
-<p>Resposta estruturada seguindo exatamente o padrão dos exemplos:</p>
-<pre><code>- 10 de abril, 19 horas: recebi ligação do colega João
-- 10 de abril, 18:30 (relatado por João): suspeito saindo do banco
-- 11 de abril, manhã: fui à delegacia e prestei depoimento
-- 15 de abril: recebi ligação do inspetor
-- 15 de abril, 15 horas: encontro no café da Avenida Paulista</code></pre>
-<h3>Avaliação Comparativa (PROMPT 1 vs PROMPT 2)</h3>
-<table class="interactive-table">
-<thead><tr><th>Aspecto</th><th>PROMPT 1 (Zero-shot)</th><th>PROMPT 2 (Few-shot)</th><th>Qual é melhor?</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col"><strong>Consistência de formato</strong></td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] PROMPT 2</td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>Segue padrão fornecido</strong></td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] PROMPT 2</td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>Menos variações</strong></td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] PROMPT 2</td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>Estrutura temporal clara</strong></td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] PROMPT 2</td>
-</tr>
-</tbody></table>
-<p><strong>Conclusão esperada:</strong> Few-shot (PROMPT 2) deve ser significativamente mais estruturado que Zero-shot (PROMPT 1).</p>
-<hr>
-<h2>PROMPT 3: Role Prompting – Perito Criminal Analisando Fraude</h2>
-<pre><code>Você é um perito criminal especializado em análise de fraudes imobiliárias. 
-Você tem 15 anos de experiência investigando documentos falsificados.
+```
+DEPOIMENTO DE RAFAEL TORRES, GERENTE
 
-Leia o relato de vítima abaixo e responda:
-1. Quais são os SINAIS DE ALERTA de falsificação que você identifica?
-2. Em que SEQUÊNCIA os eventos ocorreram?
-3. Que EVIDÊNCIAS FÍSICAS você procuraria?
+Trabalho como gerente há 7 anos no Banco Credito Legal, agência Pinheiros.
 
-Responda como especialista (técnico, objetivo, citando referências de sua experiência).
+Em 8 de janeiro de 2024, recebi solicitação de abertura de conta. 
+A pessoa se apresentou como Patricia Mendes (mostrando RG de Patricia Mendes, 
+CNH de Patricia Mendes) afirmando ser representante/procuradora de Clara Silva. 
+Apresentou documentação:
+- RG original em nome de Clara Silva (parecia legítimo)
+- Comprovante de residência em nome de Clara Silva (assinado por "Clara Silva")
+- Procuração assinada por Clara Silva autorizando Patricia como representante
 
----RELATO---
-Prestei queixa sobre falsificação de documentos. No dia 2 de janeiro de 2024, descobri que meu CPF foi usado para abrir uma conta bancária num banco no Itaim. O gerente confirmou que a documentação foi entregue no dia 30 de dezembro de 2023. Pedi que ele me mostrasse cópias. Vi que o RG era meu, mas a assinatura e a foto eram diferentes. O gerente passou o contato de um colega dele, o Sr. José, que teria intermediado. Quando entrei em contato, Sr. José disse que uma tal Marisa teria entregue os documentos. Marisa teria dito que conhecia um tabelião em Santos que facilitava a falsificação.
----FIM---</code></pre>
-<textarea id="prompt-3" style="position:absolute;left:-9999px;top:-9999px;">Você é um perito criminal especializado em análise de fraudes imobiliárias. 
-Você tem 15 anos de experiência investigando documentos falsificados.
+Na época, não identifiquei falsificações. Patricia abriu conta com limite 
+de R$ 5.000.
 
-Leia o relato de vítima abaixo e responda:
-1. Quais são os SINAIS DE ALERTA de falsificação que você identifica?
-2. Em que SEQUÊNCIA os eventos ocorreram?
-3. Que EVIDÊNCIAS FÍSICAS você procuraria?
+Em 20 de janeiro, recebi ligação de Clara Silva questionando a abertura. 
+Clara nega ter autorizado qualquer procuração. Informei à superintendência 
+do banco sobre suspeita de fraude em 21 de janeiro.
 
-Responda como especialista (técnico, objetivo, citando referências de sua experiência).
+Nota: Patricia Mendes nunca retornou à agência após 8 de janeiro.
+```
 
----RELATO---
-Prestei queixa sobre falsificação de documentos. No dia 2 de janeiro de 2024, descobri que meu CPF foi usado para abrir uma conta bancária num banco no Itaim. O gerente confirmou que a documentação foi entregue no dia 30 de dezembro de 2023. Pedi que ele me mostrasse cópias. Vi que o RG era meu, mas a assinatura e a foto eram diferentes. O gerente passou o contato de um colega dele, o Sr. José, que teria intermediado. Quando entrei em contato, Sr. José disse que uma tal Marisa teria entregue os documentos. Marisa teria dito que conhecia um tabelião em Santos que facilitava a falsificação.
----FIM---</textarea>
-<div class="prompt-tools">
-<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-3', this)">Copiar Prompt</button>
-<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-3')">Testar no Gemini</a>
-<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-3')">Testar no Claude</a>
-<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-3')">Testar no Copilot</a>
-<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-3')">Testar no ChatGPT</a>
-</div>
-<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
-<h3>Checklist de Avaliação</h3>
-<ul>
-<li>[ ] <strong>Sinais de alerta:</strong> Identifica anomalias (assinatura diferente, foto diferente, cadeia de intermediários)?</li>
-<li>[ ] <strong>Sequência:</strong> Reconstrói ordem cronológica dos eventos?</li>
-<li>[ ] <strong>Evidências:</strong> Sugere CCTV, registros bancários, contatos para investigação?</li>
-<li>[ ] <strong>Tom especialista:</strong> Resposta é técnica, não genérica?</li>
-<li>[ ] <strong>Referências:</strong> Cita padrões de fraude conhecidos ou comportamentos criminosos?</li>
-</ul>
-<h3>Avaliação</h3>
-<table class="interactive-table">
-<thead><tr><th>Critério</th><th>Presença</th><th>Qualidade</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col">3 seções claramente separadas</td>
-<td class="data-col">[ ]</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col">Análise técnica (não genérica)</td>
-<td class="data-col">[ ]</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col">Sugestões de evidências físicas</td>
-<td class="data-col">[ ]</td>
-<td class="data-col"></td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>APROVADO?</strong></td>
-<td class="data-col">[ ] Sim</td>
-<td class="data-col"></td>
-</tr>
-</tbody></table>
-<hr>
-<h2>PROMPT 4: Controle de Escopo – Analisando Apenas Um Período</h2>
-<pre><code>Você é analista de fraudes.
+---
 
-Analise APENAS eventos que ocorreram entre 1º e 15 de abril de 2024.
-Não considere eventos anteriores ou posteriores.
+### DOCUMENTO 3: Registros de Movimentação Bancária
 
-Para este período, extraia:
-1. Transações suspeitas
-2. Pessoas envolvidas
-3. Possíveis motivos
+```
+MOVIMENTAÇÃO DA CONTA — CLARA SILVA / PATRICIA MENDES
 
-Se um evento não pode ser datado neste período, indique [FORA DO ESCOPO].
+Data de Abertura: 8 de janeiro de 2024
+Limite Concedido: R$ 5.000
 
----DADOS---
-Janeiro 2024:
-- 5/1: João transfere R$500 para Marisa
-- 10/1: Marisa abre conta bancária com documentos falsos
-- 20/1: Transferência de R$2000 (fora de escopo)
+MOVIMENTAÇÕES:
+- 8/1/2024, 14h32: Saque de R$ 2.500 (terminal ATM, Pinheiros)
+- 9/1/2024, 09h15: Saque de R$ 1.200 (terminal ATM, Centro)
+- 10/1/2024, 16h45: Saque de R$ 1.000 (terminal ATM, Consolação)
+- 12/1/2024, 11h20: Tentativa de transferência para conta externa 
+                    (BLOQUEADA por sistema de segurança — limite excedido)
+- 15/1/2024, 08h00: Conta bloqueada por solicitação de vítima
 
-Abril 2024:
-- 1/4: Transação suspeita de R$1000
-- 10/4: Nova transferência de R$500 entre João e Marisa
-- 15/4: Investigador recebe denúncia anônima
-- 20/4: Transferência adicional (fora de escopo)
+SALDO FINAL: -R$ 4.700 (limite excedido)
 
-Junho 2024:
-- 5/6: Conta encerrada
----FIM---</code></pre>
-<textarea id="prompt-4" style="position:absolute;left:-9999px;top:-9999px;">Você é analista de fraudes.
+Observação: Todos os saques realizados em São Paulo (zona central/oeste).
+```
 
-Analise APENAS eventos que ocorreram entre 1º e 15 de abril de 2024.
-Não considere eventos anteriores ou posteriores.
+---
 
-Para este período, extraia:
-1. Transações suspeitas
-2. Pessoas envolvidas
-3. Possíveis motivos
+### DOCUMENTO 4: Registro de Queixa na Delegacia
 
-Se um evento não pode ser datado neste período, indique [FORA DO ESCOPO].
+```
+BOLETIM DE OCORRÊNCIA — ROUBO E FALSIFICAÇÃO
 
----DADOS---
-Janeiro 2024:
-- 5/1: João transfere R$500 para Marisa
-- 10/1: Marisa abre conta bancária com documentos falsos
-- 20/1: Transferência de R$2000 (fora de escopo)
+BO 123456/2024 — Registrada em 18 de janeiro de 2024
 
-Abril 2024:
-- 1/4: Transação suspeita de R$1000
-- 10/4: Nova transferência de R$500 entre João e Marisa
-- 15/4: Investigador recebe denúncia anônima
-- 20/4: Transferência adicional (fora de escopo)
+Queixoso: MARIA SILVA (CPF diferente de Clara Silva — parente?)
+Tipo: Roubo de documentos pessoais + Falsificação de procuração
+Local: Não especificado (possível zona central de São Paulo)
 
-Junho 2024:
-- 5/6: Conta encerrada
----FIM---</textarea>
-<div class="prompt-tools">
-<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-4', this)">Copiar Prompt</button>
-<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-4')">Testar no Gemini</a>
-<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-4')">Testar no Claude</a>
-<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-4')">Testar no Copilot</a>
-<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-4')">Testar no ChatGPT</a>
-</div>
-<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
-<h3>Resultado Esperado</h3>
-<p>Modelo deve:</p>
-<ul>
-<li>✅ Incluir eventos 1º–15 de abril (3 eventos)</li>
-<li>✅ Ignorar eventos de janeiro e junho</li>
-<li>✅ Marcar transação de 20/4 como [FORA DO ESCOPO]</li>
-</ul>
-<h3>Avaliação</h3>
-<table class="interactive-table">
-<thead><tr><th>Critério</th><th>Status</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col">Inclui APENAS eventos 1º–15 de abril?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-</tr>
-<tr>
-<td class="criterion-col">Marca eventos fora de escopo?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-</tr>
-<tr>
-<td class="criterion-col">Modelo não especula além do período?</td>
-<td class="data-col">[ ] Sim / [ ] Não</td>
-</tr>
-<tr>
-<td class="criterion-col"><strong>APROVADO?</strong></td>
-<td class="data-col">[ ] Sim</td>
-</tr>
-</tbody></table>
-<hr>
-<h2>PROMPT 5: Validação Crítica – Checklist de Confiabilidade</h2>
-<pre><code>Você é analista investigativo com responsabilidade de validação crítica.
+Descrição breve: "Minha carteira foi roubada em São Paulo contendo 
+documentos pessoais. Suspeito que meus documentos estejam sendo usados 
+para fraude."
 
-Leia esta resposta de análise e marque cada afirmação como:
-✅ VERIFICÁVEL (está explicitamente no texto fornecido)
-⚠️ INFERIDA (dedução lógica, mas não explícita)
-❌ ESPECULATIVA (além dos dados)
+Situação: Em andamento
 
-Depois, apontar qual nível de confiança você tem em cada afirmação (ALTA/MÉDIA/BAIXA).
+---
 
----RESPOSTA DO ANALISTA ANTERIOR---
-&quot;O suspeito saiu do banco às 18:30 com dinheiro em mãos e depois transferiu o dinheiro para uma conta no exterior.&quot;
----FIM---
+NOTA INVESTIGATIVA POSTERIOR (22 de janeiro):
+Detectado padrão: BO 123456/2024 (Maria Silva) e reclamação de Clara Silva 
+podem estar conectados. Maria e Clara têm mesmo sobrenome. Possível que 
+mesmo criminoso tenha roubado documentos de ambas?
+```
 
-DEPOIMENTO ORIGINAL:
-&quot;Ele disse que tinha visto o suspeito saindo do banco às 18:30.&quot;</code></pre>
-<textarea id="prompt-5" style="position:absolute;left:-9999px;top:-9999px;">Você é analista investigativo com responsabilidade de validação crítica.
+---
 
-Leia esta resposta de análise e marque cada afirmação como:
-✅ VERIFICÁVEL (está explicitamente no texto fornecido)
-⚠️ INFERIDA (dedução lógica, mas não explícita)
-❌ ESPECULATIVA (além dos dados)
+## INSTRUÇÕES PARA DUPLAS
 
-Depois, apontar qual nível de confiança você tem em cada afirmação (ALTA/MÉDIA/BAIXA).
+### ✅ TAREFAS EM AULA (12 minutos)
 
----RESPOSTA DO ANALISTA ANTERIOR---
-&quot;O suspeito saiu do banco às 18:30 com dinheiro em mãos e depois transferiu o dinheiro para uma conta no exterior.&quot;
----FIM---
+**Duplas completam TAREFAS 1–2 durante a aula (20h53–21h05)**
 
-DEPOIMENTO ORIGINAL:
-&quot;Ele disse que tinha visto o suspeito saindo do banco às 18:30.&quot;</textarea>
-<div class="prompt-tools">
-<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-5', this)">Copiar Prompt</button>
-<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-5')">Testar no Gemini</a>
-<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-5')">Testar no Claude</a>
-<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-5')">Testar no Copilot</a>
-<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-5')">Testar no ChatGPT</a>
-</div>
-<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
-<h3>Resultado Esperado</h3>
-<pre><code>✅ VERIFICÁVEL: &quot;Suspeito saiu do banco às 18:30&quot;
-   Justificativa: Explícito no depoimento
-   Confiança: ALTA
+---
 
-❌ ESPECULATIVA: &quot;Com dinheiro em mãos&quot;
-   Justificativa: Não mencionado no depoimento
-   Confiança: BAIXA
+### TAREFA 1: Estruturação e Extração (5 min) — ✅ EM AULA
 
-❌ ESPECULATIVA: &quot;Transferiu para conta no exterior&quot;
-   Justificativa: Pura invenção. Não há informação sobre transferências.
-   Confiança: MUITO BAIXA (alucinação detectada)</code></pre>
-<h3>Avaliação Crítica</h3>
-<table class="interactive-table">
-<thead><tr><th>Afirmação</th><th>Classificação Esperada</th><th>Classificação Real</th><th>Match?</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col">"Saiu do banco às 18:30"</td>
-<td class="data-col">✅ VERIFICÁVEL</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] ✅</td>
-</tr>
-<tr>
-<td class="criterion-col">"Com dinheiro em mãos"</td>
-<td class="data-col">❌ ESPECULATIVA</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] ✅</td>
-</tr>
-<tr>
-<td class="criterion-col">"Transferiu para exterior"</td>
-<td class="data-col">❌ ESPECULATIVA</td>
-<td class="data-col">[ ]</td>
-<td class="data-col">[ ] ✅</td>
-</tr>
-</tbody></table>
-<p><strong>Sucesso esperado:</strong> Modelo marca todas as 3 afirmações corretamente.</p>
-<hr>
-<h2>RESUMO EXECUTIVO</h2>
-<table class="interactive-table">
-<thead><tr><th>#</th><th>Prompt</th><th>Objetivo</th><th>Prioridade</th><th>Status</th></tr></thead>
-<tbody>
-<tr>
-<td class="criterion-col">1</td>
-<td class="data-col">Zero-shot</td>
-<td class="data-col">Baseline sem exemplos</td>
-<td class="data-col">🔴 Alta</td>
-<td class="data-col">[ ] Testado</td>
-</tr>
-<tr>
-<td class="criterion-col">2</td>
-<td class="data-col">Few-shot</td>
-<td class="data-col">Comparar com #1</td>
-<td class="data-col">🔴 Alta</td>
-<td class="data-col">[ ] Testado</td>
-</tr>
-<tr>
-<td class="criterion-col">3</td>
-<td class="data-col">Role Prompting</td>
-<td class="data-col">Mostrar impacto de persona</td>
-<td class="data-col">🟡 Média</td>
-<td class="data-col">[ ] Testado</td>
-</tr>
-<tr>
-<td class="criterion-col">4</td>
-<td class="data-col">Escopo</td>
-<td class="data-col">Testar limitações</td>
-<td class="data-col">🟡 Média</td>
-<td class="data-col">[ ] Testado</td>
-</tr>
-<tr>
-<td class="criterion-col">5</td>
-<td class="data-col">Validação Crítica</td>
-<td class="data-col">Auto-crítica de IA</td>
-<td class="data-col">🔴 Alta</td>
-<td class="data-col">[ ] Testado</td>
-</tr>
-</tbody></table>
-<hr>
+Leia os 4 documentos acima e crie uma **tabela de informações estruturadas**:
+
+```
+| DATA | HORÁRIO | EVENTO | PESSOA(S) | LOCAL | TIPO DE INFORMAÇÃO |
+|------|---------|--------|-----------|-------|-------------------|
+```
+
+**O que extrair:**
+- Todas as datas/horários mencionados
+- Pessoas envolvidas e papéis
+- Locais
+- Tipo: ROUBO / FALSIFICAÇÃO / ABERTURA DE CONTA / SAQUE / TRANSFERÊNCIA / INVESTIGAÇÃO
+
+**Critério:** Use APENAS informações explícitas. Se não houver data, indique [DATA NÃO ESPECIFICADA].
+
+---
+
+### TAREFA 2: Mapeamento de Vínculos (5 min) — ✅ EM AULA
+
+Construa uma **rede de relacionamento** em texto simples:
+
+```
+PESSOA A ↔ [TIPO DE VÍNCULO] ↔ PESSOA B
+Força: [DIRETA/INDIRETA]
+Evidência: [Citação resumida]
+```
+
+**Vínculos a procurar:**
+- Quem conhece quem?
+- Quem fez transações com quem?
+- Quem se comunicou com quem?
+- Quem estava em qual local em que data?
+
+---
+
+### ⏳ TAREFAS OPCIONAIS / ATIVIDADE EM CASA (6–8 minutos)
+
+**Duplas completam TAREFAS 3–5 como atividade extra / homework**  
+**Trazer resultados para Aula 4 (11/11) se realizarem**
+
+---
+
+### TAREFA 3: Timeline Cronológica (4 min) — ⏳ EM CASA
+
+Reconstrua a **sequência de eventos** em ordem temporal:
+
+```
+[DATA] — [HORÁRIO] → [EVENTO]
+[LACUNA: X dias] — [O QUÊ está faltando?]
+```
+
+---
+
+### TAREFA 4: Validação Crítica (2 min) — ⏳ EM CASA
+
+Para cada informação IMPORTANTE que sua dupla extraiu, classifique como:
+- ✅ VERIFICÁVEL (explícito em documento)
+- ⚠️ INFERIDO (dedução, mas suportada)
+- ❌ ESPECULATIVO (além dos dados)
+
+---
+
+### TAREFA 5: Síntese em Relatório (2 min) — ⏳ EM CASA
+
+Redija **1 parágrafo executivo** (máximo 5 linhas) resumindo:
+- O que aconteceu?
+- Quem estava envolvido?
+- Qual é o próximo passo investigativo?
+
+---
+
+## GABARITO COMENTADO
+
+### TAREFA 1: Estruturação de Informações
+
+**Resposta esperada (tabela abreviada):**
+
+| DATA | HORÁRIO | EVENTO | PESSOA(S) | LOCAL | TIPO |
+|------|---------|--------|-----------|-------|------|
+| [DATA NÃO ESPECIFICADA] | — | Roubo de carteira com documentos | Desconhecido → Maria/Clara | São Paulo (zona não especificada) | ROUBO |
+| 8 de janeiro de 2024 | [HORÁRIO NÃO ESP.] | Abertura de conta com procuração falsa | Patricia Mendes (apresentação) + Clara Silva (procuradora falsa) | Banco Credito Legal, agência Pinheiros | FALSIFICAÇÃO + ABERTURA |
+| 8/1/2024 | 14h32 | Saque em ATM | Patricia Mendes (presumida) | Pinheiros, São Paulo | SAQUE |
+| 9/1/2024 | 09h15 | Saque em ATM | Patricia Mendes (presumida) | Centro, São Paulo | SAQUE |
+| 10/1/2024 | 16h45 | Saque em ATM | Patricia Mendes (presumida) | Consolação, São Paulo | SAQUE |
+| 12/1/2024 | 11h20 | Tentativa de transferência (bloqueada) | Patricia Mendes (presumida) | — | TRANSFERÊNCIA (FRACASSADA) |
+| 15 de janeiro de 2024 | 08h00 | Vítima descobre fraude | Clara Silva | — | DESCOBERTA |
+| 15/1/2024 | [HORA NÃO ESP.] | Vítima recebe ligação do gerente | Rafael Torres ↔ Clara Silva | Telefone | COMUNICAÇÃO |
+| 20 de janeiro de 2024 | — | Gerente liga para vítima confirmando fraude | Rafael Torres ↔ Clara Silva | Telefone | COMUNICAÇÃO |
+| 18 de janeiro de 2024 | — | Queixa de Maria Silva na delegacia sobre roubo | Maria Silva | Delegacia de São Paulo | QUEIXA |
+| [DATA NÃO ESPECIFICADA] | — | Vítima vai à delegacia prestar queixa | Clara Silva | Delegacia de São Paulo | QUEIXA |
+| 21 de janeiro de 2024 | — | Gerente informa banco sobre fraude | Rafael Torres → Superintendência | Banco Credito Legal | NOTIFICAÇÃO |
+
+**Avaliação:**
+- ✅ Cronologia clara
+- ✅ Pessoas e papéis identificados
+- ✅ Lacunas marcadas [NÃO ESPECIFICADO]
+- ✅ Tipos de evento diferenciados
+
+---
+
+### TAREFA 2: Mapeamento de Vínculos
+
+**Resposta esperada:**
+
+```
+REDE DE VÍNCULOS:
+
+1. Patricia Mendes ↔ FRAUDE ↔ Clara Silva
+   Força: DIRETA
+   Evidência: "pessoa se apresentou como representante, apresentando procuração assinada por Clara Silva"
+   
+2. Patricia Mendes ↔ ROUBO [INFERIDO] ↔ Maria Silva
+   Força: INDIRETA [VÍNCULO INFERIDO]
+   Evidência: "BO 123456/2024 (Maria Silva) e reclamação de Clara Silva podem estar conectados"
+   Nota investigativa posterior sugere padrão
+   
+3. Clara Silva ↔ VÍTIMA ↔ Patricia Mendes
+   (mesma relação que acima)
+
+4. Rafael Torres (Gerente) ↔ RECEBIMENTO ↔ Patricia Mendes
+   Força: DIRETA
+   Evidência: "recebi solicitação de abertura de conta... a pessoa se apresentou como Patricia Mendes"
+   
+5. Rafael Torres ↔ COMUNICAÇÃO ↔ Clara Silva
+   Força: DIRETA
+   Evidência: "ligação de Clara Silva questionando a abertura" (20/1)
+   
+6. Clara Silva ↔ PARENTE PRESUMIDO ↔ Maria Silva
+   Força: INDIRETA [VÍNCULO INFERIDO]
+   Evidência: "ambas têm mesmo sobrenome Silva... possível que mesmo criminoso..."
+   Nota: Falta confirmação
+
+7. Patricia Mendes ↔ MOVIMENTAÇÃO ↔ Conta de Clara Silva (Banco Credito Legal)
+   Força: DIRETA (movimentações em ATM presumem cartão)
+   Evidência: Saques e tentativa de transferência após abertura em 8/1
+```
+
+**Avaliação:**
+- ✅ Vínculos principais identificados
+- ✅ Força (DIRETA/INDIRETA) diferenciada
+- ✅ Lacunas reconhecidas (Maria Silva parente de Clara? Confirmado?)
+
+---
+
+### TAREFA 3: Timeline Cronológica
+
+**Resposta esperada:**
+
+```
+SEQUÊNCIA DE EVENTOS:
+
+[DATA INCERTA — December de 2023]
+→ Roubo de carteira com documentos pessoais (presumível ocorrência antes de uso)
+
+[LACUNA: ~2 semanas]
+
+[DATA CERTA] 8 de janeiro de 2024, [HORA NÃO ESPECIFICADA]
+→ Patricia Mendes apresenta-se ao Banco Credito Legal
+→ Apresenta documentação incluindo procuração falsificada
+→ Abre conta corrente em nome de Clara Silva
+→ Recebe limite de R$ 5.000
+
+[MESMO DIA] 8/1/2024, 14h32
+→ Patricia Mendes realiza saque de R$ 2.500 em ATM (Pinheiros)
+
+[PRÓXIMOS DIAS] 9/1 (09h15), 10/1 (16h45)
+→ Saques sucessivos em ATMs diferentes (Centro, Consolação)
+→ Total sacado: R$ 3.700
+
+[DATA CERTA] 12 de janeiro de 2024, 11h20
+→ Tentativa de transferência para conta externa BLOQUEADA
+→ Razão: Limite de R$ 5.000 excedido
+
+[LACUNA: 3 dias]
+
+[DATA PRESUMIDA] 15 de janeiro de 2024, 08h00
+→ Clara Silva descobre fraude ao verificar conta
+
+[MESMO DIA] 15/1 (horário não especificado)
+→ Clara recebe ligação de Rafael Torres (gerente) confirmando abertura
+→ Clara nega ter autorizado procuração
+
+[LACUNA: 3 dias]
+
+[DATA CERTA] 18 de janeiro de 2024
+→ Maria Silva presta queixa na delegacia sobre roubo de documentos
+→ NOTA: Mesma zona de São Paulo? Mesmo criminoso?
+
+[LACUNA: 2 dias]
+
+[DATA PRESUMIDA] 20 de janeiro de 2024
+→ Clara Silva recebe nova ligação de Rafael confirmando conclusões
+→ Rafael informa que vai notificar banco
+
+[DATA CERTA] 21 de janeiro de 2024
+→ Rafael notifica superintendência do banco sobre fraude
+→ Clara Silva presta queixa sobre falsificação (data registrada como após 18/1)
+
+[APÓS 21/1]
+→ Investigação em andamento
+```
+
+**Avaliação:**
+- ✅ Ordem cronológica respeitada
+- ✅ Lacunas marcadas e analisadas
+- ✅ [INFERIDO] vs [CERTA] diferenciado
+- ✅ Padrão de saques progressivos evidente
+
+---
+
+### TAREFA 4: Validação Crítica
+
+**Resposta esperada (amostra):**
+
+| Afirmação | Status | Confiança | Justificativa |
+|-----------|--------|-----------|---|
+| "Patricia Mendes abriu conta em 8/1/2024" | ✅ VERIFICÁVEL | ALTA | Explícito em depoimento de gerente |
+| "Patricia apresentou procuração falsificada" | ✅ VERIFICÁVEL | ALTA | Clara nega ter assinado; procuração não autêntica |
+| "Patricia é criminosa profissional" | ❌ ESPECULATIVO | BAIXA | Inferência; poderia ser apenas oportunista |
+| "Maria Silva e Clara Silva são parentes" | ⚠️ INFERIDO | MÉDIA | Mesmo sobrenome + padrão; não confirmado |
+| "Mesmo criminoso roubou ambas" | ❌ ESPECULATIVO | BAIXA | Hipótese plausível mas sem evidência sólida |
+| "Patricia Mendes está em fuga" | ❌ ESPECULATIVO | MUITO BAIXA | Não mencionado; possível mas não suportado |
+| "Total defraudado foi R$ 4.700" | ✅ VERIFICÁVEL | ALTA | Conta movimentação + limite |
+
+**Avaliação:**
+- ✅ Diferencia VERIFICÁVEL de ESPECULATIVO
+- ✅ Protege contra conclusões prematuras
+- ✅ Identifica hipóteses para investigação futura
+
+---
+
+### TAREFA 5: Parágrafo Executivo
+
+**Resposta esperada:**
+
+```
+SÍNTESE EXECUTIVA:
+
+Entre 8 e 15 de janeiro de 2024, pessoa identificada como Patricia Mendes 
+utilizou documentação (incluindo procuração presumivelmente falsificada) para 
+abrir conta bancária em nome de Clara Silva no Banco Credito Legal, realizando 
+saques sucessivos totalizando R$ 3.700 antes de ser bloqueada. Investigação 
+indica possível padrão similar envolvendo vítima adicional (Maria Silva) com 
+roubo de documentos em mesma região. Recomenda-se: (1) investigar vínculo entre 
+Clara e Maria Silva; (2) localizar Patricia Mendes; (3) analisar CCTV dos ATMs 
+utilizados; (4) rastrear documentação forjada (fornecedor de procurações falsas).
+```
+
+**Avaliação:**
+- ✅ Conciso (5 linhas)
+- ✅ Responde: O QUÊ, QUEM, QUANDO
+- ✅ Próximos passos indicados (investigação futura)
+
+---
+
+## Critérios de Avaliação da Dupla
+
+| Aspecto | Fraco (0) | Adequado (1) | Bom (2) |
+|---------|-----------|-------------|---------|
+| **TAREFA 1: Estruturação** | Tabela incompleta ou desorganizada | Tabela presente, informações corretas | Tabela clara, lacunas marcadas, tipos diferenciados |
+| **TAREFA 2: Vínculos** | Poucos vínculos identificados | Vínculos principais listados | Todos os vínculos, força diferenciada, inferências marcadas |
+| **TAREFA 3: Timeline** | Ordem errada ou lacunas não marcadas | Sequência correta, algumas lacunas | Ordem correta, lacunas analisadas, credibilidade marcada |
+| **TAREFA 4: Validação** | Todas as informações acreditadas | Algumas afirmações validadas | Cada afirmação classificada, confiança atribuída |
+| **TAREFA 5: Síntese** | Ausente ou incoerente | Presente, mas incompleto | Claro, responde O QUÊ/QUEM/QUANDO, próximos passos |
+| **INTEGRAÇÃO** | Técnicas não aplicadas | Algumas técnicas aplicadas | Todas as 4 técnicas integradas sistematicamente |
+
+**Máximo por dupla:** 12 pontos
+
+---
+
+## Notas para Apresentador
+
+### Durante Aula (Tarefas 1–2, 12 min)
+- ✅ **Compartilhar os 4 documentos em tela** (já antes de aula começar, ou em slide)
+- ✅ Ativar timer de **12 minutos** (alarme em 10 min para avisar faltam 2 min)
+- ✅ Ter gabarito (Tarefas 1–2) em segundo monitor ou impresso
+- ✅ **Não dê respostas** — circule oferecendo dicas ("Quais técnicas vocês estão usando?")
+- ✅ Se dupla terminar cedo (em ~9 min): "Vocês conseguem detectar gaps nos dados?"
+- ✅ Se atrasarem: mantenha timing e avance — feedback rápido ao fim
+- ⚠️ Foco é em **processo**, não perfeição
+
+### Tarefas 3–5 (Casa)
+- 📧 Enviar gabarito completo (TAREFAS 1–5) **após aula**
+- 📧 Mencionar que Tarefas 3–5 são **opcionais** (não obrigatórias)
+- 💡 Encorajar: "Quem completar todas as 5 tarefas traz para Aula 4 (11/05) — vamos discutir"
+
+---
+
+## Tarefa de Casa
+
+**Para alunos que quiserem aprofundar:**
+
+1. Refine o relatório da dupla com as técnicas de validação crítica
+   - Identifique 2-3 afirmações que mereceriam investigação adicional
+   - Que tipo de investigação (CCTV, análise de documentos, depoimentos adicionais)?
+
+2. Expanda timeline com "ações investigativas necessárias"
+   - Para cada evento-chave, qual evidência corroboraria?
+
+3. Traga **caso anônimo real** de seu trabalho
+   - Seu próprio exercício funcionaria para aquele caso?
+   - Que desafios apareceriam?
+
+4. **Discussão na Aula 4 (11/05):**
+   - Qual técnica foi mais útil?
+   - Qual foi mais difícil de aplicar?
+
+</code></pre>
             </section>
         </div>
 

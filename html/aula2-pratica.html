@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenharia de Prompt para Análises Investigativas - Datavirtus</title>
+    <title>ENGENHARIA DE PROMPT PARA ANÁLISES INVESTIGATIVAS - Práticas - Aula 02</title>
     <style>
         :root {
             --bg-main: #f3f4f6;
@@ -252,14 +252,12 @@
         .caor-card h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
         .caor-card h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
         
+        .page-indicator { float: right; font-size: 0.8rem; color: var(--accent); opacity: 0.7; font-weight: 800; }
 
         /* Listas e Tabelas */
         ul { list-style: none; margin-bottom: 1rem; }
-        ol { margin: 0 0 1rem 1.25rem; padding-left: 1.25rem; }
-        li { margin-bottom: 12px; line-height: 1.6; }
-        ul li { position: relative; padding-left: 25px; }
-        ul li::before { content: "✓"; font-family: inherit; font-weight: 900; position: absolute; left: 0; color: var(--accent); }
-        ol li { padding-left: 0.25rem; }
+        li { margin-bottom: 12px; line-height: 1.6; position: relative; padding-left: 25px; }
+        li::before { content: "✓"; font-family: inherit; font-weight: 900; position: absolute; left: 0; color: var(--accent); }
         
         .table-wrapper { width: 100%; overflow-x: auto; margin: 1.5rem 0; border-radius: 8px; border: 1px solid var(--table-border); }
         table { width: 100%; border-collapse: collapse; background: rgba(201,168,76,0.03); }
@@ -290,6 +288,7 @@
             .content-container { max-width: 100%; }
             .btn-theme { top: 0.9rem; right: 1rem; padding: 8px 12px; font-size: 0.7rem; }
             .caor-card { border-left-width: 6px; padding: 1.2rem; }
+            .page-indicator { float: none; display: block; margin-bottom: 0.8rem; }
             th, td { padding: 10px; font-size: 0.82rem; }
         }
 
@@ -299,12 +298,76 @@
             .caor-card h1 { font-size: 1.45rem; }
             .caor-card h2 { font-size: 1.22rem; }
         }
+
+        /* Praticas */
+        .hero-title { margin: 0 0 20px; border:1px solid var(--table-border); border-radius:12px; padding:14px; background: rgba(201,168,76,0.10); }
+        .hero-title .line1 { font-size:1.45rem; font-weight:800; line-height:1.2; color: var(--accent); }
+        .hero-title .line2 { margin-top:8px; font-size:1.05rem; font-weight:700; }
+        .hero-title .line3, .hero-title .line4 { margin-top:4px; font-size:1rem; font-weight:600; }
+        .prompt-tools { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin: 10px 0 18px; }
+        .btn { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:1px solid transparent; padding:9px 12px; border-radius:8px; font-weight:700; cursor:pointer; min-width:140px; }
+        .copy-btn { background:var(--accent); color:#111; }
+        .copy-btn:hover { filter:brightness(0.95); }
+        .gemini { background:#1a73e8; color:#fff; }
+        .claude { background:#d97757; color:#fff; }
+        .copilot { background:#6b4dfc; color:#fff; }
+        .chatgpt { background:#10a37f; color:#fff; }
+        .hint { color:var(--text-main); opacity:0.8; font-size:.9rem; margin-top:4px; text-align:center; }
+        .form-radio-group { display:flex; flex-wrap:wrap; gap:10px; }
+        .form-inline-input { width:100%; border:1px solid var(--table-border); border-radius:8px; padding:6px 8px; background:var(--card-bg); color:var(--text-main); }
+        .chip { display:inline-flex; align-items:center; gap:6px; border:1px solid var(--table-border); border-radius:999px; padding:6px 10px; }
+        .checklist-card { border:1px solid var(--table-border); border-radius:12px; padding:14px; background: rgba(201,168,76,0.08); margin:10px 0 14px; }
+        .checklist-intro { margin:0 0 10px 0; }
+        .checklist-result { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+        .checklist-result li { display:flex; align-items:flex-start; gap:10px; border:1px solid var(--table-border); border-radius:10px; padding:9px 10px; background:var(--card-bg); }
+        .checklist-result li::before { content: none !important; }
+        .check-icon { width:18px; height:18px; min-width:18px; color:var(--accent); margin-top:2px; }
+        .praticas-content { background: transparent; border: 0; box-shadow: none; border-radius: 0; padding: 0; margin: 0; }
+        .main-content { align-items: flex-start; }
+        .content-container { max-width: 100%; }
+        .praticas-content h2 { margin-top: 38px; margin-bottom: 16px; line-height: 1.22; }
+        .praticas-content h3 { margin-top: 28px; margin-bottom: 14px; line-height: 1.25; }
+        .praticas-content p { margin: 13px 0; line-height: 1.58; }
+        .praticas-content ul, .praticas-content ol { margin: 12px 0 18px 22px; }
+        .praticas-content li { margin-bottom: 10px; line-height: 1.55; }
+        .praticas-content hr { margin: 32px 0; opacity: 0.75; }
+        .praticas-content pre {
+            width: 100%;
+            max-width: 100%;
+            border: 1px solid var(--table-border);
+            border-radius: 10px;
+            padding: 16px;
+            margin: 14px 0 18px;
+            white-space: pre-wrap;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            overflow-x: hidden;
+        }
+        .praticas-content table { margin: 18px 0 30px; }
+        .praticas-content .interactive-table { border-radius: 10px; overflow: hidden; }
+        .praticas-content th, .praticas-content td { padding-top: 14px; padding-bottom: 14px; }
+        .prompt-tools { margin: 16px 0 18px; }
+        .hint { margin: 10px 0 20px; }
+        .checklist-card { margin: 14px 0 24px; }
+        .praticas-content h2 + pre {
+            margin-top: 6px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 0 1px rgba(201,168,76,0.28), 0 8px 20px rgba(0,0,0,0.22);
+            background: rgba(10, 17, 32, 0.88);
+            color: #f8fafc;
+            font-size: 1.03rem;
+            line-height: 1.62;
+        }
+        .praticas-content h2 + pre code { color: #f8fafc; }
+        .praticas-content table + h2 { margin-top: 42px; }
+        .praticas-content .checklist-card + h3 { margin-top: 24px; }
+
     </style>
 </head>
 <body>
     <header class="mobile-header">
         <button class="btn-menu" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">☰</button>
-        <span class="mobile-header-title">Aula 1</span>
+        <span class="mobile-header-title">Aula 2 - Práticas</span>
     </header>
     <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
 
@@ -324,30 +387,26 @@
             <a href="../index.html" class="nav-l"><i class="fas fa-book-open"></i> Página inicial</a>
             <hr class="nav-divider-line">
             <div class="nav-group-title">Aula 1</div>
-            <a href="#p2" class="nav-l"><i class="fas fa-list-ol"></i> Agenda</a>
-            <a href="#p3" class="nav-l"><i class="fas fa-search"></i> Por que a IA Importa</a>
-            <a href="#p4" class="nav-l"><i class="fas fa-user-shield"></i> IA como Colega</a>
-            <a href="#p5" class="nav-l"><i class="fas fa-brain"></i> O que é LLM</a>
-            <a href="#p6" class="nav-l"><i class="fas fa-exclamation-triangle"></i> O Que Modelos NÃO Sabem</a>
-            <a href="#p7" class="nav-l"><i class="fas fa-sync"></i> Busca vs. IA</a>
-            <a href="#p8" class="nav-l"><i class="fas fa-balance-scale"></i> Vieses</a>
-            <a href="#p9" class="nav-l"><i class="fas fa-ghost"></i> Alucinações</a>
-            <a href="#p11" class="nav-l"><i class="fas fa-tools"></i> Engenharia de Prompt</a>
-            <a href="#p12" class="nav-l"><i class="fas fa-microscope"></i> Anatomia do Prompt</a>
-            <a href="#p13" class="nav-l"><i class="fas fa-database"></i> Engenharia de Contexto</a>
-            <a href="#p19" class="nav-l"><i class="fas fa-ban"></i> Como não usar</a>
-            <hr class="nav-divider-line">
-            <div class="nav-group-title">Aula 2</div>
-            <a href="aula2.html#agenda-aula2" class="nav-l"><i class="fas fa-list-ol"></i> Agenda</a>
+            <a href="aula1.html#p1" class="nav-l"><i class="fas fa-gavel"></i> Início</a>
+            <a href="aula1.html#p2" class="nav-l"><i class="fas fa-list-ol"></i> Agenda</a>
+            <a href="aula1.html#p3" class="nav-l"><i class="fas fa-search"></i> Por que a IA Importa</a>
+            <a href="aula1.html#p4" class="nav-l"><i class="fas fa-user-shield"></i> IA como Colega</a>
+            <a href="aula1.html#p5" class="nav-l"><i class="fas fa-brain"></i> O que é LLM</a>
+            <a href="aula1.html#p6" class="nav-l"><i class="fas fa-exclamation-triangle"></i> O Que Modelos NÃO Sabem</a>
+            <a href="aula1.html#p7" class="nav-l"><i class="fas fa-sync"></i> Busca vs. IA</a>
+            <a href="aula1.html#p8" class="nav-l"><i class="fas fa-balance-scale"></i> Vieses</a>
+            <a href="aula1.html#p9" class="nav-l"><i class="fas fa-ghost"></i> Alucinações</a>
+            <a href="aula1.html#p11" class="nav-l"><i class="fas fa-tools"></i> Engenharia de Prompt</a>
+            <a href="aula1.html#p12" class="nav-l"><i class="fas fa-microscope"></i> Anatomia do Prompt</a>
+            <a href="aula1.html#p13" class="nav-l"><i class="fas fa-database"></i> Engenharia de Contexto</a>
+            <a href="aula1.html#p19" class="nav-l"><i class="fas fa-ban"></i> Como não usar</a>
             <a href="aula2.html#p26" class="nav-l"><i class="fas fa-fingerprint"></i> Prompt Investigativo</a>
             <a href="aula2.html#p30" class="nav-l"><i class="fas fa-desktop"></i> Ferramentas</a>
             <a href="aula2.html#p31" class="nav-l"><i class="fas fa-user-secret"></i> Sigilo e Segurança</a>
             <a href="aula2.html#p34" class="nav-l"><i class="fas fa-bolt"></i> Zero vs Few-shot</a>
-            <a href="aula2.html#p39" class="nav-l"><i class="fas fa-edit"></i> Exercício Prático</a>
-            <a href="aula2-pratica.html" class="nav-l"><i class="fas fa-tasks"></i> Prática Aula 2</a>
+            <a href="aula2-pratica.html" class="nav-l nav-aula current"><i class="fas fa-tasks"></i> Práticas</a>
             <hr class="nav-divider-line">
             <div class="nav-group-title">Aulas</div>
-            <a href="aula1.html" class="nav-l"><i class="fas fa-book"></i> Aula 1</a>
             <a href="aula2.html" class="nav-l"><i class="fas fa-book"></i> Aula 2</a>
             <a href="aula3.html" class="nav-l"><i class="fas fa-book"></i> Aula 3</a>
             <span class="nav-l nav-locked"><i class="fas fa-book"></i> Aula 4 <i class="fas fa-lock"></i></span>
@@ -357,317 +416,463 @@
     <button class="btn-theme" onclick="toggleTheme()">🌓 TEMA</button>
 
     <main class="main-content">
+        
         <div class="content-container">
-            
-            <section id="p1" class="caor-card">
-                <!-- Página 1 -->
-                <h1><i class="fas fa-shield-halved"></i> Engenharia de Prompt para Análises Investigativas</h1>
-                <p><strong>Professor:</strong> Paulo Lima (Datavirtus)</p>
-                <div class="alert-box">
-                    <p><strong>Objetivo:</strong> Transforme perguntas em insights poderosos.</p>
-                    <span class="badge">Exclusivo para agentes da lei</span>
-                </div>
+            <section id="p-praticas" class="praticas-content">
+                <div class="hero-title">
+  <div class="line1">ENGENHARIA DE PROMPT PARA ANÁLISES INVESTIGATIVAS</div>
+  <div class="line2">Datavirtus</div>
+  <div class="line3">Prof. Paulo Lima</div>
+  <div class="line4">Práticas - Aula 02</div>
+</div>
+<h2>PROMPT 1: Zero-shot Básico – Extração de Datas e Locais</h2>
+<pre><code>Você é um analista investigativo especializado em fraudes.
+
+Leia o depoimento abaixo e extraia uma lista numerada com TODAS as datas, horários e locais mencionados.
+
+Para cada item, incluir:
+1. Data/horário/local encontrado
+2. Sentença exata do texto original
+
+---DEPOIMENTO---
+Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
+---FIM---</code></pre>
+<textarea id="prompt-1" style="position:absolute;left:-9999px;top:-9999px;">Você é um analista investigativo especializado em fraudes.
+
+Leia o depoimento abaixo e extraia uma lista numerada com TODAS as datas, horários e locais mencionados.
+
+Para cada item, incluir:
+1. Data/horário/local encontrado
+2. Sentença exata do texto original
+
+---DEPOIMENTO---
+Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
+---FIM---</textarea>
+<div class="prompt-tools">
+<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-1', this)">Copiar Prompt</button>
+<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-1')">Testar no Gemini</a>
+<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-1')">Testar no Claude</a>
+<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-1')">Testar no Copilot</a>
+<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-1')">Testar no ChatGPT</a>
+</div>
+<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
+<h3>Checklist de Resultado</h3>
+<p>A resposta esperada deve conter <strong>pelo menos</strong> os 6 itens abaixo:</p>
+<ul>
+<li>[ ] <strong>10 de abril, 19 horas</strong> (casa) — Sentença citada corretamente</li>
+<li>[ ] <strong>18:30</strong> (banco) — Sentença citada corretamente  </li>
+<li>[ ] <strong>11 de abril</strong> (delegacia) — Sentença citada corretamente</li>
+<li>[ ] <strong>15 de abril, 15 horas</strong> (café da Avenida Paulista) — Sentença citada corretamente</li>
+<li>[ ] <strong>Local: delegacia</strong> — Mencionado com data</li>
+<li>[ ] <strong>Local: café da Avenida Paulista</strong> — Mencionado com horário</li>
+</ul>
+<h3>Avaliação</h3>
+<table class="interactive-table">
+<thead><tr><th>Critério</th><th>Status</th><th>Notas</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col">Extrai todas as 6 informações?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col">Cita sentença exata (não parafraseia)?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col">Usa formato estruturado (lista numerada)?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>APROVADO?</strong></td>
+<td class="data-col">[ ] ✅ Sim / [ ] ⚠️ Com ressalvas</td>
+<td class="data-col"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>PROMPT 2: Few-shot com Exemplos – Formatação de Cronologia</h2>
+<pre><code>Você é um analista investigativo especializado em reconstrução de eventos.
+
+Extraia a cronologia de eventos de um depoimento. Use EXATAMENTE este formato:
+
+---EXEMPLOS---
+
+EXEMPLO 1:
+Entrada: &quot;Fui para a casa do João em 5 de março. Lá ele me mostrou uns documentos. Depois fomos ao banco às 14h.&quot;
+Saída:
+- 5 de março, horário não especificado: ir para casa do João
+- 5 de março, 14 horas: ir ao banco
+
+EXEMPLO 2:
+Entrada: &quot;O suspeito ligou para mim no dia 2 de janeiro. Eu não atendi. No dia 3, ele ligou novamente.&quot;
+Saída:
+- 2 de janeiro: suspeito ligou
+- 3 de janeiro: suspeito ligou novamente
+
+---FIM DOS EXEMPLOS---
+
+Agora extraia do depoimento abaixo, USANDO O MESMO FORMATO:
+
+---DEPOIMENTO---
+Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
+---FIM---</code></pre>
+<textarea id="prompt-2" style="position:absolute;left:-9999px;top:-9999px;">Você é um analista investigativo especializado em reconstrução de eventos.
+
+Extraia a cronologia de eventos de um depoimento. Use EXATAMENTE este formato:
+
+---EXEMPLOS---
+
+EXEMPLO 1:
+Entrada: &quot;Fui para a casa do João em 5 de março. Lá ele me mostrou uns documentos. Depois fomos ao banco às 14h.&quot;
+Saída:
+- 5 de março, horário não especificado: ir para casa do João
+- 5 de março, 14 horas: ir ao banco
+
+EXEMPLO 2:
+Entrada: &quot;O suspeito ligou para mim no dia 2 de janeiro. Eu não atendi. No dia 3, ele ligou novamente.&quot;
+Saída:
+- 2 de janeiro: suspeito ligou
+- 3 de janeiro: suspeito ligou novamente
+
+---FIM DOS EXEMPLOS---
+
+Agora extraia do depoimento abaixo, USANDO O MESMO FORMATO:
+
+---DEPOIMENTO---
+Eu estava em casa no dia 10 de abril, por volta das 19 horas, quando recebi uma ligação do meu colega João. Ele disse que tinha visto o suspeito saindo do banco às 18:30. Eu fui até a delegacia no dia 11, de manhã, e prestei depoimento. Depois, em 15 de abril, recebi outra ligação, dessa vez de um inspetor, que disse ter mais uma informação. Fomos nos encontrar no café da Avenida Paulista às 15 horas.
+---FIM---</textarea>
+<div class="prompt-tools">
+<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-2', this)">Copiar Prompt</button>
+<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-2')">Testar no Gemini</a>
+<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-2')">Testar no Claude</a>
+<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-2')">Testar no Copilot</a>
+<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-2')">Testar no ChatGPT</a>
+</div>
+<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
+<h3>Resultado Esperado</h3>
+<p>Resposta estruturada seguindo exatamente o padrão dos exemplos:</p>
+<pre><code>- 10 de abril, 19 horas: recebi ligação do colega João
+- 10 de abril, 18:30 (relatado por João): suspeito saindo do banco
+- 11 de abril, manhã: fui à delegacia e prestei depoimento
+- 15 de abril: recebi ligação do inspetor
+- 15 de abril, 15 horas: encontro no café da Avenida Paulista</code></pre>
+<h3>Avaliação Comparativa (PROMPT 1 vs PROMPT 2)</h3>
+<table class="interactive-table">
+<thead><tr><th>Aspecto</th><th>PROMPT 1 (Zero-shot)</th><th>PROMPT 2 (Few-shot)</th><th>Qual é melhor?</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col"><strong>Consistência de formato</strong></td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] PROMPT 2</td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>Segue padrão fornecido</strong></td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] PROMPT 2</td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>Menos variações</strong></td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] PROMPT 2</td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>Estrutura temporal clara</strong></td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] PROMPT 2</td>
+</tr>
+</tbody></table>
+<p><strong>Conclusão esperada:</strong> Few-shot (PROMPT 2) deve ser significativamente mais estruturado que Zero-shot (PROMPT 1).</p>
+<hr>
+<h2>PROMPT 3: Role Prompting – Perito Criminal Analisando Fraude</h2>
+<pre><code>Você é um perito criminal especializado em análise de fraudes imobiliárias. 
+Você tem 15 anos de experiência investigando documentos falsificados.
+
+Leia o relato de vítima abaixo e responda:
+1. Quais são os SINAIS DE ALERTA de falsificação que você identifica?
+2. Em que SEQUÊNCIA os eventos ocorreram?
+3. Que EVIDÊNCIAS FÍSICAS você procuraria?
+
+Responda como especialista (técnico, objetivo, citando referências de sua experiência).
+
+---RELATO---
+Prestei queixa sobre falsificação de documentos. No dia 2 de janeiro de 2024, descobri que meu CPF foi usado para abrir uma conta bancária num banco no Itaim. O gerente confirmou que a documentação foi entregue no dia 30 de dezembro de 2023. Pedi que ele me mostrasse cópias. Vi que o RG era meu, mas a assinatura e a foto eram diferentes. O gerente passou o contato de um colega dele, o Sr. José, que teria intermediado. Quando entrei em contato, Sr. José disse que uma tal Marisa teria entregue os documentos. Marisa teria dito que conhecia um tabelião em Santos que facilitava a falsificação.
+---FIM---</code></pre>
+<textarea id="prompt-3" style="position:absolute;left:-9999px;top:-9999px;">Você é um perito criminal especializado em análise de fraudes imobiliárias. 
+Você tem 15 anos de experiência investigando documentos falsificados.
+
+Leia o relato de vítima abaixo e responda:
+1. Quais são os SINAIS DE ALERTA de falsificação que você identifica?
+2. Em que SEQUÊNCIA os eventos ocorreram?
+3. Que EVIDÊNCIAS FÍSICAS você procuraria?
+
+Responda como especialista (técnico, objetivo, citando referências de sua experiência).
+
+---RELATO---
+Prestei queixa sobre falsificação de documentos. No dia 2 de janeiro de 2024, descobri que meu CPF foi usado para abrir uma conta bancária num banco no Itaim. O gerente confirmou que a documentação foi entregue no dia 30 de dezembro de 2023. Pedi que ele me mostrasse cópias. Vi que o RG era meu, mas a assinatura e a foto eram diferentes. O gerente passou o contato de um colega dele, o Sr. José, que teria intermediado. Quando entrei em contato, Sr. José disse que uma tal Marisa teria entregue os documentos. Marisa teria dito que conhecia um tabelião em Santos que facilitava a falsificação.
+---FIM---</textarea>
+<div class="prompt-tools">
+<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-3', this)">Copiar Prompt</button>
+<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-3')">Testar no Gemini</a>
+<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-3')">Testar no Claude</a>
+<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-3')">Testar no Copilot</a>
+<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-3')">Testar no ChatGPT</a>
+</div>
+<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
+<h3>Checklist de Avaliação</h3>
+<ul>
+<li>[ ] <strong>Sinais de alerta:</strong> Identifica anomalias (assinatura diferente, foto diferente, cadeia de intermediários)?</li>
+<li>[ ] <strong>Sequência:</strong> Reconstrói ordem cronológica dos eventos?</li>
+<li>[ ] <strong>Evidências:</strong> Sugere CCTV, registros bancários, contatos para investigação?</li>
+<li>[ ] <strong>Tom especialista:</strong> Resposta é técnica, não genérica?</li>
+<li>[ ] <strong>Referências:</strong> Cita padrões de fraude conhecidos ou comportamentos criminosos?</li>
+</ul>
+<h3>Avaliação</h3>
+<table class="interactive-table">
+<thead><tr><th>Critério</th><th>Presença</th><th>Qualidade</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col">3 seções claramente separadas</td>
+<td class="data-col">[ ]</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col">Análise técnica (não genérica)</td>
+<td class="data-col">[ ]</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col">Sugestões de evidências físicas</td>
+<td class="data-col">[ ]</td>
+<td class="data-col"></td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>APROVADO?</strong></td>
+<td class="data-col">[ ] Sim</td>
+<td class="data-col"></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>PROMPT 4: Controle de Escopo – Analisando Apenas Um Período</h2>
+<pre><code>Você é analista de fraudes.
+
+Analise APENAS eventos que ocorreram entre 1º e 15 de abril de 2024.
+Não considere eventos anteriores ou posteriores.
+
+Para este período, extraia:
+1. Transações suspeitas
+2. Pessoas envolvidas
+3. Possíveis motivos
+
+Se um evento não pode ser datado neste período, indique [FORA DO ESCOPO].
+
+---DADOS---
+Janeiro 2024:
+- 5/1: João transfere R$500 para Marisa
+- 10/1: Marisa abre conta bancária com documentos falsos
+- 20/1: Transferência de R$2000 (fora de escopo)
+
+Abril 2024:
+- 1/4: Transação suspeita de R$1000
+- 10/4: Nova transferência de R$500 entre João e Marisa
+- 15/4: Investigador recebe denúncia anônima
+- 20/4: Transferência adicional (fora de escopo)
+
+Junho 2024:
+- 5/6: Conta encerrada
+---FIM---</code></pre>
+<textarea id="prompt-4" style="position:absolute;left:-9999px;top:-9999px;">Você é analista de fraudes.
+
+Analise APENAS eventos que ocorreram entre 1º e 15 de abril de 2024.
+Não considere eventos anteriores ou posteriores.
+
+Para este período, extraia:
+1. Transações suspeitas
+2. Pessoas envolvidas
+3. Possíveis motivos
+
+Se um evento não pode ser datado neste período, indique [FORA DO ESCOPO].
+
+---DADOS---
+Janeiro 2024:
+- 5/1: João transfere R$500 para Marisa
+- 10/1: Marisa abre conta bancária com documentos falsos
+- 20/1: Transferência de R$2000 (fora de escopo)
+
+Abril 2024:
+- 1/4: Transação suspeita de R$1000
+- 10/4: Nova transferência de R$500 entre João e Marisa
+- 15/4: Investigador recebe denúncia anônima
+- 20/4: Transferência adicional (fora de escopo)
+
+Junho 2024:
+- 5/6: Conta encerrada
+---FIM---</textarea>
+<div class="prompt-tools">
+<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-4', this)">Copiar Prompt</button>
+<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-4')">Testar no Gemini</a>
+<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-4')">Testar no Claude</a>
+<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-4')">Testar no Copilot</a>
+<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-4')">Testar no ChatGPT</a>
+</div>
+<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
+<h3>Resultado Esperado</h3>
+<p>Modelo deve:</p>
+<ul>
+<li>✅ Incluir eventos 1º–15 de abril (3 eventos)</li>
+<li>✅ Ignorar eventos de janeiro e junho</li>
+<li>✅ Marcar transação de 20/4 como [FORA DO ESCOPO]</li>
+</ul>
+<h3>Avaliação</h3>
+<table class="interactive-table">
+<thead><tr><th>Critério</th><th>Status</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col">Inclui APENAS eventos 1º–15 de abril?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+</tr>
+<tr>
+<td class="criterion-col">Marca eventos fora de escopo?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+</tr>
+<tr>
+<td class="criterion-col">Modelo não especula além do período?</td>
+<td class="data-col">[ ] Sim / [ ] Não</td>
+</tr>
+<tr>
+<td class="criterion-col"><strong>APROVADO?</strong></td>
+<td class="data-col">[ ] Sim</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>PROMPT 5: Validação Crítica – Checklist de Confiabilidade</h2>
+<pre><code>Você é analista investigativo com responsabilidade de validação crítica.
+
+Leia esta resposta de análise e marque cada afirmação como:
+✅ VERIFICÁVEL (está explicitamente no texto fornecido)
+⚠️ INFERIDA (dedução lógica, mas não explícita)
+❌ ESPECULATIVA (além dos dados)
+
+Depois, apontar qual nível de confiança você tem em cada afirmação (ALTA/MÉDIA/BAIXA).
+
+---RESPOSTA DO ANALISTA ANTERIOR---
+&quot;O suspeito saiu do banco às 18:30 com dinheiro em mãos e depois transferiu o dinheiro para uma conta no exterior.&quot;
+---FIM---
+
+DEPOIMENTO ORIGINAL:
+&quot;Ele disse que tinha visto o suspeito saindo do banco às 18:30.&quot;</code></pre>
+<textarea id="prompt-5" style="position:absolute;left:-9999px;top:-9999px;">Você é analista investigativo com responsabilidade de validação crítica.
+
+Leia esta resposta de análise e marque cada afirmação como:
+✅ VERIFICÁVEL (está explicitamente no texto fornecido)
+⚠️ INFERIDA (dedução lógica, mas não explícita)
+❌ ESPECULATIVA (além dos dados)
+
+Depois, apontar qual nível de confiança você tem em cada afirmação (ALTA/MÉDIA/BAIXA).
+
+---RESPOSTA DO ANALISTA ANTERIOR---
+&quot;O suspeito saiu do banco às 18:30 com dinheiro em mãos e depois transferiu o dinheiro para uma conta no exterior.&quot;
+---FIM---
+
+DEPOIMENTO ORIGINAL:
+&quot;Ele disse que tinha visto o suspeito saindo do banco às 18:30.&quot;</textarea>
+<div class="prompt-tools">
+<button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-5', this)">Copiar Prompt</button>
+<a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-5')">Testar no Gemini</a>
+<a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-5')">Testar no Claude</a>
+<a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-5')">Testar no Copilot</a>
+<a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-5')">Testar no ChatGPT</a>
+</div>
+<div class="hint">Ao clicar em testar, o prompt é copiado e a IA abre em nova aba.</div>
+<h3>Resultado Esperado</h3>
+<pre><code>✅ VERIFICÁVEL: &quot;Suspeito saiu do banco às 18:30&quot;
+   Justificativa: Explícito no depoimento
+   Confiança: ALTA
+
+❌ ESPECULATIVA: &quot;Com dinheiro em mãos&quot;
+   Justificativa: Não mencionado no depoimento
+   Confiança: BAIXA
+
+❌ ESPECULATIVA: &quot;Transferiu para conta no exterior&quot;
+   Justificativa: Pura invenção. Não há informação sobre transferências.
+   Confiança: MUITO BAIXA (alucinação detectada)</code></pre>
+<h3>Avaliação Crítica</h3>
+<table class="interactive-table">
+<thead><tr><th>Afirmação</th><th>Classificação Esperada</th><th>Classificação Real</th><th>Match?</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col">"Saiu do banco às 18:30"</td>
+<td class="data-col">✅ VERIFICÁVEL</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] ✅</td>
+</tr>
+<tr>
+<td class="criterion-col">"Com dinheiro em mãos"</td>
+<td class="data-col">❌ ESPECULATIVA</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] ✅</td>
+</tr>
+<tr>
+<td class="criterion-col">"Transferiu para exterior"</td>
+<td class="data-col">❌ ESPECULATIVA</td>
+<td class="data-col">[ ]</td>
+<td class="data-col">[ ] ✅</td>
+</tr>
+</tbody></table>
+<p><strong>Sucesso esperado:</strong> Modelo marca todas as 3 afirmações corretamente.</p>
+<hr>
+<h2>RESUMO EXECUTIVO</h2>
+<table class="interactive-table">
+<thead><tr><th>#</th><th>Prompt</th><th>Objetivo</th><th>Prioridade</th><th>Status</th></tr></thead>
+<tbody>
+<tr>
+<td class="criterion-col">1</td>
+<td class="data-col">Zero-shot</td>
+<td class="data-col">Baseline sem exemplos</td>
+<td class="data-col">🔴 Alta</td>
+<td class="data-col">[ ] Testado</td>
+</tr>
+<tr>
+<td class="criterion-col">2</td>
+<td class="data-col">Few-shot</td>
+<td class="data-col">Comparar com #1</td>
+<td class="data-col">🔴 Alta</td>
+<td class="data-col">[ ] Testado</td>
+</tr>
+<tr>
+<td class="criterion-col">3</td>
+<td class="data-col">Role Prompting</td>
+<td class="data-col">Mostrar impacto de persona</td>
+<td class="data-col">🟡 Média</td>
+<td class="data-col">[ ] Testado</td>
+</tr>
+<tr>
+<td class="criterion-col">4</td>
+<td class="data-col">Escopo</td>
+<td class="data-col">Testar limitações</td>
+<td class="data-col">🟡 Média</td>
+<td class="data-col">[ ] Testado</td>
+</tr>
+<tr>
+<td class="criterion-col">5</td>
+<td class="data-col">Validação Crítica</td>
+<td class="data-col">Auto-crítica de IA</td>
+<td class="data-col">🔴 Alta</td>
+<td class="data-col">[ ] Testado</td>
+</tr>
+</tbody></table>
+<hr>
             </section>
-
-            <section id="p2" class="caor-card">
-                <!-- Página 2 -->
-                <h2><i class="fas fa-calendar-alt"></i> Agenda da Aula 1</h2>
-                <ul>
-                    <li><strong>Contexto e Motivação:</strong> Por que a IA importa para investigadores.</li>
-                    <li><strong>O que são LLMs:</strong> Funcionamento, geração de texto, vieses e alucinações.</li>
-                    <li><strong>Fundamentos:</strong> Engenharia de Prompt e Engenharia de Contexto.</li>
-                    <li><strong>Erros Comuns:</strong> Como não usar a IA.</li>
-                </ul>
-            </section>
-
-            <section id="p3" class="caor-card">
-                <!-- Página 3 -->
-                <h2><i class="fas fa-chart-line"></i> Por que a IA Importa: Três Cenários Reais</h2>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Cenário</th>
-                                <th>Tarefa Investigativa</th>
-                                <th>Ganho de Eficiência</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Síntese Probatória</strong></td>
-                                <td>Extrair inconsistências cronológicas em 15 depoimentos.</td>
-                                <td>De 4-6h manuais para 20 min + validação.</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Vínculos e Padrões</strong></td>
-                                <td>Encontrar padrão de circulação entre 500 transações e 50 pessoas.</td>
-                                <td>Estruturação em minutos (substitui análise gráfica longa).</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Reconstrução Temporal</strong></td>
-                                <td>Criar linha do tempo coerente de relatos confusos.</td>
-                                <td>Estruturação automática (substitui leitura e anotação manual).</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <section id="p4" class="caor-card">
-                <!-- Página 4 -->
-                <h2><i class="fas fa-handshake"></i> IA como Colega, não Decisor</h2>
-                <ul>
-                    <li><strong>Capacidades:</strong> A IA analisa, sintetiza e organiza.</li>
-                    <li><strong>Limitação Crítica:</strong> IA não toma decisões por você.</li>
-                    <li><strong>Responsabilidade:</strong> O juízo e a escolha final são sempre do humano.</li>
-                    <li><strong>Revisão:</strong> IA é um "colega incansável", mas pode errar; revise sempre.</li>
-                </ul>
-            </section>
-
-            <section id="p5" class="caor-card">
-                <!-- Página 5 -->
-                <h2><i class="fas fa-network-wired"></i> O que é um LLM e como gera texto?</h2>
-                <ul>
-                    <li><strong>Definição:</strong> <em>Large Language Model</em> é uma IA treinada em bilhões de textos para prever a próxima palavra mais provável.</li>
-                    <li><strong>Sem Consciência:</strong> Ele não pensa, não raciocina e não compreende o mundo; funciona por padrões estatísticos e probabilidade.</li>
-                    <li><strong>Contexto:</strong> Enxerga apenas a conversa atual, sem memória de sessões anteriores (salvo se fornecido).</li>
-                    <li><strong>Acesso:</strong> Não possui acesso externo em tempo real, a menos que habilitado.</li>
-                </ul>
-            </section>
-
-            <section id="p6" class="caor-card">
-                <!-- Página 6 -->
-                <h2><i class="fas fa-eye-slash"></i> O Que Modelos NÃO Sabem</h2>
-                <ul>
-                    <li><strong>Tempo Real:</strong> Treinados até uma data de corte; desconhecem eventos recentes (podem citar fatos desatualizados).</li>
-                    <li><strong>Dados Privados:</strong> Não conhecem seus documentos ou inquéritos a menos que você os forneça no contexto.</li>
-                    <li><strong>Alucinação:</strong> Quando incerto, o modelo inventa respostas plausíveis que parecem verídicas (confabulação).</li>
-                </ul>
-            </section>
-
-            <section id="p7" class="caor-card">
-                <!-- Página 7 -->
-                <h2><i class="fas fa-vial"></i> Busca Tradicional vs. IA Generativa</h2>
-                <ul>
-                    <li><strong>Motor de Busca:</strong> Encontra e localiza links/documentos existentes; bom para fontes primárias, mas não conecta pontos.</li>
-                    <li><strong>IA Generativa (LLM):</strong> Sintetiza, analisa e gera novas estruturas de texto; raciocina passo a passo, mas pode inventar fatos se não for ancorada.</li>
-                </ul>
-            </section>
-
-            <section id="p8" class="caor-card">
-                <!-- Página 8 -->
-                <h2><i class="fas fa-users-slash"></i> Vieses nos Dados de Treinamento</h2>
-                <ul>
-                    <li><strong>Herança Cultural:</strong> Modelos herdam preconceitos presentes nos textos da internet.</li>
-                    <li><strong>Risco Investigativo:</strong> Perguntas sobre perfis criminais podem gerar respostas com vieses de gênero, classe ou origem.</li>
-                    <li><strong>Implicação:</strong> Analise sempre os resultados de forma crítica.</li>
-                </ul>
-            </section>
-
-            <section id="p9" class="caor-card">
-                <!-- Página 9 -->
-                <h2><i class="fas fa-bug"></i> Alucinações: O Risco de Respostas Falsas</h2>
-                <ul>
-                    <li><strong>O que é:</strong> Geração de afirmações factualmente incorretas com aparência de coerência e confiança.</li>
-                    <li><strong>Manifestações:</strong> Datas, nomes, leis e jurisprudências inventadas; conclusões sem suporte documental.</li>
-                </ul>
-                <div class="alert-box">
-                    <span class="badge">Como Detectar</span>
-                    <ul>
-                        <li>Confronte sempre com o material original.</li>
-                        <li>Peça citações exatas de trechos dos documentos.</li>
-                        <li>Nunca aceite referências jurídicas sem verificação independente.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="p10" class="caor-card">
-                <!-- Página 10 -->
-                <h2><i class="fas fa-user-cog"></i> O Fator Humano e Limitações Técnicas</h2>
-                <ul>
-                    <li><strong>Risco da Desatualização:</strong> Nunca confie em datas automáticas; verifique legislação e precedentes recentes.</li>
-                    <li><strong>Risco da Alucinação:</strong> Valide citações de artigos e cheque duplamente cálculos e prazos legais gerados.</li>
-                    <li><strong>Papel Humano:</strong> A IA rascunha, o humano valida.</li>
-                </ul>
-            </section>
-
-            <section id="p11" class="caor-card">
-                <!-- Página 11 -->
-                <h2><i class="fas fa-pencil-ruler"></i> Fundamentos de Engenharia de Prompt</h2>
-                <ul>
-                    <li><strong>Conceito:</strong> Processo interativo de desenvolver e refinar instruções para obter resultados precisos.</li>
-                    <li><strong>Analogia do Maestro:</strong> Você ajusta os "instrumentos" (instruções) para alcançar a harmonia (resultado ideal).</li>
-                    <li><strong>Exemplo de Refinamento:</strong> De "Resuma este inquérito" para "Foque o resumo nas provas que apontam as qualificadoras do homicídio".</li>
-                </ul>
-            </section>
-
-            <section id="p12" class="caor-card">
-                <!-- Página 12 -->
-                <h2><i class="fas fa-dna"></i> Anatomia de um Prompt de Qualidade</h2>
-                <ul>
-                    <li><strong>Definição:</strong> Um comando estruturado que inclui contexto, objetivo e restrições (não é uma pergunta casual).</li>
-                </ul>
-                <div class="alert-box">
-                    <p><i class="fas fa-times-circle" style="color: #ef4444;"></i> <strong>Prompt Ruim:</strong> "Analisa esse documento" (vago, sem formato).</p>
-                    <p><i class="fas fa-check-circle" style="color: #10b981;"></i> <strong>Prompt Bom:</strong> "Releia o depoimento e extraia: (1) cronologia, (2) inconsistências, (3) informações faltantes. Cite a sentença exata."</p>
-                </div>
-            </section>
-
-            <section id="p13" class="caor-card">
-                <!-- Página 13 -->
-                <h2><i class="fas fa-layer-group"></i> Engenharia de Contexto: Elementos Chave</h2>
-                <ol>
-                    <li style="margin-left: 15px;"><strong>Persona:</strong> Atribuir um papel à IA.</li>
-                    <li style="margin-left: 15px;"><strong>Background:</strong> Fornecer o cenário.</li>
-                    <li style="margin-left: 15px;"><strong>Curadoria:</strong> Recortar apenas as informações relevantes e remover ruídos.</li>
-                    <li style="margin-left: 15px;"><strong>Exemplos:</strong> Mostrar o que se espera.</li>
-                    <li style="margin-left: 15px;"><strong>Estrutura e Restrições:</strong> Definir formato e o que não fazer.</li>
-                </ol>
-            </section>
-
-            <section id="p14" class="caor-card">
-                <!-- Página 14 -->
-                <h2><i class="fas fa-window-maximize"></i> O Papel do Contexto na IA</h2>
-                <ul>
-                    <li><strong>Definição:</strong> Tudo o que é fornecido no momento (pergunta, histórico, arquivos, instruções).</li>
-                    <li><strong>Importância:</strong> A IA só trabalha com o que está na "janela"; nada é presumido.</li>
-                    <li><strong>Exemplo Prático:</strong> Sem contexto, "Diligência urgente" pode ser interpretado literalmente (veículo/presteza); com contexto jurídico, é interpretado como coleta de provas.</li>
-                </ul>
-            </section>
-
-            <section id="p15" class="caor-card">
-                <!-- Página 15 -->
-                <h2><i class="fas fa-cog"></i> Dinâmica da Janela de Contexto</h2>
-                <ul>
-                    <li><strong>Janela de Entrada:</strong> Composta por prompts, textos colados, anexos e histórico.</li>
-                    <li><strong>Processamento:</strong> O modelo lê o bloco inteiro de uma vez.</li>
-                    <li><strong>Saída:</strong> A resposta gerada depende da qualidade da entrada. Se a denúncia for genérica, o erro costuma estar na entrada.</li>
-                </ul>
-            </section>
-
-            <section id="p16" class="caor-card">
-                <!-- Página 16 -->
-                <h2><i class="fas fa-star"></i> Regras de Ouro para Janelas de Contexto</h2>
-                <ul>
-                    <li><strong>Fragmentação:</strong> Não faça upload de arquivos com centenas de páginas; fragmente em blocos temáticos.</li>
-                    <li><strong>Capacidade:</strong> Exemplificado com Claude Sonnet 4.6 (200k tokens). O risco de alucinação aumenta conforme a janela é preenchida (ex: acima de 75.5% de uso).</li>
-                    <li><strong>Ação:</strong> Analise por sessões separadas para arquivos volumosos.</li>
-                </ul>
-            </section>
-
-            <section id="p17" class="caor-card">
-                <!-- Página 17 -->
-                <h2><i class="fas fa-memory"></i> Memória da IA: Agora vs. Sempre</h2>
-                <ul>
-                    <li><strong>Na Mesa (Janela de Contexto):</strong> Temporária, finita e zera a cada nova conversa. A IA só "vê" o que está sobre esta mesa.</li>
-                    <li><strong>No Treinamento (Memória Estática):</strong> Conhecimento congelado até a data de corte.</li>
-                    <li><strong>RAG (Memória Dinâmica):</strong> Busca seletiva em bases oficiais quando solicitada.</li>
-                    <li><strong>Insight:</strong> Sem contexto na "mesa", a IA inventa fatos para preencher lacunas.</li>
-                </ul>
-            </section>
-
-            <section id="p18" class="caor-card">
-                <!-- Página 18 -->
-                <h2><i class="fas fa-magic"></i> Matriz de Transformação: Do Risco à Precisão</h2>
-                <div class="alert-box">
-                    <span class="badge" style="background: #ef4444; color: #fff;">Contexto Fraco (Risco)</span>
-                    <p>"Analise este inquérito e me diga se devo oferecer denúncia." Resulta em resposta genérica e alto risco de alucinação.</p>
-                </div>
-                <div class="alert-box">
-                    <span class="badge" style="background: #10b981; color: #fff;">Contexto Engenheirado (Precisão)</span>
-                    <p>Define <strong>Persona</strong> (Promotor), <strong>Dados</strong> (IP em anexo), <strong>Tarefa</strong> (resumir fatos/indícios), <strong>Restrições</strong> (exclusivamente nos anexos) e <strong>Formato</strong> (seções numeradas).</p>
-                </div>
-            </section>
-
-            <section id="p19" class="caor-card">
-                <!-- Página 19 -->
-                <h2><i class="fas fa-exclamation-circle"></i> Como não usar a IA: Três Pilares Faltantes</h2>
-                <ol>
-                    <li style="margin-left: 15px;"><strong>Sem Hipótese:</strong> Não use a IA sem uma pergunta de pesquisa definida.</li>
-                    <li style="margin-left: 15px;"><strong>Sem Curadoria:</strong> Não aceite respostas sem análise crítica e validação jurídica.</li>
-                    <li style="margin-left: 15px;"><strong>Sem Direção:</strong> Defina o objetivo final (resumir, analisar contradições ou redigir) antes do comando.</li>
-                </ol>
-            </section>
-
-            <section id="p20" class="caor-card">
-                <!-- Página 20 -->
-                <h2><i class="fas fa-user-tie"></i> Erro 1: Persona Inflada e Calibragem</h2>
-                <ul>
-                    <li><strong>Armadilha (Ruído):</strong> Usar adjetivos exagerados ("melhor jurista do universo", "PhD em Harvard"). Gera respostas arrogantes ou imprecisas.</li>
-                    <li><strong>Calibragem (Especialista):</strong> Atribuir papel técnico e direto ("Promotor especializado em direito penal").</li>
-                </ul>
-            </section>
-
-            <section id="p21" class="caor-card">
-                <!-- Página 21 -->
-                <h2><i class="fas fa-bullseye"></i> Erro 2: Objetivo Genérico</h2>
-                <ul>
-                    <li><strong>Vago:</strong> "Analise este documento e me diga o que acha." Resulta em resumos óbvios sem utilidade tática.</li>
-                    <li><strong>Específico:</strong> "Analise criticamente esta denúncia verificando os requisitos do art. 41 do CPP..." Ativa o conhecimento jurídico específico e gera respostas focadas.</li>
-                </ul>
-            </section>
-
-            <section id="p22" class="caor-card">
-                <!-- Página 22 -->
-                <h2><i class="fas fa-layer-group"></i> Erro 3: Misturar Análise com Escrita</h2>
-                <ul>
-                    <li><strong>O Caos:</strong> Pedir análise jurídica e redação final rebuscada no mesmo prompt.</li>
-                </ul>
-                <div class="alert-box">
-                    <span class="badge">O Fluxo Correto</span>
-                    <p><strong>Passo 1 (Processamento):</strong> Analisar aspectos jurídicos e precedentes.</p>
-                    <p><strong>Passo 2 (Formatação):</strong> Redigir a manifestação com base na análise anterior.</p>
-                </div>
-            </section>
-
-            <section id="p23" class="caor-card">
-                <!-- Página 23 -->
-                <h2><i class="fas fa-minus-circle"></i> Erro 4: Comandos Negativos sem Direção</h2>
-                <ul>
-                    <li><strong>O Bloqueio:</strong> "Não faça texto longo", "Não use palavras difíceis". A IA foca nos termos negativos e pode se confundir.</li>
-                    <li><strong>A Direção (Afirmativo):</strong> "Seja conciso", "Use linguagem clara", "Cite apenas jurisprudência aplicável". Mapeia o caminho esperado de forma eficaz.</li>
-                </ul>
-            </section>
-
-            <section id="p24" class="caor-card">
-                <!-- Página 24 -->
-                <h2><i class="fas fa-tasks"></i> Erro 5: Excesso de Instruções (Trade-off)</h2>
-                <ul>
-                    <li><strong>Princípio:</strong> Quanto mais instruções simultâneas (o "Mega-Prompt"), menor a qualidade da execução individual.</li>
-                    <li><strong>A Correção:</strong> Limite-se a <strong>5 a 7 instruções principais</strong> hierarquizadas. Se precisar de mais, fragmente em vários prompts consecutivos.</li>
-                </ul>
-            </section>
-
-            <section id="p25" class="caor-card">
-                <!-- Página 25 -->
-                <h2><i class="fas fa-brain"></i> Gestão do Foco Cognitivo</h2>
-                <p>Os 5 erros principais (personas infladas, objetivos genéricos, excesso de instruções, comandos negativos e mistura de tarefas) resultam no <strong>desperdício da janela de contexto</strong> e diluição do poder computacional.</p>
-                <div class="alert-box">
-                    <p><strong>Insight:</strong> Engenharia de prompt é administrar o foco da máquina para economizar seu tempo.</p>
-                </div>
-            </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
+
     </main>
 
+    
     <script>
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
@@ -698,6 +903,82 @@
         navLinks.forEach((link) => {
             link.addEventListener('click', () => setNavOpen(false));
         });
+
+        function getPrompt(id){ const el = document.getElementById(id); return el ? el.value : ''; }
+        async function copyPrompt(id, btn){
+          const txt = getPrompt(id);
+          try { await navigator.clipboard.writeText(txt);
+            if(btn){ const old = btn.textContent; btn.textContent = 'Copiado'; setTimeout(()=>btn.textContent = old, 1200); }
+          } catch(e) {
+            const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch(_) {}
+            document.body.removeChild(ta);
+          }
+        }
+        function extractOptions(text){
+          return [...text.matchAll(/\[ \]\s*([^\/|]+)(?=\s*\/|$)/g)].map(m=>m[1].trim()).filter(Boolean);
+        }
+        function normalizeName(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''); }
+        function tableToInteractive(){
+          const tables = document.querySelectorAll('table.interactive-table');
+          tables.forEach((table, tIdx) => {
+            const headerTexts = [...table.querySelectorAll('thead th')].map(th => th.textContent.trim().toLowerCase());
+            const rows = [...table.querySelectorAll('tbody tr')];
+            rows.forEach((row, rIdx) => {
+              const cells = [...row.querySelectorAll('td')];
+              cells.forEach((cell, cIdx) => {
+                const raw = cell.textContent.trim();
+                if(cIdx === 0) return;
+                const head = headerTexts[cIdx] || '';
+                if(head.includes('nota')){
+                  cell.innerHTML = '<input class="form-inline-input" type="text" placeholder="Escreva aqui">';
+                  return;
+                }
+                const options = extractOptions(raw);
+                if(options.length >= 2){
+                  const name = `t${tIdx}-r${rIdx}-c${cIdx}-${normalizeName(cells[0].textContent)}`;
+                  const group = document.createElement('div'); group.className = 'form-radio-group';
+                  options.forEach((opt)=>{
+                    const label = document.createElement('label'); label.className = 'chip';
+                    label.innerHTML = `<input type="radio" name="${name}" value="${opt}"> ${opt}`;
+                    group.appendChild(label);
+                  });
+                  cell.innerHTML = ''; cell.appendChild(group);
+                } else if(raw.includes('[ ]')) {
+                  const cleaned = raw.replaceAll('[ ]', '').trim();
+                  cell.innerHTML = `<label class="chip"><input type="checkbox"> ${cleaned || 'Marcar'}</label>`;
+                }
+              });
+            });
+          });
+        }
+        function enhanceChecklistSections(){
+          const headers = [...document.querySelectorAll('h2, h3, h4')].filter(h => /checklist/i.test(h.textContent.trim()));
+          headers.forEach((h) => {
+            const next = h.nextElementSibling;
+            const p = next && next.tagName === 'P' ? next : null;
+            const ul = p ? p.nextElementSibling : next;
+            if(!ul || ul.tagName !== 'UL') return;
+            if(p) p.classList.add('checklist-intro');
+            ul.classList.add('checklist-result');
+            const wrapper = document.createElement('div');
+            wrapper.className = 'checklist-card';
+            (p || ul).parentNode.insertBefore(wrapper, (p || ul));
+            if(p) wrapper.appendChild(p);
+            wrapper.appendChild(ul);
+            ul.querySelectorAll('li').forEach((li) => {
+              li.innerHTML = li.innerHTML.replace(/^\s*\[\s\]\s*/, '');
+              const icon = document.createElement('span');
+              icon.className = 'check-icon';
+              icon.setAttribute('aria-hidden', 'true');
+              icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="2"/><path d="M8 12.5L10.8 15.3L16 10.2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+              li.prepend(icon);
+            });
+          });
+        }
+
+        enhanceChecklistSections();
+        tableToInteractive();
     </script>
 </body>
 </html>
