@@ -46,48 +46,45 @@
         "source_file": "aulas-md/aula1.md"
       },
       {
-        "id": "four_prompt_techniques",
-        "label": "Four Core Prompt Engineering Techniques for Aula 3",
+        "id": "aula3_four_techniques",
+        "label": "Aula 3 - Integrated Techniques",
         "nodes": [
-          "persona_estruturacao",
-          "role_prompting_taxonomia",
-          "chain_of_thought_certeza",
-          "metacognicion_taxonomia_vie"
+          "aula3_exercicios_estruturacao",
+          "aula3_exercicios_mapeamento_vinculos",
+          "aula3_exercicios_timeline",
+          "aula3_exercicios_validacao_critica"
         ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
-      },
-      {
-        "id": "five_learning_objectives",
-        "label": "Five Learning Objectives for Investigative Analysis",
-        "nodes": [
-          "extra\u00e7\u00e3o_informa\u00e7\u00f5es",
-          "mapeamento_v\u00ednculos",
-          "reconstru\u00e7\u00e3o_cronol\u00f3gica",
-          "valida\u00e7\u00e3o_cr\u00edtica",
-          "verific\u00e1vel_inferido_especulativo"
-        ],
-        "relation": "form",
-        "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
-        "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
-      },
-      {
-        "id": "five_practical_tasks",
-        "label": "Five Practical Tasks Sequence",
-        "nodes": [
-          "tarefa_1_estrutura\u00e7\u00e3o",
-          "tarefa_2_mapeamento",
-          "tarefa_3_timeline",
-          "tarefa_4_valida\u00e7\u00e3o",
-          "tarefa_5_s\u00edntese"
-        ],
-        "relation": "participate_in",
+        "relation": "form_integrated_workflow",
         "confidence": "EXTRACTED",
         "confidence_score": 1.0,
         "source_file": "03_AULA3_EXERCICIOS.md"
+      },
+      {
+        "id": "aula3_course_artifacts",
+        "label": "Aula 3 Course Materials",
+        "nodes": [
+          "aula3_slides_persona_estruturacao",
+          "aula3_slides_taxonomia_vinculos",
+          "aula3_html_slides_content",
+          "aula3_pratica_html_exercicio"
+        ],
+        "relation": "constitute_lesson_module",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
+      },
+      {
+        "id": "investigative_case_progression",
+        "label": "Case Study Progression",
+        "nodes": [
+          "aula3_exercicios_fraude_bancaria",
+          "aula4_caso_fraude_bancaria_rede",
+          "dados_topico3_55_eventos"
+        ],
+        "relation": "escalate_complexity",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "aula 4 - topico 3.md"
       }
     ]
   },
@@ -102,7 +99,7 @@
       "author": null,
       "contributor": null,
       "id": "readme_project_overview",
-      "community": 0,
+      "community": 1,
       "norm_label": "projeto aulas-engenharia-prompt"
     },
     {
@@ -116,7 +113,7 @@
       "contributor": null,
       "rationale": "O conte\u00fado did\u00e1tico deve ser conclu\u00eddo e revisado em Markdown antes da convers\u00e3o manual para HTML offline.",
       "id": "readme_markdown_first_workflow",
-      "community": 0,
+      "community": 1,
       "norm_label": "fluxo markdown primeiro"
     },
     {
@@ -130,7 +127,7 @@
       "contributor": null,
       "rationale": "Cada HTML final deve ser \u00fanico, abrir sem internet e embutir CSS/JS localmente.",
       "id": "readme_offline_first_html",
-      "community": 0,
+      "community": 1,
       "norm_label": "html offline autonomo"
     },
     {
@@ -143,7 +140,7 @@
       "author": null,
       "contributor": null,
       "id": "agents_md",
-      "community": 10,
+      "community": 5,
       "norm_label": "agents.md graphify instructions"
     },
     {
@@ -211,7 +208,7 @@
       "author": null,
       "contributor": null,
       "id": "guia_apoio_editorial_guide",
-      "community": 0,
+      "community": 1,
       "norm_label": "guia de apoio editorial e tecnico"
     },
     {
@@ -225,7 +222,7 @@
       "contributor": null,
       "rationale": "Padroniza compatibilidade offline, proibindo depend\u00eancias remotas e exigindo recursos locais.",
       "id": "guia_apoio_single_file_html_rule",
-      "community": 0,
+      "community": 1,
       "norm_label": "regra de html unico com css/js embutido"
     },
     {
@@ -321,7 +318,7 @@
       "author": null,
       "contributor": null,
       "id": "aula2_aula2_draft",
-      "community": 0,
+      "community": 1,
       "norm_label": "rascunho da aula 2"
     },
     {
@@ -334,7 +331,7 @@
       "author": null,
       "contributor": null,
       "id": "aula4_aula4_draft",
-      "community": 0,
+      "community": 1,
       "norm_label": "rascunho da aula 4"
     },
     {
@@ -347,398 +344,203 @@
       "author": null,
       "contributor": null,
       "id": "aula3_aula3_draft",
-      "community": 0,
+      "community": 1,
       "norm_label": "rascunho da aula 3"
     },
     {
-      "label": "Aula 3 - Slides e Conte\u00fado T\u00e9cnico",
-      "file_type": "document",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": "Prof. Paulo Lima",
-      "contributor": null,
-      "id": "aula3_slides_conteudo",
-      "community": 9,
-      "norm_label": "aula 3 - slides e conteudo tecnico"
-    },
-    {
-      "label": "Exerc\u00edcio Pr\u00e1tico Intensivo - Aula 3",
+      "label": "Fraude Banc\u00e1ria - Caso Pr\u00e1tico",
       "file_type": "document",
       "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": "Prof. Paulo Lima",
-      "contributor": null,
-      "id": "aula3_exercicios",
-      "community": 6,
-      "norm_label": "exercicio pratico intensivo - aula 3"
-    },
-    {
-      "label": "Persona + Estrutura\u00e7\u00e3o com Restri\u00e7\u00e3o",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 1",
+      "source_location": "CEN\u00c1RIO section",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "persona_estruturacao",
-      "community": 7,
-      "norm_label": "persona + estruturacao com restricao"
+      "id": "aula3_exercicios_fraude_bancaria",
+      "community": 0,
+      "norm_label": "fraude bancaria - caso pratico"
     },
     {
-      "label": "Role Prompting Especializado + Taxonomia de V\u00ednculos",
+      "label": "Estrutura\u00e7\u00e3o de Informa\u00e7\u00f5es",
       "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 2",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "TAREFA 1",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "role_prompting_taxonomia",
-      "community": 8,
-      "norm_label": "role prompting especializado + taxonomia de vinculos"
+      "id": "aula3_exercicios_estruturacao",
+      "community": 3,
+      "norm_label": "estruturacao de informacoes"
     },
     {
-      "label": "Chain-of-Thought + Marca\u00e7\u00e3o de N\u00edvel de Certeza",
+      "label": "Mapeamento de V\u00ednculos",
       "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 3",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "TAREFA 2",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "chain_of_thought_certeza",
-      "community": 5,
-      "norm_label": "chain-of-thought + marcacao de nivel de certeza"
+      "id": "aula3_exercicios_mapeamento_vinculos",
+      "community": 3,
+      "norm_label": "mapeamento de vinculos"
     },
     {
-      "label": "Metacogni\u00e7\u00e3o + Taxonomia V/I/E",
+      "label": "Reconstru\u00e7\u00e3o Cronol\u00f3gica",
       "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 4",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "TAREFA 3",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "metacognicion_taxonomia_vie",
-      "community": 1,
-      "norm_label": "metacognicao + taxonomia v/i/e"
+      "id": "aula3_exercicios_timeline",
+      "community": 0,
+      "norm_label": "reconstrucao cronologica"
     },
     {
-      "label": "Extra\u00e7\u00e3o de Informa\u00e7\u00f5es Estruturadas",
+      "label": "Valida\u00e7\u00e3o Cr\u00edtica",
       "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Objetivos de Aprendizado",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "TAREFA 4",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "extra\u00e7\u00e3o_informa\u00e7\u00f5es",
-      "community": 7,
-      "norm_label": "extracao de informacoes estruturadas"
+      "id": "aula3_exercicios_validacao_critica",
+      "community": 0,
+      "norm_label": "validacao critica"
     },
     {
-      "label": "Mapeamento de Rela\u00e7\u00f5es entre Pessoas/Eventos",
+      "label": "T\u00e9cnica: Persona + Estrutura\u00e7\u00e3o + Restri\u00e7\u00e3o",
       "file_type": "rationale",
       "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Objetivos de Aprendizado",
+      "source_location": "T\u00d3PICO 1 - A Solu\u00e7\u00e3o",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "mapeamento_v\u00ednculos",
-      "community": 8,
-      "norm_label": "mapeamento de relacoes entre pessoas/eventos"
+      "id": "aula3_slides_persona_estruturacao",
+      "community": 3,
+      "norm_label": "tecnica: persona + estruturacao + restricao"
     },
     {
-      "label": "Reconstru\u00e7\u00e3o Cronol\u00f3gica de Fatos",
+      "label": "Taxonomia de 7 Tipos de V\u00ednculos",
       "file_type": "rationale",
       "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Objetivos de Aprendizado",
+      "source_location": "T\u00d3PICO 2 - Componentes da T\u00e9cnica",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "reconstru\u00e7\u00e3o_cronol\u00f3gica",
-      "community": 5,
-      "norm_label": "reconstrucao cronologica de fatos"
+      "id": "aula3_slides_taxonomia_vinculos",
+      "community": 3,
+      "norm_label": "taxonomia de 7 tipos de vinculos"
     },
     {
-      "label": "Valida\u00e7\u00e3o Cr\u00edtica de Respostas Geradas",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Objetivos de Aprendizado",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "valida\u00e7\u00e3o_cr\u00edtica",
-      "community": 1,
-      "norm_label": "validacao critica de respostas geradas"
-    },
-    {
-      "label": "Classifica\u00e7\u00e3o V/I/E (Verific\u00e1vel/Inferido/Especulativo)",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 4",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "verific\u00e1vel_inferido_especulativo",
-      "community": 1,
-      "norm_label": "classificacao v/i/e (verificavel/inferido/especulativo)"
-    },
-    {
-      "label": "Cen\u00e1rio: Opera\u00e7\u00e3o de Falsifica\u00e7\u00e3o de Documenta\u00e7\u00e3o Banc\u00e1ria",
+      "label": "T\u00d3PICO 3: Reconstru\u00e7\u00e3o Cronol\u00f3gica de Fatos",
       "file_type": "document",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "CEN\u00c1RIO",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "Opening section",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
+      "id": "aula4_topico3_reconstrucao_cronologica",
+      "community": 0,
+      "norm_label": "topico 3: reconstrucao cronologica de fatos"
+    },
+    {
+      "label": "Caso: Fraude Banc\u00e1ria em Rede (51 dias)",
+      "file_type": "document",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "Estudo de Caso section",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "aula4_caso_fraude_bancaria_rede",
+      "community": 0,
+      "norm_label": "caso: fraude bancaria em rede (51 dias)"
+    },
+    {
+      "label": "Dados de Exemplo - T\u00f3pico 1",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico1.md",
+      "source_location": "Full document",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dados_topico1_fraude_exemplo",
       "community": 3,
-      "norm_label": "cenario: operacao de falsificacao de documentacao bancaria"
+      "norm_label": "dados de exemplo - topico 1"
     },
     {
-      "label": "Clara Silva - V\u00edtima de Fraude",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1",
+      "label": "Lista de 55 Eventos Desordenados",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico3.md",
+      "source_location": "Full document",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "clara_silva",
+      "id": "dados_topico3_55_eventos",
+      "community": 0,
+      "norm_label": "lista de 55 eventos desordenados"
+    },
+    {
+      "label": "Dados de Exemplo - 55 Frases com V\u00ednculos",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico2.md",
+      "source_location": "Full document (55 sentences describing crime network)",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dados_topico2_vinculos_complexos",
       "community": 3,
-      "norm_label": "clara silva - vitima de fraude"
+      "norm_label": "dados de exemplo - 55 frases com vinculos"
     },
     {
-      "label": "Patricia Mendes - Intermedi\u00e1ria Fraudulenta",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1, 2",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "patricia_mendes",
-      "community": 3,
-      "norm_label": "patricia mendes - intermediaria fraudulenta"
-    },
-    {
-      "label": "Rafael Torres - Gerente Banc\u00e1rio",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 2",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "rafael_torres",
-      "community": 3,
-      "norm_label": "rafael torres - gerente bancario"
-    },
-    {
-      "label": "Maria Silva - Poss\u00edvel V\u00edtima Adicional",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 4",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "maria_silva",
-      "community": 3,
-      "norm_label": "maria silva - possivel vitima adicional"
-    },
-    {
-      "label": "Banco Credito Legal - Ag\u00eancia Pinheiros",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1, 2, 3",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "banco_credito_legal",
-      "community": 3,
-      "norm_label": "banco credito legal - agencia pinheiros"
-    },
-    {
-      "label": "Tarefa 1 - Estrutura\u00e7\u00e3o e Extra\u00e7\u00e3o",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "INSTRU\u00c7\u00d5ES PARA DUPLAS",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "tarefa_1_estrutura\u00e7\u00e3o",
-      "community": 7,
-      "norm_label": "tarefa 1 - estruturacao e extracao"
-    },
-    {
-      "label": "Tarefa 2 - Mapeamento de V\u00ednculos",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "INSTRU\u00c7\u00d5ES PARA DUPLAS",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "tarefa_2_mapeamento",
-      "community": 8,
-      "norm_label": "tarefa 2 - mapeamento de vinculos"
-    },
-    {
-      "label": "Tarefa 3 - Timeline Cronol\u00f3gica",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "tarefa_3_timeline",
-      "community": 5,
-      "norm_label": "tarefa 3 - timeline cronologica"
-    },
-    {
-      "label": "Tarefa 4 - Valida\u00e7\u00e3o Cr\u00edtica",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "tarefa_4_valida\u00e7\u00e3o",
-      "community": 1,
-      "norm_label": "tarefa 4 - validacao critica"
-    },
-    {
-      "label": "Tarefa 5 - S\u00edntese em Relat\u00f3rio",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "tarefa_5_s\u00edntese",
-      "community": 6,
-      "norm_label": "tarefa 5 - sintese em relatorio"
-    },
-    {
-      "label": "Aula 3 - HTML Interactive Content",
-      "file_type": "code",
-      "source_file": "html/aula3.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "aula3_html",
-      "community": 9,
-      "norm_label": "aula 3 - html interactive content"
-    },
-    {
-      "label": "Aula 3 - Pr\u00e1tica HTML Interactive Content",
-      "file_type": "code",
-      "source_file": "html/aula3-pratica.html",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "aula3_pratica_html",
-      "community": 6,
-      "norm_label": "aula 3 - pratica html interactive content"
-    },
-    {
-      "label": "Index - Course Homepage",
-      "file_type": "code",
+      "label": "P\u00e1gina Principal - Aulas Dispon\u00edveis",
+      "file_type": "document",
       "source_file": "index.html",
-      "source_location": null,
+      "source_location": "aulas section",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_html",
-      "community": 6,
-      "norm_label": "index - course homepage"
+      "id": "index_html_aulas",
+      "community": 0,
+      "norm_label": "pagina principal - aulas disponiveis"
     },
     {
-      "label": "Princ\u00edpio: IA \u00e9 ferramenta de apoio, nunca substituta",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
+      "label": "Aula 3 - HTML Presentation",
+      "file_type": "document",
+      "source_file": "html/aula3.html",
+      "source_location": "Full document",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "princ\u00edpio_ia_ferramenta_apoio",
-      "community": 1,
-      "norm_label": "principio: ia e ferramenta de apoio, nunca substituta"
+      "id": "aula3_html_slides_content",
+      "community": 0,
+      "norm_label": "aula 3 - html presentation"
     },
     {
-      "label": "Princ\u00edpio: Verificabilidade \u00e9 crit\u00e9rio essencial",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
+      "label": "Aula 3 Pr\u00e1tica - Exerc\u00edcio Pr\u00e1tico Intensivo",
+      "file_type": "document",
+      "source_file": "html/aula3-pratica.html",
+      "source_location": "Full document",
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "princ\u00edpio_verificabilidade",
-      "community": 1,
-      "norm_label": "principio: verificabilidade e criterio essencial"
-    },
-    {
-      "label": "Princ\u00edpio: Lacunas s\u00e3o informa\u00e7\u00e3o",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "princ\u00edpio_lacunas_informa\u00e7\u00e3o",
-      "community": 5,
-      "norm_label": "principio: lacunas sao informacao"
-    },
-    {
-      "label": "Princ\u00edpio: Incerteza \u00e9 honestidade",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "princ\u00edpio_incerteza_honestidade",
-      "community": 1,
-      "norm_label": "principio: incerteza e honestidade"
-    },
-    {
-      "label": "Princ\u00edpio: Documentar \u00e9 responsabilidade",
-      "file_type": "rationale",
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "princ\u00edpio_documenta\u00e7\u00e3o",
-      "community": 1,
-      "norm_label": "principio: documentar e responsabilidade"
+      "id": "aula3_pratica_html_exercicio",
+      "community": 0,
+      "norm_label": "aula 3 pratica - exercicio pratico intensivo"
     }
   ],
   "links": [
@@ -943,364 +745,164 @@
       "target": "aula4_aula4_draft"
     },
     {
-      "relation": "references",
+      "relation": "applies_technique",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 1",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "aula3_slides_conteudo",
-      "target": "persona_estruturacao"
+      "source": "aula3_exercicios_fraude_bancaria",
+      "target": "aula3_exercicios_estruturacao"
     },
     {
-      "relation": "references",
+      "relation": "applies_technique",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 2",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "aula3_slides_conteudo",
-      "target": "role_prompting_taxonomia"
+      "source": "aula3_exercicios_fraude_bancaria",
+      "target": "aula3_exercicios_mapeamento_vinculos"
     },
     {
-      "relation": "references",
+      "relation": "applies_technique",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 3",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "aula3_slides_conteudo",
-      "target": "chain_of_thought_certeza"
+      "source": "aula3_exercicios_fraude_bancaria",
+      "target": "aula3_exercicios_timeline"
     },
     {
-      "relation": "references",
+      "relation": "applies_technique",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 4",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "aula3_slides_conteudo",
-      "target": "metacognicion_taxonomia_vie"
+      "source": "aula3_exercicios_fraude_bancaria",
+      "target": "aula3_exercicios_validacao_critica"
     },
     {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
+      "relation": "renders",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "html/aula3.html",
       "source_location": null,
       "weight": 1.0,
-      "source": "aula3_html",
-      "target": "aula3_slides_conteudo"
+      "source": "aula3_html_slides_content",
+      "target": "aula3_exercicios_fraude_bancaria"
     },
     {
-      "relation": "references",
+      "relation": "renders",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "CEN\u00c1RIO",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "INSTRU\u00c7\u00d5ES PARA DUPLAS",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "tarefa_1_estrutura\u00e7\u00e3o"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "INSTRU\u00c7\u00d5ES PARA DUPLAS",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "tarefa_2_mapeamento"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "tarefa_3_timeline"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "tarefa_4_valida\u00e7\u00e3o"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFAS OPCIONAIS",
-      "weight": 1.0,
-      "source": "aula3_exercicios",
-      "target": "tarefa_5_s\u00edntese"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
       "source_file": "html/aula3-pratica.html",
       "source_location": null,
       "weight": 1.0,
-      "source": "aula3_pratica_html",
-      "target": "aula3_exercicios"
+      "source": "aula3_pratica_html_exercicio",
+      "target": "aula3_exercicios_fraude_bancaria"
     },
     {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFA 1",
-      "weight": 1.0,
-      "source": "tarefa_1_estrutura\u00e7\u00e3o",
-      "target": "persona_estruturacao"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 1",
-      "weight": 1.0,
-      "source": "extra\u00e7\u00e3o_informa\u00e7\u00f5es",
-      "target": "persona_estruturacao"
-    },
-    {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFA 2",
-      "weight": 1.0,
-      "source": "tarefa_2_mapeamento",
-      "target": "role_prompting_taxonomia"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 2",
-      "weight": 1.0,
-      "source": "mapeamento_v\u00ednculos",
-      "target": "role_prompting_taxonomia"
-    },
-    {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFA 3",
-      "weight": 1.0,
-      "source": "tarefa_3_timeline",
-      "target": "chain_of_thought_certeza"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 3",
-      "weight": 1.0,
-      "source": "reconstru\u00e7\u00e3o_cronol\u00f3gica",
-      "target": "chain_of_thought_certeza"
-    },
-    {
-      "relation": "implements",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "TAREFA 4",
-      "weight": 1.0,
-      "source": "tarefa_4_valida\u00e7\u00e3o",
-      "target": "metacognicion_taxonomia_vie"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 4",
-      "weight": 1.0,
-      "source": "valida\u00e7\u00e3o_cr\u00edtica",
-      "target": "metacognicion_taxonomia_vie"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "weight": 1.0,
-      "source": "princ\u00edpio_lacunas_informa\u00e7\u00e3o",
-      "target": "reconstru\u00e7\u00e3o_cronol\u00f3gica"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "T\u00d3PICO 4",
-      "weight": 1.0,
-      "source": "valida\u00e7\u00e3o_cr\u00edtica",
-      "target": "verific\u00e1vel_inferido_especulativo"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "weight": 1.0,
-      "source": "princ\u00edpio_ia_ferramenta_apoio",
-      "target": "valida\u00e7\u00e3o_cr\u00edtica"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "weight": 1.0,
-      "source": "princ\u00edpio_verificabilidade",
-      "target": "valida\u00e7\u00e3o_cr\u00edtica"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "weight": 1.0,
-      "source": "princ\u00edpio_incerteza_honestidade",
-      "target": "valida\u00e7\u00e3o_cr\u00edtica"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
-      "source_location": "Princ\u00edpios Aplic\u00e1veis",
-      "weight": 1.0,
-      "source": "princ\u00edpio_documenta\u00e7\u00e3o",
-      "target": "valida\u00e7\u00e3o_cr\u00edtica"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1",
-      "weight": 1.0,
-      "source": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
-      "target": "clara_silva"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1, 2",
-      "weight": 1.0,
-      "source": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
-      "target": "patricia_mendes"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 2",
-      "weight": 1.0,
-      "source": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
-      "target": "rafael_torres"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 4",
-      "weight": 1.0,
-      "source": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
-      "target": "maria_silva"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1, 2, 3",
-      "weight": 1.0,
-      "source": "falsifica\u00e7\u00e3o_banc\u00e1ria_cen\u00e1rio",
-      "target": "banco_credito_legal"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 1, 2",
-      "weight": 1.0,
-      "source": "patricia_mendes",
-      "target": "clara_silva"
-    },
-    {
-      "relation": "conceptually_related_to",
+      "relation": "semantically_similar_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 4",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "clara_silva",
-      "target": "maria_silva"
+      "source": "aula4_caso_fraude_bancaria_rede",
+      "target": "aula3_exercicios_fraude_bancaria"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "DOCUMENTO 2",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_SLIDES_CONTEUDO.md",
+      "source_location": null,
       "weight": 1.0,
-      "source": "patricia_mendes",
-      "target": "rafael_torres"
+      "source": "aula3_slides_persona_estruturacao",
+      "target": "aula3_exercicios_estruturacao"
     },
     {
-      "relation": "references",
+      "relation": "prerequisite_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula3_exercicios_estruturacao",
+      "target": "aula3_exercicios_mapeamento_vinculos"
+    },
+    {
+      "relation": "uses",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula3_exercicios_mapeamento_vinculos",
+      "target": "aula3_slides_taxonomia_vinculos"
+    },
+    {
+      "relation": "extends",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula4_topico3_reconstrucao_cronologica",
+      "target": "aula3_exercicios_timeline"
+    },
+    {
+      "relation": "exemplifies",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dados-exemplo/dados-topico1.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dados_topico1_fraude_exemplo",
+      "target": "aula3_slides_persona_estruturacao"
+    },
+    {
+      "relation": "practices",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dados-exemplo/dados-topico2.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dados_topico2_vinculos_complexos",
+      "target": "aula3_slides_taxonomia_vinculos"
+    },
+    {
+      "relation": "demonstrates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula4_caso_fraude_bancaria_rede",
+      "target": "aula4_topico3_reconstrucao_cronologica"
+    },
+    {
+      "relation": "practices",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "dados-exemplo/dados-topico3.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dados_topico3_55_eventos",
+      "target": "aula4_topico3_reconstrucao_cronologica"
+    },
+    {
+      "relation": "links_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "index.html",
       "source_location": null,
       "weight": 1.0,
-      "source": "index_html",
-      "target": "aula3_html"
-    },
-    {
-      "relation": "references",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_html",
-      "target": "aula3_pratica_html"
+      "source": "index_html_aulas",
+      "target": "aula3_html_slides_content"
     }
   ],
   "hyperedges": [
@@ -1347,49 +949,46 @@
       "source_file": "aulas-md/aula1.md"
     },
     {
-      "id": "four_prompt_techniques",
-      "label": "Four Core Prompt Engineering Techniques for Aula 3",
+      "id": "aula3_four_techniques",
+      "label": "Aula 3 - Integrated Techniques",
       "nodes": [
-        "persona_estruturacao",
-        "role_prompting_taxonomia",
-        "chain_of_thought_certeza",
-        "metacognicion_taxonomia_vie"
+        "aula3_exercicios_estruturacao",
+        "aula3_exercicios_mapeamento_vinculos",
+        "aula3_exercicios_timeline",
+        "aula3_exercicios_validacao_critica"
       ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
-    },
-    {
-      "id": "five_learning_objectives",
-      "label": "Five Learning Objectives for Investigative Analysis",
-      "nodes": [
-        "extra\u00e7\u00e3o_informa\u00e7\u00f5es",
-        "mapeamento_v\u00ednculos",
-        "reconstru\u00e7\u00e3o_cronol\u00f3gica",
-        "valida\u00e7\u00e3o_cr\u00edtica",
-        "verific\u00e1vel_inferido_especulativo"
-      ],
-      "relation": "form",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
-    },
-    {
-      "id": "five_practical_tasks",
-      "label": "Five Practical Tasks Sequence",
-      "nodes": [
-        "tarefa_1_estrutura\u00e7\u00e3o",
-        "tarefa_2_mapeamento",
-        "tarefa_3_timeline",
-        "tarefa_4_valida\u00e7\u00e3o",
-        "tarefa_5_s\u00edntese"
-      ],
-      "relation": "participate_in",
+      "relation": "form_integrated_workflow",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "03_AULA3_EXERCICIOS.md"
+    },
+    {
+      "id": "aula3_course_artifacts",
+      "label": "Aula 3 Course Materials",
+      "nodes": [
+        "aula3_slides_persona_estruturacao",
+        "aula3_slides_taxonomia_vinculos",
+        "aula3_html_slides_content",
+        "aula3_pratica_html_exercicio"
+      ],
+      "relation": "constitute_lesson_module",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_SLIDES_CONTEUDO.md"
+    },
+    {
+      "id": "investigative_case_progression",
+      "label": "Case Study Progression",
+      "nodes": [
+        "aula3_exercicios_fraude_bancaria",
+        "aula4_caso_fraude_bancaria_rede",
+        "dados_topico3_55_eventos"
+      ],
+      "relation": "escalate_complexity",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "aula 4 - topico 3.md"
     }
   ],
-  "built_at_commit": "cad7608a8c50bed786e6230ee13e590b7c92c5fa"
+  "built_at_commit": "ae02b26e239e185dd86ea304c29c1282e100634c"
 }
