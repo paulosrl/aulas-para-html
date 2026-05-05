@@ -1,0 +1,13 @@
+/home/pl/projetos/aulas-engenharia-prompt/03_AULA3_EXERCICIOS.md
+/home/pl/projetos/aulas-engenharia-prompt/README.md
+/home/pl/projetos/aulas-engenharia-prompt/AGENTS.md
+/home/pl/projetos/aulas-engenharia-prompt/aula 4 - topico 3.md
+/home/pl/projetos/aulas-engenharia-prompt/index.html
+/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico1.md
+/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico3.md
+/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico2.md
+/home/pl/projetos/aulas-engenharia-prompt/html/aula2.html
+/home/pl/projetos/aulas-engenharia-prompt/html/aula3.html
+/home/pl/projetos/aulas-engenharia-prompt/html/aula3-pratica.html
+/home/pl/projetos/aulas-engenharia-prompt/html/aula1.html
+/home/pl/projetos/aulas-engenharia-prompt/html/aula2-pratica.html

@@ -1,0 +1,361 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "aula3_investigation_techniques",
+        "label": "Lesson 3 Integrated Investigation Techniques",
+        "nodes": [
+          "aula3_exercicios_structured_data",
+          "aula3_exercicios_mapping",
+          "aula3_exercicios_validation"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "03_AULA3_EXERCICIOS.md"
+      },
+      {
+        "id": "prompting_methodology_stack",
+        "label": "Progressive Prompting Methodology",
+        "nodes": [
+          "aula3_exercicios_structured_data",
+          "aula3_exercicios_mapping",
+          "aula4_chain_of_thought",
+          "aula4_chronological_reconstruction"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "03_AULA3_EXERCICIOS.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "HTML as Source of Truth Principle",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 23-31",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_html_as_source",
+      "community": 3,
+      "norm_label": "html as source of truth principle"
+    },
+    {
+      "label": "Offline-First Architecture",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 107-113",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_offline_first",
+      "community": 3,
+      "norm_label": "offline-first architecture"
+    },
+    {
+      "label": "Structured Didactic Pattern for Lessons",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 91-105",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_teaching_pattern",
+      "community": 4,
+      "norm_label": "structured didactic pattern for lessons"
+    },
+    {
+      "label": "Structured Data Extraction Technique",
+      "file_type": "document",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 148-165",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_exercicios_structured_data",
+      "community": 4,
+      "norm_label": "structured data extraction technique"
+    },
+    {
+      "label": "Relationship Mapping Technique",
+      "file_type": "document",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 167-183",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_exercicios_mapping",
+      "community": 2,
+      "norm_label": "relationship mapping technique"
+    },
+    {
+      "label": "Chronological Reconstruction Technique (Topic 3)",
+      "file_type": "document",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 1-50",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula4_chronological_reconstruction",
+      "community": 0,
+      "norm_label": "chronological reconstruction technique (topic 3)"
+    },
+    {
+      "label": "Chain-of-Thought Prompting with Certainty Marking",
+      "file_type": "rationale",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 12-43",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula4_chain_of_thought",
+      "community": 0,
+      "norm_label": "chain-of-thought prompting with certainty marking"
+    },
+    {
+      "label": "Critical Validation Task",
+      "file_type": "document",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 203-209",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_exercicios_validation",
+      "community": 2,
+      "norm_label": "critical validation task"
+    },
+    {
+      "label": "Index HTML Landing Page",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "line 1-100",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "index_html_page",
+      "community": 1,
+      "norm_label": "index html landing page"
+    },
+    {
+      "label": "Graphify Knowledge Graph Documentation",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "line 1-10",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "agents_md_graphify",
+      "community": 5,
+      "norm_label": "graphify knowledge graph documentation"
+    },
+    {
+      "label": "Bank Fraud Case Study (Lesson 3 Practical)",
+      "file_type": "document",
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-137",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_fraud_case_study",
+      "community": 2,
+      "norm_label": "bank fraud case study (lesson 3 practical)"
+    },
+    {
+      "label": "Coordinated Fraud Network Case Study",
+      "file_type": "document",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 45-105",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula4_fraud_network_case",
+      "community": 0,
+      "norm_label": "coordinated fraud network case study"
+    },
+    {
+      "label": "GitHub Pages Publication Workflow",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 44-59",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_publication_workflow",
+      "community": 1,
+      "norm_label": "github pages publication workflow"
+    },
+    {
+      "label": "Prompt Template and Structural Pattern",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 70-89",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_template_pattern",
+      "community": 1,
+      "norm_label": "prompt template and structural pattern"
+    }
+  ],
+  "links": [
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "README.md",
+      "source_location": "line 23-113",
+      "weight": 1.0,
+      "source": "readme_html_as_source",
+      "target": "readme_offline_first"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": "line 91-105",
+      "weight": 1.0,
+      "source": "readme_teaching_pattern",
+      "target": "aula3_exercicios_structured_data"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-165",
+      "weight": 1.0,
+      "source": "aula3_exercicios_structured_data",
+      "target": "aula3_fraud_case_study"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 148-165",
+      "weight": 1.0,
+      "source": "aula3_exercicios_structured_data",
+      "target": "aula4_chronological_reconstruction"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-183",
+      "weight": 1.0,
+      "source": "aula3_exercicios_mapping",
+      "target": "aula3_fraud_case_study"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 12-50",
+      "weight": 1.0,
+      "source": "aula4_chain_of_thought",
+      "target": "aula4_chronological_reconstruction"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 45-105",
+      "weight": 1.0,
+      "source": "aula4_chronological_reconstruction",
+      "target": "aula4_fraud_network_case"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-209",
+      "weight": 1.0,
+      "source": "aula3_exercicios_validation",
+      "target": "aula3_fraud_case_study"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "README.md",
+      "source_location": "line 44-59",
+      "weight": 1.0,
+      "source": "readme_publication_workflow",
+      "target": "index_html_page"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "README.md",
+      "source_location": "line 70-89",
+      "weight": 1.0,
+      "source": "readme_template_pattern",
+      "target": "index_html_page"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-137",
+      "weight": 1.0,
+      "source": "aula3_fraud_case_study",
+      "target": "aula4_fraud_network_case"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "aula3_investigation_techniques",
+      "label": "Lesson 3 Integrated Investigation Techniques",
+      "nodes": [
+        "aula3_exercicios_structured_data",
+        "aula3_exercicios_mapping",
+        "aula3_exercicios_validation"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md"
+    },
+    {
+      "id": "prompting_methodology_stack",
+      "label": "Progressive Prompting Methodology",
+      "nodes": [
+        "aula3_exercicios_structured_data",
+        "aula3_exercicios_mapping",
+        "aula4_chain_of_thought",
+        "aula4_chronological_reconstruction"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "03_AULA3_EXERCICIOS.md"
+    }
+  ],
+  "built_at_commit": "65cf0689e95cacc53e9f3cd06f9ccaee892c33e1"
+}
