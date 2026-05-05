@@ -111,14 +111,20 @@ Cada aula segue este padrão:
 
 ## Publicação Pública
 
-O repositório é publicado automaticamente no GitHub Pages:
+O repositório é publicado automaticamente no GitHub Pages.
 
-**URL base:** `https://paulosrl.github.io/aulas-engenharia-prompt/`
+### 🌐 Acessar Agora
 
-Exemplos de acesso:
-- Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/`
+**→ [https://paulosrl.github.io/aulas-engenharia-prompt/index.html](https://paulosrl.github.io/aulas-engenharia-prompt/index.html)**
+
+### Exemplos de acesso
+
+- Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/index.html`
 - Aula 1: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1.html`
+- Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2.html`
 - Prática Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2-pratica.html`
+- Aula 3: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3.html`
+- Prática Aula 3: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3-pratica.html`
 
 ## Manutenção do Repositório
 
