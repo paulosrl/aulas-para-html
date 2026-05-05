@@ -2,6 +2,8 @@
 
 Material completo de ensino para **Engenharia de Prompt em Análises Investigativas** — um curso sobre técnicas estruturadas de uso de IA para investigadores, analistas e agentes da lei.
 
+Atualizado em: **2026-05-05**
+
 ## Estrutura do Projeto
 
 ```text
@@ -17,6 +19,8 @@ Material completo de ensino para **Engenharia de Prompt em Análises Investigati
 │   ├── dados-topico1.md
 │   ├── dados-topico2.md
 │   └── dados-topico3.md
+├── graphify-out/                       Grafo de conhecimento do projeto
+├── AGENTS.md                           Instruções operacionais para agentes
 └── README.md (este arquivo)
 ```
 
@@ -37,7 +41,7 @@ Cada página é um arquivo HTML completo e independente:
 | **Aula 1** | ✅ Completa | [html/aula1.html](html/aula1.html) |
 | **Aula 2** | ✅ Completa | [html/aula2.html](html/aula2.html) |
 | **Prática Aula 2** | ✅ Disponível | [html/aula2-pratica.html](html/aula2-pratica.html) |
-| **Aula 3** | ⚠️ Em desenvolvimento | [html/aula3.html](html/aula3.html) |
+| **Aula 3** | ✅ Completa | [html/aula3.html](html/aula3.html) |
 | **Prática Aula 3** | ✅ Disponível | [html/aula3-pratica.html](html/aula3-pratica.html) |
 | **Aula 4** | 🔒 Bloqueada | Em planejamento |
 
@@ -57,13 +61,6 @@ Cada página é um arquivo HTML completo e independente:
    - Nenhum overflow em tabelas ou blocos de código
 7. **Faça commit** com mensagem clara: `update: revise Aula 3 Tópico 2`
 8. **Push para GitHub** — publica automaticamente via GitHub Pages
-
-### Nunca Faça Isso
-
-- ❌ Não crie arquivos Markdown (não são mais necessários)
-- ❌ Não use a pasta `aulas-md/` (foi descontinuada)
-- ❌ Não aguarde conversão Markdown→HTML (não há intermediário)
-- ❌ Não altere estrutura fundamental do HTML (preservar nav, tema, JS)
 
 ## Detalhes Técnicos
 
@@ -122,6 +119,12 @@ Exemplos de acesso:
 - Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/`
 - Aula 1: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1.html`
 - Prática Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2-pratica.html`
+
+## Manutenção do Repositório
+
+- Use `README.md` e `index.html` como referência pública da estrutura e do status das aulas.
+- Ao alterar aulas em `html/`, revise também a seção "Status das Aulas" neste arquivo.
+- Quando uma nova aula/prática for publicada, adicione o link no `index.html` e atualize a tabela de status.
 
 ## Requisitos para Publicação
 
