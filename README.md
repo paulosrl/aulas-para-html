@@ -1,127 +1,153 @@
 # aulas-engenharia-prompt
 
-Projeto para produzir aulas completas em Markdown e convertê-las depois para páginas HTML finais, com entrega 100% offline e publicação pública via GitHub Pages.
+Material completo de ensino para **Engenharia de Prompt em Análises Investigativas** — um curso sobre técnicas estruturadas de uso de IA para investigadores, analistas e agentes da lei.
 
-## Regra principal
+## Estrutura do Projeto
 
-- A fonte oficial de cada aula é o arquivo Markdown em `aulas-md/`.
-- A aula deve ser escrita, revisada e considerada completa em `.md` antes de qualquer conversão para HTML.
-- O HTML é o produto final de entrega, não o lugar para desenvolver o conteúdo didático.
-- Cada HTML final deve ser um arquivo único, abrir localmente no navegador e funcionar sem internet.
-- Não usar dependências externas: CDN, fontes remotas, JavaScript remoto, CSS remoto ou imagens hospedadas fora do arquivo final.
+```text
+.
+├── index.html                          Página inicial (GitHub Pages)
+├── html/                               Aulas e práticas (HTML final)
+│   ├── aula1.html
+│   ├── aula2.html
+│   ├── aula2-pratica.html
+│   ├── aula3.html
+│   └── aula3-pratica.html
+├── dados-exemplo/                      Dados para exercícios práticos
+│   ├── dados-topico1.md
+│   ├── dados-topico2.md
+│   └── dados-topico3.md
+└── README.md (este arquivo)
+```
 
-## Estrutura do projeto
+## Princípio Fundamental
 
-- `aulas-md/`: textos-fonte das aulas em Markdown.
-- `aulas-md/GUIA-APOIO.md`: padrão editorial, regras técnicas e checklist.
-- `html/`: arquivos HTML finais, já diagramados e prontos para uso offline.
-- `index.html`: página pública de entrada para acesso às aulas pelo GitHub Pages.
+**HTML é a fonte de verdade.** 
 
-Arquivos atuais:
+Cada página é um arquivo HTML completo e independente:
+- ✅ Contém CSS e JavaScript embutidos
+- ✅ Funciona offline, sem CDN ou dependências externas
+- ✅ Abre diretamente no navegador
+- ✅ Versão única para desktop e mobile
 
-- `aulas-md/aula1.md`: conteúdo-base completo da Aula 1.
-- `aulas-md/aula1-pratica.md`: conteúdo-base da prática da Aula 1.
-- `aulas-md/aula2.md`: rascunho da Aula 2.
-- `aulas-md/aula3.md`: rascunho da Aula 3.
-- `aulas-md/aula4.md`: rascunho da Aula 4.
-- `html/aula1.html`: versão HTML da Aula 1.
-- `html/aula1-pratica-html.html`: versão HTML da prática da Aula 1.
+## Status das Aulas
 
-## Acesso público
+| Aula | Status | Acesso |
+| --- | --- | --- |
+| **Aula 1** | ✅ Completa | [html/aula1.html](html/aula1.html) |
+| **Aula 2** | ✅ Completa | [html/aula2.html](html/aula2.html) |
+| **Prática Aula 2** | ✅ Disponível | [html/aula2-pratica.html](html/aula2-pratica.html) |
+| **Aula 3** | ⚠️ Em desenvolvimento | [html/aula3.html](html/aula3.html) |
+| **Prática Aula 3** | ✅ Disponível | [html/aula3-pratica.html](html/aula3-pratica.html) |
+| **Aula 4** | 🔒 Bloqueada | Em planejamento |
 
-O repositório deve ficar publicado no GitHub com o nome `aulas-engenharia-prompt`.
+## Como Editar uma Aula
 
-Com o GitHub Pages ativo a partir da branch `main`, os HTMLs poderão ser acessados por qualquer pessoa nestes endereços:
+### Fluxo de Trabalho
 
+1. **Abra o arquivo HTML** da aula desejada (ex: `html/aula3.html`)
+2. **Edite o conteúdo** diretamente no arquivo HTML
+3. **Procure pela seção** que deseja modificar (use Ctrl+F para buscar)
+4. **Altere o texto**, atualize exemplos, revise exercícios
+5. **Salve o arquivo**
+6. **Teste localmente** — abra no navegador para verificar:
+   - Tema claro/escuro funciona
+   - Botões de copiar prompts funcionam
+   - Layout responsivo em desktop e mobile
+   - Nenhum overflow em tabelas ou blocos de código
+7. **Faça commit** com mensagem clara: `update: revise Aula 3 Tópico 2`
+8. **Push para GitHub** — publica automaticamente via GitHub Pages
+
+### Nunca Faça Isso
+
+- ❌ Não crie arquivos Markdown (não são mais necessários)
+- ❌ Não use a pasta `aulas-md/` (foi descontinuada)
+- ❌ Não aguarde conversão Markdown→HTML (não há intermediário)
+- ❌ Não altere estrutura fundamental do HTML (preservar nav, tema, JS)
+
+## Detalhes Técnicos
+
+### Template de Prompt
+
+Quando adicionar um novo prompt, use este padrão:
+
+```html
+<pre id="prompt-aX-Y">Seu prompt aqui...</pre>
+<div class="prompt-actions">
+    <button class="btn copy-btn" onclick="copyPrompt('prompt-aX-Y', this)">Copiar</button>
+    <a class="btn gemini" target="_blank" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-aX-Y')">Testar no Gemini</a>
+    <a class="btn claude" target="_blank" href="https://claude.ai/new" onclick="copyPrompt('prompt-aX-Y')">Testar no Claude</a>
+    <a class="btn copilot" target="_blank" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-aX-Y')">Testar no Copilot</a>
+    <a class="btn chatgpt" target="_blank" href="https://chatgpt.com/" onclick="copyPrompt('prompt-aX-Y')">Testar no ChatGPT</a>
+</div>
+```
+
+**Convenção de IDs:**
+- `prompt-aX-Y` → prompts (aX = aula X, Y = sequência)
+- `base-aX-Y` → exemplos
+- `p1`, `p2`, `p3` → seções principais
+
+### Estrutura Didática
+
+Cada aula segue este padrão:
+
+1. **Título** — Claro e profissional
+2. **Objetivo** — O que o aluno aprenderá (3-5 pontos com ✅)
+3. **Agenda** — Tópicos e tempo estimado
+4. **Tópico 1, 2, 3...** — Cada com:
+   - 📌 Situação-problema (contexto)
+   - 🎯 Objetivo (o que alcançar)
+   - 🔧 Solução (técnica passo a passo)
+   - 💡 Por que funciona (benefícios)
+   - 📋 Exemplo prático
+   - ✍️ Exercício para o aluno
+5. **Integração Final** — Como as técnicas se conectam
+6. **Fechamento** — Resumo e próximos passos
+
+### Restrições Offline-First
+
+- ❌ Sem CDN (Google Fonts, FontAwesome, Bootstrap, etc.)
+- ❌ Sem JavaScript externo
+- ❌ Sem CSS externo
+- ❌ Sem imagens hospedadas
+- ✅ Tudo embutido em um único arquivo HTML
+
+## Publicação Pública
+
+O repositório é publicado automaticamente no GitHub Pages:
+
+**URL base:** `https://paulosrl.github.io/aulas-engenharia-prompt/`
+
+Exemplos de acesso:
 - Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/`
 - Aula 1: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1.html`
-- Prática da Aula 1: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1-pratica-html.html`
+- Prática Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2-pratica.html`
 
-## Fluxo obrigatório
+## Requisitos para Publicação
 
-1. Criar ou editar a aula em `aulas-md/aulaX.md`.
-2. Completar todo o conteúdo didático no Markdown:
-   - título definitivo;
-   - objetivo;
-   - agenda;
-   - blocos de conteúdo;
-   - exemplos;
-   - exercícios;
-   - fechamento;
-   - observações ou práticas, quando existirem.
-3. Revisar o `.md` usando `aulas-md/GUIA-APOIO.md`.
-4. Confirmar que o Markdown não é mais placeholder ou rascunho.
-5. Só então converter o conteúdo para `html/aulaX.html`.
-6. Usar uma aula HTML já validada como base visual.
-7. Testar o HTML final localmente, sem internet.
+Antes de marcar uma aula como completa:
 
-## Quando uma aula Markdown está pronta
+- [ ] HTML testado localmente sem internet
+- [ ] Tema toggle funciona (claro ↔ escuro)
+- [ ] Botões copiar funcionam (IDs corretos)
+- [ ] Links de teste em plataformas de IA funcionam
+- [ ] Tabelas têm `<thead>` e `<tbody>`
+- [ ] Sem overflow em desktop ou mobile
+- [ ] Links internos funcionam
+- [ ] `index.html` atualizado com novo link
 
-Antes de gerar o HTML, confira:
+## Contribuindo
 
-- não há textos genéricos como `Título a definir`, `Texto base`, `Tópico 1` ou instruções de preenchimento;
-- a aula tem sequência didática completa, com começo, desenvolvimento e fechamento;
-- exemplos e exercícios estão escritos de forma aplicável em sala;
-- tabelas, listas e prompts estão claros e sem resíduos técnicos;
-- o conteúdo pode ser lido e revisado sem depender do HTML.
+Para adicionar ou modificar conteúdo:
 
-## Conversão para HTML
+1. Clone ou faça fork do repositório
+2. Edite o arquivo HTML desejado
+3. Teste localmente no navegador
+4. Faça commit com mensagem descritiva
+5. Abra pull request
 
-Não há script automatizado de conversão neste repositório. A conversão atual é manual: o conteúdo aprovado em Markdown deve ser aplicado em uma página HTML baseada no layout existente.
+## Contato
 
-## Como os HTMLs são gerados
-
-As páginas HTML não são geradas automaticamente por ferramenta, script ou pipeline de build.
-
-O processo atual é manual:
-
-1. A aula é escrita primeiro em Markdown, dentro de `aulas-md/`.
-2. O conteúdo do Markdown é revisado até ficar completo.
-3. Depois disso, uma página HTML já pronta é usada como modelo visual.
-4. O conteúdo aprovado no Markdown é transferido para o HTML.
-5. O HTML final fica em `html/` e deve abrir diretamente no navegador.
-
-Cada HTML é um arquivo completo e independente. Ele inclui o próprio CSS, o próprio JavaScript, a navegação lateral, o tema claro/escuro e os ajustes de responsividade. Isso permite que a aula funcione offline, sem depender de CDN, bibliotecas externas, fontes remotas ou servidor.
-
-Por isso, ao alterar uma aula, a ordem correta é sempre:
-
-1. alterar primeiro o arquivo `.md`;
-2. revisar o conteúdo no Markdown;
-3. atualizar o HTML correspondente;
-4. testar o HTML final localmente.
-
-Regras para a conversão:
-
-- salvar novos HTMLs sempre em `html/`;
-- manter CSS e JavaScript embutidos no próprio arquivo;
-- preservar navegação lateral, menu mobile, tema e responsividade;
-- atualizar links entre aulas e práticas quando necessário;
-- atualizar `index.html` com o link público para cada novo HTML final;
-- bloquear ou marcar aulas futuras quando ainda não tiverem conteúdo completo;
-- garantir que prompts, tabelas e blocos de código não estourem o layout;
-- validar em desktop e celular.
-
-## Uso recomendado do codebase
-
-Para criar uma nova aula:
-
-1. Duplique a estrutura de um arquivo em `aulas-md/` ou crie `aulas-md/aulaX.md`.
-2. Escreva a aula inteira em Markdown.
-3. Revise o conteúdo com o checklist do `GUIA-APOIO.md`.
-4. Depois de aprovar o `.md`, crie `html/aulaX.html` a partir de uma aula HTML já validada.
-5. Transponha o conteúdo para o HTML sem alterar a lógica visual já validada.
-6. Teste o arquivo abrindo diretamente no navegador.
-
-Para alterar uma aula existente:
-
-1. Altere primeiro o arquivo Markdown correspondente.
-2. Revise e estabilize o conteúdo no `.md`.
-3. Atualize o HTML correspondente apenas depois.
-4. Verifique se Markdown e HTML continuam consistentes.
-
-## Controle verificado
-
-- A Aula 1 já possui Markdown e HTML.
-- A prática da Aula 1 já possui Markdown e HTML.
-- As Aulas 2, 3 e 4 ainda estão como rascunho em Markdown e não devem ser convertidas para HTML final antes de serem completadas.
-- A regra operacional deste projeto é: primeiro gerar a aula completa em `.md`; depois converter para HTML offline.
+**Prof. Paulo Lima**  
+📧 paulosrl@gmail.com  
+🌐 [paulosrl.github.io](https://paulosrl.github.io/)
