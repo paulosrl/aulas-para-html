@@ -170,7 +170,6 @@
             <a href="#p3" class="nav-l"><i class="fas fa-route"></i> Roadmap</a>
             <a href="#p4" class="nav-l"><i class="fas fa-file-alt"></i> Tópico 1</a>
             <a href="#p5" class="nav-l"><i class="fas fa-project-diagram"></i> Tópico 2</a>
-            <a href="#p6" class="nav-l"><i class="fas fa-clock"></i> Tópico 3</a>
             <hr class="nav-divider-line">
             <div class="nav-group-title">Aulas</div>
             <a href="aula1.html" class="nav-l"><i class="fas fa-book"></i> Aula 1</a>
@@ -235,18 +234,6 @@
                                 <td>Mapear vínculos complexos entre pessoas/eventos</td>
                                 <td>2</td>
                             </tr>
-                            <tr>
-                                <td><strong>Chain-of-Thought + Marcação de Certeza</strong></td>
-                                <td>Forçar raciocínio passo-a-passo + Diferenciar [CERTA/APROXIMADA/INCERTA]</td>
-                                <td>Ordenar cronologicamente; identificar lacunas</td>
-                                <td>3</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Metacognição + Taxonomia V/I/E</strong></td>
-                                <td>Pedir auto-crítica do modelo + Classificar [VERIFICÁVEL/INFERIDO/ESPECULATIVO]</td>
-                                <td>Validar respostas antes de usar em relatório</td>
-                                <td>4</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -255,57 +242,117 @@
 
             <!-- SEÇÃO 4: TÓPICO 1 -->
             <section id="p4" class="caor-card">
-                <h2>TÓPICO 1: Análise de Documentos Investigativos</h2>
-                <h3>Contexto</h3>
-                <p>Documentos investigativos (depoimentos, laudos, comunicações) chegam frequentemente:</p>
+                <h2>TÓPICO 1: Análise Estruturada de Documentos Investigativos</h2>
+                <h3>📌 A Situação-Problema</h3>
+                <p>Documentos investigativos (depoimentos, laudos, comunicações) chegam com problemas sistemáticos:</p>
                 <ul>
-                    <li><strong>Desorganizados:</strong> Informações em ordem aleatória</li>
-                    <li><strong>Redundantes:</strong> Mesma informação repetida em múltiplas fontes</li>
-                    <li><strong>Inconsistentes:</strong> Dados que se contradizem entre documentos</li>
-                    <li><strong>Incompletos:</strong> Lacunas de informação</li>
+                    <li><strong>Desorganizados</strong> — Informações em ordem aleatória</li>
+                    <li><strong>Redundantes</strong> — Mesma informação repetida em múltiplas fontes</li>
+                    <li><strong>Inconsistentes</strong> — Dados que se contradizem entre documentos</li>
+                    <li><strong>Incompletos</strong> — Lacunas de informação</li>
                 </ul>
-                <h3>O Desafio</h3>
-                <p>Converter esse caos em <strong>informação estruturada e verificável</strong> que suporte análise investigativa.</p>
-                <h3>🔑 Técnica Empregada: Persona + Estruturação com Restrição</h3>
-                <p><strong>O que:</strong> Combine 3 elementos — (1) atribua especialidade ao modelo, (2) defina formato exato, (3) restrinja a informações explícitas.</p>
-                <p><strong>Por que funciona aqui:</strong> Depoimentos chegam desorganizados. Persona força qualidade analítica. Estruturação cria uniformidade (mesma resposta para qualquer documento). Restrição evita alucinações (modelo não deve inventar dados).</p>
+                <p><strong>Resultado:</strong> Converter esse caos em informação estruturada e verificável que suporte análise investigativa.</p>
 
-                <h3>Técnica de Prompt: Detalhamento Completo</h3>
-                <p><strong>O que é:</strong></p>
+                <h3>🎯 Objetivo</h3>
+                <p>Extrair dados essenciais de documentos desorganizados mantendo:</p>
                 <ul>
-                    <li><strong>Persona/Role Prompting:</strong> Instruir modelo a agir como especialista ("Você é analista investigativo...")</li>
-                    <li><strong>Estruturação:</strong> Definir formato exato de resposta (tabela, lista, JSON)</li>
-                    <li><strong>Restrição:</strong> Impor limite explícito ("Use APENAS explícito, não infira")</li>
+                    <li>✅ Fidelidade ao documento (sem invenções)</li>
+                    <li>✅ Uniformidade na estrutura (mesma resposta independente da fonte)</li>
+                    <li>✅ Especialidade analítica (qualidade de especialista)</li>
                 </ul>
-                <p><strong>Como funciona:</strong></p>
+
+                <h3>🔧 A Solução: Persona + Estruturação + Restrição</h3>
+                <p>Combine 3 elementos estratégicos:</p>
                 <ol>
-                    <li>Persona guia <strong>tom e profundidade</strong> da resposta</li>
-                    <li>Estruturação força <strong>uniformidade</strong> (mesma resposta, independente do documento)</li>
-                    <li>Restrição reduz <strong>alucinações</strong> (modelo não inventa o que não está lá)</li>
-                </ol>
-                <p><strong>Por que funciona para extração:</strong></p>
-                <ul>
-                    <li>Depoimentos vêm desorganizados → Estruturação cria ordem</li>
-                    <li>Risco de modelo "melhorar" dados → Restrição força literalidade</li>
-                    <li>Análise precisa de especialista → Persona eleva qualidade</li>
-                </ul>
-                <p><strong>Estratégia:</strong></p>
-                <ol>
-                    <li>Estabelecer <strong>persona</strong> especializada (analista investigativo)</li>
-                    <li>Definir <strong>instruções claras</strong> (o que extrair: datas, nomes, locais)</li>
-                    <li>Especificar <strong>formato de saída</strong> (tabela, lista estruturada)</li>
-                    <li>Impor <strong>restrições</strong> (use apenas explícito, não infira)</li>
+                    <li><strong>Persona</strong> — Atribua especialidade ao modelo ("Você é analista investigativo...")</li>
+                    <li><strong>Estruturação</strong> — Defina formato exato de resposta (tabela, lista, JSON)</li>
+                    <li><strong>Restrição</strong> — Force literalidade ("Use APENAS o explícito, não infira")</li>
                 </ol>
 
-                <h3>Exemplo Prático</h3>
-                <h4>Resumo do caso</h4>
-                <p>O caso resume-se a uma suposta fraude de R$ 50 mil no Banco Sul.</p>
-                <p>Em 10/03, Sandra Lima abriu uma conta acompanhada por um homem não identificado. No dia 20/03, houve uma tentativa de transferência desse valor em um terminal físico, o que causou o bloqueio automático da conta.</p>
-                <p>Os pontos centrais da investigação são:</p>
+                <h3>💡 Por Que Funciona</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Problema</th>
+                                <th>Solução</th>
+                                <th>Resultado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Documentos desorganizados</td>
+                                <td>Estruturação força formato</td>
+                                <td>Uniformidade garantida</td>
+                            </tr>
+                            <tr>
+                                <td>Risco de "melhorias" dos dados</td>
+                                <td>Restrição força literalidade</td>
+                                <td>Fidelidade mantida</td>
+                            </tr>
+                            <tr>
+                                <td>Qualidade variável</td>
+                                <td>Persona eleva padrão</td>
+                                <td>Análise profissional</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>📋 Componentes da Técnica</h3>
+                <h4>1. Persona (Especialidade)</h4>
+                <p><strong>Efeito:</strong> Modelo compreende contexto e eleva rigor analítico.</p>
+
+                <h4>2. Estruturação (Formato)</h4>
+                <p><strong>Efeito:</strong> Resposta uniforme independente do documento.</p>
+
+                <h4>3. Restrição (Literalidade)</h4>
+                <p><strong>Efeito:</strong> Zero alucinações, 100% rastreabilidade.</p>
+
+                <h3>🔄 Procedimento (Passo a Passo)</h3>
+                <ol>
+                    <li><strong>Estabelecer Persona</strong>
+                        <ul>
+                            <li>Defina especialidade (analista, investigador, perito)</li>
+                            <li>Indique experiência/autoridade</li>
+                            <li>Explique contexto (por que essa expertise importa aqui)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Definir o Que Extrair</strong>
+                        <ul>
+                            <li>Datas, nomes, locais, eventos</li>
+                            <li>Contradições, lacunas</li>
+                            <li>Relações entre informações</li>
+                        </ul>
+                    </li>
+                    <li><strong>Especificar Formato de Saída</strong>
+                        <ul>
+                            <li>Tabela, lista, JSON, texto estruturado</li>
+                            <li>Mesma forma para todos os documentos</li>
+                        </ul>
+                    </li>
+                    <li><strong>Impor Restrições Explícitas</strong>
+                        <ul>
+                            <li>Proíba inferência</li>
+                            <li>Marque ambiguidades</li>
+                            <li>Sinalize falta de informação</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aplicar ao Documento</strong>
+                        <ul>
+                            <li>Instruções + Documento = Saída estruturada</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>📖 Exemplo Prático</h3>
+                <h4>Contexto do Caso</h4>
+                <p>Suposta fraude de R$ 50 mil no Banco Sul. Em 10/03, Sandra Lima abriu uma conta acompanhada por homem não identificado. No dia 20/03, tentativa de transferência em terminal físico causou bloqueio automático.</p>
+                <p><strong>Problemas documentados:</strong></p>
                 <ul>
-                    <li><strong>Conflito de horários:</strong> O gerente relata o bloqueio às 14h, enquanto a TI registrou às 16h30.</li>
-                    <li><strong>Falhas de registro:</strong> As câmeras da agência não funcionaram e o vigilante perdeu as anotações com os horários exatos da movimentação.</li>
-                    <li><strong>Ausência de comando:</strong> O gerente estava em viagem, e o homem que acompanhava Sandra foi visto saindo apressado da agência logo após o travamento do sistema.</li>
+                    <li>Conflito de horários: gerente relata 14h, TI registra 16h30</li>
+                    <li>Falhas de registro: câmeras não funcionaram, vigilante perdeu anotações</li>
+                    <li>Ausência de comando: gerente estava em viagem, homem saiu apressado após travamento</li>
                 </ul>
 
                 <p><strong>Três depoimentos (desorganizados):</strong></p>
@@ -356,8 +403,7 @@ Se dois ou mais depoentes fornecerem informações diferentes sobre o mesmo fato
 
                 <p><strong>Resultado Esperado (Estruturado):</strong></p>
                 <h4>RELATÓRIO DE INTELIGÊNCIA INVESTIGATIVA</h4>
-                <p><strong>Analista Responsável:</strong> Sênior<br>
-                <strong>Caso:</strong> Suspeita de Fraude - Banco Sul (Sandra Lima)</p>
+                <p><strong>Analista Responsável:</strong> Sênior<br><strong>Caso:</strong> Suspeita de Fraude - Banco Sul (Sandra Lima)</p>
 
                 <h4>TABELA 1: CRONOLOGIA CONSOLIDADA</h4>
                 <div class="table-wrapper">
@@ -446,44 +492,22 @@ Se dois ou mais depoentes fornecerem informações diferentes sobre o mesmo fato
                     <li><strong>Localização Geográfica:</strong> Recomenda-se a validação das passagens aéreas ou comprovantes de estadia do Gerente Ricardo Souza em Salvador para confirmar o álibi.</li>
                 </ol>
 
-                <h3>Por Que Isso Funciona</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Elemento</th>
-                                <th>Benefício</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Persona clara</strong></td>
-                                <td>Modelo entende especialidade esperada</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Instrução explícita</strong></td>
-                                <td>Sem ambiguidade sobre o que fazer</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Formato especificado</strong></td>
-                                <td>Saída uniforme, fácil de processar</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Restrição de domínio</strong></td>
-                                <td>Reduz alucinações</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h3>✅ Por Que Este Fluxo Funciona</h3>
+                <ol>
+                    <li><strong>Persona</strong> eleva rigor → Analista não "melhora" dados</li>
+                    <li><strong>Estruturação</strong> força uniformidade → Mesma resposta para qualquer documento</li>
+                    <li><strong>Restrição</strong> garante rastreabilidade → Sabe-se de onde veio cada dado</li>
+                    <li><strong>Exemplo prático</strong> conecta teoria à realidade → Aluno vê aplicação imediata</li>
+                </ol>
 
-                <h3>Limitações a Reconhecer</h3>
-                <p>⚠️ <strong>O que NÃO fazer:</strong></p>
+                <h3>⚠️ Limitações a Reconhecer</h3>
+                <p><strong>O que NÃO fazer:</strong></p>
                 <ul>
                     <li>Não inferir motivação (ex: "Marisa é criminosa profissional" — não está no texto)</li>
                     <li>Não deduzir padrões (ex: "Fraude organizada" — sem evidência)</li>
                     <li>Não suprimir lacunas (ex: "Tabelião em Santos" — sem nome)</li>
                 </ul>
-                <p>✅ <strong>O que fazer:</strong></p>
+                <p><strong>O que fazer:</strong></p>
                 <ul>
                     <li>Marcar [DATA NÃO ESPECIFICADA] quando falta informação</li>
                     <li>Marcar [INFERIDO] quando dedução é necessária</li>
@@ -493,57 +517,91 @@ Se dois ou mais depoentes fornecerem informações diferentes sobre o mesmo fato
 
             <!-- SEÇÃO 5: TÓPICO 2 -->
             <section id="p5" class="caor-card">
-                <h2>TÓPICO 2: Reconhecimento de Vínculos</h2>
-                <h3>Contexto</h3>
-                <p>Investigações frequentemente exigem entender <strong>quem conhece quem</strong>, <strong>quem transacionou com quem</strong>, <strong>onde as pessoas estiveram juntas</strong>.</p>
-                <h3>O Desafio</h3>
-                <p>Em casos complexos com 20–50 pessoas e centenas de interações, a rede fica caótica. Como estruturar para que padrões fiquem visíveis?</p>
-                <h3>🔑 Técnica Empregada: Role Prompting + Taxonomia + Força do Vínculo</h3>
-                <p><strong>O que:</strong> (1) Atribua identidade especializada ao modelo, (2) crie categorias pré-definidas (COLEGUISMO, TRANSAÇÃO, etc.), (3) marque certeza (DIRETA vs INDIRETA).</p>
-                <p><strong>Por que funciona aqui:</strong> Redes caóticas precisam de ordem. Taxonomia diferencia tipos (não confunde parentesco com corrupção). Força DIRETA/INDIRETA documenta confiança. Evidência citada torna cada vínculo verificável.</p>
+                <h2>TÓPICO 2: Reconhecimento de Vínculos em Redes</h2>
 
-                <h3>Técnica de Prompt: Detalhamento Completo</h3>
-                <p><strong>O que é:</strong></p>
+                <h3>📌 A Situação-Problema</h3>
+                <p>Investigações frequentemente exigem entender: <strong>quem conhece quem, quem transacionou com quem, onde as pessoas estiveram juntas.</strong></p>
+                <p>Em casos complexos com 20–50 pessoas e centenas de interações, a rede fica caótica:</p>
                 <ul>
-                    <li><strong>Role Prompting:</strong> Atribuir "identidade especializada" ao modelo ("Você é analista de inteligência...")</li>
-                    <li><strong>Taxonomia:</strong> Classificar cada relação em categoria (INTERMEDIAÇÃO, TRANSAÇÃO, etc.)</li>
-                    <li><strong>Força diferenciada:</strong> Marcar DIRETA (explícito) vs INDIRETA (inferida) para controlar certeza</li>
-                    <li><strong>Evidência exigida:</strong> Citar fonte exata para cada vínculo (rastreabilidade)</li>
+                    <li>Impossível visualizar padrões manualmente</li>
+                    <li>Fácil confundir tipos de vínculo (parentesco ≠ transação ≠ corrupção)</li>
+                    <li>Sem rastreabilidade, é impossível validar afirmações</li>
                 </ul>
-                <p><strong>Como funciona:</strong></p>
-                <ol>
-                    <li>Role (especialista) → Resposta técnica, profunda, estruturada</li>
-                    <li>Taxonomia → Modelo diferencia tipos de vínculo (não confunde parentesco com transação)</li>
-                    <li>Força DIRETA/INDIRETA → Marca certeza vs especulação</li>
-                    <li>Evidência → Torna cada afirmação verificável contra fonte</li>
-                </ol>
-                <p><strong>Por que funciona para reconhecimento de vínculos:</strong></p>
+                <p><strong>Resultado:</strong> Como estruturar para que padrões fiquem visíveis e verificáveis?</p>
+
+                <h3>🎯 Objetivo</h3>
+                <p>Mapear relacionamentos entre pessoas em formato estruturado (CSV) que permita:</p>
                 <ul>
-                    <li>Casos complexos com 20+ pessoas ficam caóticos → Taxonomia ordena</li>
-                    <li>Fácil confundir "coleguismo" com "corrupção" → Especialista mantém rigor</li>
-                    <li>Investigação precisa saber confiança → Força DIRETA/INDIRETA diferencia</li>
-                    <li>Relatório exige rastreabilidade → Evidência citada permite validar</li>
+                    <li>✅ Visualização em software de análise de redes (i2 Analysts Notebook)</li>
+                    <li>✅ Diferenciação clara de tipos de vínculo</li>
+                    <li>✅ Rastreabilidade total (cada vínculo citado com evidência)</li>
+                    <li>✅ Detecção de lacunas (onde investigação deve aprofundar)</li>
                 </ul>
-                <p><strong>Estratégia:</strong></p>
+
+                <h3>🔧 A Solução: Taxonomia + Força + Rastreabilidade</h3>
+                <p>Combine 3 elementos estratégicos:</p>
                 <ol>
-                    <li><strong>Role prompting:</strong> "Você é analista de inteligência especializado em redes criminosas"</li>
-                    <li><strong>Tipo de vínculo:</strong> INTERMEDIAÇÃO / TRANSAÇÃO / COMUNICAÇÃO / PARENTESCO / COLEGUISMO</li>
-                    <li><strong>Força do vínculo:</strong> DIRETA (explícito) vs INDIRETA (inferida)</li>
-                    <li><strong>Evidência:</strong> Cite exatamente onde encontrou a informação</li>
+                    <li><strong>Taxonomia de Vínculos</strong> — Classificar cada relação em categoria pré-definida</li>
+                    <li><strong>Força Diferenciada</strong> — Marcar DIRETA (explícito) vs INDIRETA (intermediária)</li>
+                    <li><strong>Rastreabilidade</strong> — Citar fonte exata para cada vínculo</li>
                 </ol>
 
-                <h3>Exemplo Prático</h3>
-                <p><strong>Dados (desorganizados):</strong></p>
-                <pre id="base-a3-2">Sr. Carlos é gerente do Banco XYZ.
-Sr. José intermediou abertura de conta envolvendo Marisa.
-Marisa é amiga de infância da esposa do tabelião em Santos.
-Sr. Carlos recebeu Marisa na agência em 30/12/2023.
+                <h3>💡 Por Que Funciona</h3>
+                <p><strong>1. Taxonomia ordena o caos</strong></p>
+                <ul>
+                    <li>Redes com muitos envolvidos geram centenas de relações</li>
+                    <li>7 categorias pré-definidas eliminam ambiguidade</li>
+                    <li>Mesma estrutura funciona para qualquer caso</li>
+                </ul>
+                <p><strong>2. Força diferencia confiança</strong></p>
+                <ul>
+                    <li>DIRETA = afirmação está literalmente no texto</li>
+                    <li>INDIRETA = requer lógica dentro da mesma frase</li>
+                    <li>Investigador sabe o que é certo vs. provável</li>
+                </ul>
+                <p><strong>3. Rastreabilidade torna verificável</strong></p>
+                <ul>
+                    <li>Cada vínculo cita sua fonte exata</li>
+                    <li>Saída é auditável (não há "eu achei que...")</li>
+                    <li>Qualquer pessoa pode conferir contra original</li>
+                </ul>
 
-Neste exemplo, iremos usar um arquivo com os dados em formato markdown, simulando um arquivo que você poderia receber de um setor de inteligência.
-Este arquivo pode ser baixado clicando diretamente no link abaixo:</pre>
-                <div style="margin: 15px 0;">
-                    <a href="../dados-exemplo/dados-topico2.md" download style="display: inline-block; background: var(--accent); color: #111; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: 700;">📥 Baixar arquivo para anexar ao prompt</a>
-                </div>
+                <h3>📋 Componentes da Técnica</h3>
+                <h4>1. Taxonomia de Vínculos (7 Tipos)</h4>
+                <p>Cada vínculo cabe em <strong>exatamente uma</strong> categoria:</p>
+                <ul>
+                    <li><strong>COLEGUISMO</strong> — Relação profissional/trabalho (exemplo: "trabalha com", "supervisionava")</li>
+                    <li><strong>INTERMEDIAÇÃO</strong> — Mediação/facilitação de negócio (exemplo: "intermediou abertura de conta")</li>
+                    <li><strong>TRANSAÇÃO</strong> — Troca, pagamento, entrega (exemplo: "recebeu documentos")</li>
+                    <li><strong>COMUNICAÇÃO</strong> — Contato direto (ligação, conversa, mensagem)</li>
+                    <li><strong>PARENTESCO</strong> — Família ou laço pessoal (exemplo: "amiga de infância")</li>
+                    <li><strong>ACOMPANHAMENTO</strong> — Presença conjunta, encontro (exemplo: "estiveram juntos")</li>
+                    <li><strong>FACILITAÇÃO ILÍCITA</strong> — Envolvimento em ato criminoso (exemplo: "falsificou documento")</li>
+                </ul>
+                <p><strong>Regra:</strong> Use exatamente um tipo por vínculo. Se ambíguo, marque como INDIRETA.</p>
+
+                <h4>2. Força (Certeza do Vínculo)</h4>
+                <ul>
+                    <li><strong>DIRETA</strong> — Vínculo está literalmente expresso entre as pessoas na frase</li>
+                    <li><strong>INDIRETA</strong> — Vínculo é textual mas depende de relação intermediária explícita na mesma frase</li>
+                </ul>
+                <p><strong>Regra:</strong> Não use inferências externas à frase. Se precisar sair da frase, é especulação.</p>
+
+                <h4>3. Rastreabilidade (Evidência Citada)</h4>
+                <p>Cada vínculo deve citar a evidência exata — a citação literal da frase original.</p>
+
+                <h3>🔄 Procedimento (Passo a Passo)</h3>
+                <ol>
+                    <li><strong>Atribua Persona Especializada</strong> — "Você é analista de inteligência especializado em mapeamento de redes"</li>
+                    <li><strong>Processe Frase por Frase</strong> — Cada frase = uma ou mais linhas CSV</li>
+                    <li><strong>Extraia Vínculos DIRETOS Primeiro</strong> — Antes de qualquer inferência</li>
+                    <li><strong>Classifique em Taxonomia</strong> — Exatamente um tipo por vínculo</li>
+                    <li><strong>Marque Força (DIRETA/INDIRETA)</strong> — Literal vs depende de intermediário</li>
+                    <li><strong>Cite Evidência Literal</strong> — Citação exata da frase original</li>
+                    <li><strong>Gere CSV</strong> — Formato estruturado, validado, sem comentários</li>
+                </ol>
+
+                <h3>📖 Exemplo Prático Completo</h3>
 
                 <p><strong>Prompt de Mapeamento:</strong></p>
                 <pre id="prompt-a3-2">Você é analista de inteligência especializado em mapeamento de redes.
@@ -557,7 +615,6 @@ PASSO 3: Não invente pessoas, vínculos, datas, locais ou relações.
 PASSO 4: Quando houver pessoa mencionada sem nome próprio ou não identificada completamente, use exatamente: [PESSOA NÃO IDENTIFICADA].
 PASSO 5: Quando a frase não tiver vínculo interpessoal explícito, registre a frase com os demais campos preenchidos como [SEM VÍNCULO].
 PASSO 6: Entregue a resposta exclusivamente em formato CSV, sem comentários antes ou depois.
-PASSO 7: Além de gerar o CSV no corpo da resposta, crie e disponibilize um arquivo baixável em formato .csv com o nome: vinculos_extraidos.csv.
 
 TIPOS DE VÍNCULO, use EXATAMENTE um destes:
 COLEGUISMO = trabalho/relação profissional, exemplo: "trabalha com", "supervisionava", "assessora de", "contratado por"
@@ -591,14 +648,13 @@ REGRAS DO CSV:
 10. Não use tabela visual.
 11. Não explique o resultado.
 12. Não inclua observações finais.
-13. O arquivo .csv baixável deve conter exatamente as mesmas colunas e linhas da resposta.
 
 EXEMPLO DE SAÍDA:
 "Frase","Pessoa A","Tipo","Pessoa B","Força","Evidência"
 "1","Roberto Mendes","COLEGUISMO","Carlos Henrique","DIRETA","trabalha diretamente com o gerente de operações Carlos Henrique"
 "3","Patricia Gonçalves","COLEGUISMO","Carlos Henrique","DIRETA","Patricia Gonçalves, assessora de Carlos"
 "3","Patricia Gonçalves","TRANSAÇÃO","João da Silva","DIRETA","recebeu pessoalmente os documentos falsificados de um courier identificado como ""João da Silva"""
-"14","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]"
+"4","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]","[SEM VÍNCULO]"
 
 DADOS PARA PROCESSAR:</pre>
                 <div class="prompt-actions">
@@ -609,28 +665,7 @@ DADOS PARA PROCESSAR:</pre>
                     <a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-a3-2')">Testar no ChatGPT</a>
                 </div>
 
-                <p><strong>Resultado Esperado (Rede):</strong></p>
-                <p>Um arquivo em formato CSV será gerado com a relação de vínculos entre pessoas.</p>
-                <p>A estrutura do arquivo csv é a seguinte:</p>
-                <ol>
-                    <li>Frase</li>
-                    <li>Pessoa A</li>
-                    <li>Tipo de vínculo</li>
-                    <li>Pessoa B</li>
-                    <li>Força do vínculo</li>
-                    <li>Evidência</li>
-                </ol>
-                <p>O prompt acima é um bom exemplo de como usar o role prompt para obter informações estructuradas de um texto.</p>
-                <p>Usando a técnica de prompt anterior, obteremos um arquivo em formato CSV com a relação de vínculos entre pessoas</p>
-                <p>Com este arquivo poderemos importar para o i2 analysts notebook, software de análise de dados em rede. A visualização em rede facilita o entendimento da estrutura da organização.</p>
-
-                <p><strong>Entrada:</strong></p>
-                <pre>Frase 1: Roberto Mendes é sócio do Banco Fiduciário desde 2018 e trabalha diretamente com o gerente de operações Carlos Henrique.
-Frase 2: Carlos Henrique intermediou a abertura de 12 contas fictícias em nome de terceiros entre janeiro e março de 2024.
-Frase 3: Patricia Gonçalves, assessora de Carlos, recebeu pessoalmente os documentos falsificados de um courier identificado como "João da Silva" em 15/02/2024.
-Frase 4: João da Silva trabalha como entregador autônomo há 8 anos e foi recrutado por Marisa Oliveira, ex-funcionária do Tabelionato de Santos.</pre>
-
-                <p><strong>Saída:</strong></p>
+                <p><strong>Resultado Esperado (Saída CSV):</strong></p>
                 <pre>Frase,"Pessoa A","Tipo","Pessoa B","Força","Evidência"
 1,"Roberto Mendes","COLEGUISMO","Carlos Henrique","DIRETA","trabalha diretamente com o gerente de operações Carlos Henrique"
 2,"Carlos Henrique","INTERMEDIAÇÃO","[PESSOA NÃO IDENTIFICADA]","DIRETA","intermediou a abertura de 12 contas fictícias em nome de terceiros"
@@ -638,7 +673,7 @@ Frase 4: João da Silva trabalha como entregador autônomo há 8 anos e foi recr
 3,"Patricia Gonçalves","TRANSAÇÃO","João da Silva","DIRETA","recebeu pessoalmente os documentos falsificados de um courier identificado como ""João da Silva"""
 4,"João da Silva","COLEGUISMO","Marisa Oliveira","DIRETA","foi recrutado por Marisa Oliveira"</pre>
 
-                <h3>Por Que Isso Funciona</h3>
+                <h3>✅ Por Que Este Método Funciona</h3>
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -649,7 +684,7 @@ Frase 4: João da Silva trabalha como entregador autônomo há 8 anos e foi recr
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>Tipos explícitos</strong></td>
+                                <td><strong>Tipos explícitos (7 categorias)</strong></td>
                                 <td>Diferencia coleguismo de transação de parentesco</td>
                             </tr>
                             <tr>
@@ -658,606 +693,34 @@ Frase 4: João da Silva trabalha como entregador autônomo há 8 anos e foi recr
                             </tr>
                             <tr>
                                 <td><strong>Evidência citada</strong></td>
-                                <td>Verificável contra fonte original</td>
+                                <td>Verificável contra frase original</td>
                             </tr>
                             <tr>
                                 <td><strong>Lacunas marcadas</strong></td>
                                 <td>Indica onde investigação deve aprofundar</td>
                             </tr>
+                            <tr>
+                                <td><strong>Formato CSV</strong></td>
+                                <td>Importável em software (i2, Palantir, etc.)</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <h3>Limitações</h3>
-                <p>⚠️ <strong>Não inferir criminosidade:</strong></p>
+                <h3>⚠️ Limitações Importantes</h3>
+                <p><strong>NÃO inferir criminosidade:</strong></p>
                 <ul>
-                    <li>"José é corrupto" — não está dito</li>
-                    <li>"Marisa é especialista em falsificação" — apenas intermediou uma vez</li>
-                    <li>"Rede internacional de falsificação" — pura especulação</li>
+                    <li>❌ "José é corrupto" — não está dito</li>
+                    <li>❌ "Marisa é especialista em falsificação" — apenas intermediou uma vez</li>
+                    <li>❌ "Rede internacional de falsificação" — pura especulação</li>
                 </ul>
-                <p>✅ <strong>Marcar como INFERIDO:</strong></p>
+                <p><strong>Marcar como INDIRETA:</strong></p>
                 <ul>
                     <li>Relações que são deduções lógicas mas não explícitas</li>
-                    <li>Força INDIRETA para conexões via terceiros</li>
+                    <li>Se precisa sair da frase para conectar, é inferência externa (proibida)</li>
                 </ul>
             </section>
 
-            <!-- SEÇÃO 6: TÓPICO 3 -->
-            <section id="p6" class="caor-card">
-                <h2>TÓPICO 3: Reconstrução Cronológica de Fatos</h2>
-                <h3>Contexto</h3>
-                <p>Investigações dependem de <strong>entender ordem dos eventos</strong>. Problemas comuns:</p>
-                <ul>
-                    <li>Informações chegam fora de ordem</li>
-                    <li>Há períodos sem dados (lacunas)</li>
-                    <li>Datas conflitam entre fontes</li>
-                    <li>Sequência temporal revela causalidade</li>
-                </ul>
-                <p>A tarefa é <strong>organizar</strong>, <strong>questionar lacunas</strong>, e <strong>apontar contradições</strong> — exatamente o que PROMPT 3 ensina.</p>
-
-                <h3>🔑 Técnica Empregada: Chain-of-Thought + Marcação de Certeza + Validação</h3>
-                <p><strong>O que:</strong> (1) Force raciocínio passo-a-passo (PASSO 1 → 2 → 3...), (2) diferencie [DATA CERTA] vs [APROXIMADA] vs [INCERTA], (3) valide se sequência é internamente consistente.</p>
-                <p><strong>Por que funciona aqui:</strong> Eventos chegam fora de ordem. CoT força ordem sistemática. Marcação diferencia fatos de deduções. Validação detecta contradições antes de conclusions. Lacunas marcadas mostram exatamente onde investigação tem gaps.</p>
-
-                <h3>Técnica de Prompt: Detalhamento Completo</h3>
-                <p><strong>O que é:</strong></p>
-                <ul>
-                    <li><strong>Chain-of-Thought (CoT):</strong> Forçar modelo a raciocinar em etapas ("Primeiro, identifique; depois, ordene; depois, valide")</li>
-                    <li><strong>Marcação de Certeza:</strong> Diferenciar [DATA CERTA] / [DATA APROXIMADA] / [DATA INCERTA]</li>
-                    <li><strong>Validação de Consistência:</strong> Pedir ao modelo que questione se sequência faz sentido</li>
-                </ul>
-                <p><strong>Como funciona:</strong></p>
-                <ol>
-                    <li>CoT (passo-a-passo) → Reduz erros de "pulo de lógica"; modelo tem que explicar raciocínio</li>
-                    <li>Marcação de certeza → Documenta confiança em cada data (não força certeza artificial)</li>
-                    <li>Validação → Modelo detecta contradições internas antes de entregar resposta</li>
-                </ol>
-                <p><strong>Por que funciona para reconstrução cronológica:</strong></p>
-                <ul>
-                    <li>Eventos chegam fora de ordem → CoT força organização sistemática</li>
-                    <li>Fácil confundir "sequência" com "causalidade" → Marcação de certeza protege contra conclusões falsas</li>
-                    <li>Relatórios exigem transparência → Lacunas marcadas mostram exatamente onde investigação tem gaps</li>
-                    <li>Datas conflitantes causam confusão → Validação de consistência detecta contradições</li>
-                </ul>
-                <p><strong>Estratégia:</strong></p>
-                <ol>
-                    <li><strong>Identificar todas as datas</strong> mencionadas (passo 1 do CoT)</li>
-                    <li><strong>Ordenar do mais antigo</strong> para mais recente (passo 2)</li>
-                    <li><strong>Marcar lacunas</strong> (períodos sem informação) (passo 3)</li>
-                    <li><strong>Validar consistência</strong> (se A ocorreu antes de B, dedução X faz sentido?) (passo 4)</li>
-                    <li><strong>Nível de certeza</strong> por data: [DATA CERTA] vs [DATA APROXIMADA] vs [DATA INCERTA] (passo 5)</li>
-                </ol>
-
-                <h3>Estudo de Caso: Fraude Bancária em Rede</h3>
-                <p>Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O aspecto crítico: <strong>a investigação demorou 51 dias para começar</strong>, e quando começou, ficou parada por 8 dias enquanto os criminosos continuavam ativos.</p>
-                <p>Este é um caso real de investigação deficiente onde as autoridades falharam em comunicação e resposta rápida — exatamente o tipo de cenário que um investigador moderno enfrenta: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas.</p>
-
-                <h4>Os Envolvidos</h4>
-                <p><strong>Criminosos:</strong></p>
-                <ul>
-                    <li><strong>Sr. José da Silva</strong> — O operador. Faz as chamadas telefônicas oferecendo crédito pré-aprovado. Obtém os documentos pessoais das vítimas (CPF, RG) enganando-as sobre a suposta oferta de crédito.</li>
-                    <li><strong>Marisa Oliveira</strong> — A executora. Usa os documentos fornecidos para abrir contas bancárias falsificadas em nome das vítimas. Depois realiza os saques nas agências ou caixas eletrônicos.</li>
-                </ul>
-                <p><strong>Vítimas:</strong></p>
-                <ul>
-                    <li><strong>Anderson Silva</strong> — Vítima 1. Ligação de Sr. José em 30 de dezembro. Envia documentos em 31 de dezembro. Descobre saque em sua conta em 2 de janeiro.</li>
-                    <li><strong>Clara Silva</strong> — Vítima 2. Conta aberta em seu nome em 10 de janeiro. Descobre múltiplos saques em 17 de janeiro (total R$ 3.700).</li>
-                    <li><strong>Miguel Santos</strong> — Vítima 3. Descobre saques em 31 de janeiro (total R$ 5.200 em 5 saques diferentes).</li>
-                </ul>
-                <p><strong>Instituições:</strong></p>
-                <ul>
-                    <li><strong>Banco XYZ</strong> — Detecta anomalias quando o gerente Sr. Carlos nota. Tem informação completa em 7 de fevereiro (depoimento + perícia). MAS só alerta a polícia em 20 de fevereiro — 13 dias depois.</li>
-                    <li><strong>Polícia Civil</strong> — Recebe denúncia em 20 de fevereiro. Abre inquérito em 22 de fevereiro. Não progride. Polícia Federal assume em 1º de março.</li>
-                </ul>
-
-                <h4>Como o Crime Funcionou (Sequência Real)</h4>
-                <p><strong>Dezembro 2023 — Início:</strong><br>
-                Sr. José faz ligações para pessoas desconhecidas oferecendo crédito pré-aprovado (golpe clássico). A vítima, confiante, envia seus documentos pessoais.</p>
-
-                <p><strong>Janeiro 2024 — Execução:</strong><br>
-                Marisa recebe os documentos e usa-os para abrir contas bancárias em nome das vítimas. Ela não é uma estranha — ela realmente entra na agência, abre contas, e consegue aprovação (falha do banco aqui: documentação falsificada não foi detectada imediatamente).</p>
-                <p>Marisa então vai aos caixas eletrônicos e saca dinheiro usando os cartões gerados para essas contas falsificadas.</p>
-                <p><strong>Três saques documentados:</strong></p>
-                <ul>
-                    <li>Anderson: saque de R$ 1.500 em 2 de janeiro</li>
-                    <li>Clara: saque de R$ 2.000 em 11 de janeiro + outros (total R$ 3.700)</li>
-                    <li>Miguel: cinco saques não autorizados (total R$ 5.200)</li>
-                </ul>
-
-                <p><strong>Janeiro-Fevereiro — Descoberta Lenta:</strong><br>
-                As vítimas só descobrem quando checam seus extratos bancários. Não é detecção automática. Isso leva dias ou semanas.</p>
-                <p>Anderson descobre em 2 de janeiro. Clara descobre em 17 de janeiro (15 dias depois). Miguel descobre em 31 de janeiro (29 dias depois).</p>
-
-                <p><strong>Fevereiro — Denúncia e Investigação Falha:</strong><br>
-                As vítimas registram boletim de ocorrência. O banco convida todas para depoimento em 5 de fevereiro e recebe depoimento em 7 de fevereiro. Perícia examina os documentos falsificados em 10 de fevereiro. Auditoria interna identifica que TODAS as contas foram abertas por Marisa em 11 de fevereiro.</p>
-                <p>O banco tem tudo. Tem provas. Tem o padrão (todas as contas abiertas pela mesma pessoa). Tem os dados das vítimas.</p>
-                <p><strong>MAS a polícia só descobre em 20 de fevereiro — 13 dias depois.</strong></p>
-                <p>Por quê? Ninguém sabe. Aparentemente o banco não alertou imediatamente. Falha de comunicação.</p>
-
-                <p><strong>Março — Sem Progresso:</strong><br>
-                Delegacia de Polícia Civil abre inquérito em 22 de fevereiro. Nada acontece pelos próximos 8 dias. Em 1º de março, Polícia Federal assume porque "pode envolver rede interstadual".</p>
-                <p>Durante esses 8 dias e depois, Sr. José continua fazendo ligações (última ligação conhecida é ~início de março para novo alvo que recusou).</p>
-                <p>Marisa desaparece ~meados de fevereiro. Nunca é localizada no caso.</p>
-
-                <h4>O Que Precisa Ser Analisado com PROMPT 3</h4>
-                <p>Ler <strong>todos os eventos deste caso</strong>, mas <strong>completamente fora de ordem</strong>. Eventos são:</p>
-                <ul>
-                    <li>Datas de ligações</li>
-                    <li>Datas de saques</li>
-                    <li>Datas de descobertas</li>
-                    <li>Datas de depoimentos</li>
-                    <li>Datas de análises forenses</li>
-                    <li>Datas de comunicação entre instituições</li>
-                    <li>Algumas datas faltando completamente (quando Marisa desapareceu? quando Sr. José fez a última ligação exatamente?)</li>
-                </ul>
-
-                <p><strong>A tarefa do PROMPT é:</strong></p>
-                <ol>
-                    <li><strong>Reconstruir a sequência correta</strong> — Colocar os 55 eventos em ordem cronológica, do primeiro ao último.</li>
-                    <li><strong>Identificar lacunas</strong> — Entre o evento A e o evento B, quantos dias passaram SEM informação? Por exemplo:
-                        <ul>
-                            <li>Entre "Clara descobre fraude (17 de janeiro)" e "Clara registra denúncia (30 de janeiro)" há 13 dias. O que Clara fez nesse tempo? Por que esperou?</li>
-                            <li>Entre "Banco tem informação completa (7 de fevereiro)" e "Polícia é alertada (20 de fevereiro)" há 13 dias. Por quê?</li>
-                            <li>Entre "Inquérito aberto (22 de fevereiro)" e "PF assume (1º de março)" há 8 dias. O que aconteceu?</li>
-                        </ul>
-                    </li>
-                    <li><strong>Detectar contradições</strong> — O caso tem problemas internos:
-                        <ul>
-                            <li>Um evento diz que Marisa saca R$ 1.500 em 4 de janeiro, mas outro evento diz que ela abre a conta em 10 de janeiro. Como saca ANTES de abrir?</li>
-                            <li>Marisa desaparece ~meados de fevereiro, mas Sr. José continua ligando em março. Como um desaparece e o outro não?</li>
-                        </ul>
-                    </li>
-                    <li><strong>Formular questões investigativas</strong> — Para cada lacuna, pergunte:
-                        <ul>
-                            <li>Por que existe essa lacuna?</li>
-                            <li>O que deveria ter acontecido nesse período?</li>
-                            <li>O que o investigador deveria verificar?</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p><strong>Você NÃO está julgando</strong> ("isso foi negligência"). Você está <strong>perguntando</strong> ("por que isso aconteceu? o que falta saber?").</p>
-
-                <h3>Prompt de Reconstrução</h3>
-                <pre id="prompt-a3-3">Você é um ANALISTA INVESTIGATIVO EXPERIENTE com 15 anos de experiência
-em reconstrução de cronologias para casos complexos de fraude, corrupção
-e crimes financeiros.
-
-Sua especialidade é pegar informações fragmentadas, desorganizadas e muitas
-vezes contraditórias — como você recebe de depoimentos, extratos bancários,
-comunicações e perícias — e transformá-las em uma SEQUÊNCIA TEMPORAL COERENTE
-que revela padrões, lacunas críticas e inconsistências.
-
-Você trabalha para autoridades investigativas que precisam entender:
-- O QUÊ aconteceu e em que ordem
-- ONDE estão os gaps (informação faltando)
-- QUAIS contradições indicam dados errados ou falha de processo
-- POR QUÊ certos períodos têm silêncio investigativo
-
-Você é metódico, não faz julgamentos precipitados, e diferencia SEQUÊNCIA
-TEMPORAL (ordem dos eventos) de CAUSALIDADE (relação causa-efeito).
-
----
-
-PROCEDIMENTO:
-
-PASSO 1: Listar TODAS as datas mencionadas
-Extraia cada data ou referência temporal do material fornecido, mantendo
-a classificação original: é uma data exata, uma aproximação, ou é incerta?
-
-PASSO 2: Ordenar cronologicamente
-Coloque todos os eventos em sequência do mais antigo para o mais recente.
-Marque eventos sem data clara para análise posterior.
-
-PASSO 3: Marcar LACUNAS
-Entre cada evento sucessivo, calcule quantos dias passaram sem informação.
-- [LACUNA: X dias] = intervalo com duração conhecida
-- [LACUNA: ~X dias] = intervalo aproximado
-
-PASSO 4: Classificar CERTEZA de cada data
-Para cada evento, classifique como:
-- [DATA CERTA] = explicitamente mencionada ("7 de fevereiro")
-- [DATA APROXIMADA] = inferida de contexto ("alguns dias depois", "uma semana após")
-- [DATA INCERTA] = ambígua ou não mencionada ("data desconhecida")
-
-PASSO 5: Validar ordem e causalidade
-Pergunta-se:
-- Evento A realmente ocorreu antes de Evento B?
-- Há contradições lógicas? (Exemplo: saque antes de abertura de conta?)
-- A sequência faz sentido narrativamente?
-
-NOTA IMPORTANTE: Sequência temporal ≠ Causalidade
-Exemplo: "Vítima descobriu fraude em 17 de janeiro, polícia foi alertada em 20 de fevereiro"
-- SEQUÊNCIA: Verdadeira (um antes do outro)
-- CAUSALIDADE: Não há — a descoberta NÃO causou o alerta imediato da polícia
-
-PASSO 6: Formatar timeline reconstituída
-Apresente a cronologia em formato claro com:
-- Data (classificação)
-- Evento
-- Lacuna até o próximo evento
-
-PASSO 7: Análise investigativa profunda
-Para cada lacuna significativa (> 3 dias), questione:
-- O que se sabe ANTES dessa lacuna?
-- O que se sabe DEPOIS dessa lacuna?
-- QUESTÃO INVESTIGATIVA: Por que existe esse gap? O que deveria ter acontecido?
-- Como isso afetou a investigação?
-
-Identifique todas as contradições encontradas e relate quais precisam verificação.
-
-CONCLUSÃO: A sequência temporal é coerente? Quais pontos precisam clarificação?
-Quais lacunas são "normais" vs quais indicam falha de processo?
-
----
-
-OUTPUT ESPERADO:
-
-1. Timeline cronológica formatada (eventos + datas + lacunas)
-2. Tabela de lacunas significativas (duração + questões)
-3. Lista de contradições detectadas
-4. Análise: sequência é coerente ou há problemas?
-5. Próximas etapas investigativas sugeridas (o que verificar)
-
-Lembre-se: Você está QUESTIONANDO, não julgando. Você está EXPONDO GAPS,
-não acusando de negligência. Sua função é fazer o investigador humano
-entender o que falta saber.
-
-DADOS PARA PROCESSAR:</pre>
-                <div style="margin: 15px 0;">
-                    <a href="../dados-exemplo/dados-topico3.md" download style="display: inline-block; background: var(--accent); color: #111; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: 700;">📥 Baixar arquivo para anexar ao prompt</a>
-                </div>
-                <div class="prompt-actions">
-                    <button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-a3-3', this)">Copiar Prompt</button>
-                    <a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-a3-3')">Testar no Gemini</a>
-                    <a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-a3-3')">Testar no Claude</a>
-                    <a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-a3-3')">Testar no Copilot</a>
-                    <a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-a3-3')">Testar no ChatGPT</a>
-                </div>
-
-                <p><strong>O Que Esperamos do Resultado</strong></p>
-                <h4>📋 Output Principal: Timeline Reconstruída</h4>
-                <ul>
-                    <li><strong>52 de 55 eventos</strong> ordenados cronologicamente (do mais antigo ao mais recente)</li>
-                    <li>Cada evento com <strong>classificação de data:</strong>
-                        <ul>
-                            <li>[DATA CERTA] = mencionada explicitamente</li>
-                            <li>[DATA APROXIMADA] = inferida do contexto</li>
-                            <li>[DATA INCERTA] = não mencionada</li>
-                        </ul>
-                    </li>
-                    <li><strong>Lacunas marcadas</strong> entre cada evento (duração em dias)</li>
-                </ul>
-
-                <h4>❌ Contradições a Detectar (2 críticas)</h4>
-                <ul>
-                    <li><strong>Contradição 1:</strong> Saque em 4 de janeiro, mas conta abre em 10 de janeiro
-                        <ul>
-                            <li>Questão: Qual data está correta?</li>
-                        </ul>
-                    </li>
-                    <li><strong>Contradição 2:</strong> Marisa desaparece ~meados de fevereiro, mas Sr. José continua ativo até ~março
-                        <ul>
-                            <li>Questão: Como um desaparece e o outro não?</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h4>⚠️ Lacunas Significativas a Identificar</h4>
-                <ul>
-                    <li><strong>Lacuna 1 (5 dias):</strong> Gerente vê irregularidade (5/1) mas conta abre normalmente (10/1)</li>
-                    <li><strong>Lacuna 2 (15-29 dias):</strong> Vítimas descobrem em momentos completamente diferentes</li>
-                    <li><strong>Lacuna Crítica 3 (13 dias):</strong> Banco tem prova completa (11/2) → Polícia alerta (20/2)
-                        <ul>
-                            <li>🔴 Crime continua ativo nesse período</li>
-                        </ul>
-                    </li>
-                    <li><strong>Lacuna Crítica 4 (8 dias):</strong> Inquérito aberto (22/2) → PF assume (1/3)
-                        <ul>
-                            <li>🔴 Sem progresso documentado</li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <h4>💡 Análise Investigativa Esperada</h4>
-                <ul>
-                    <li><strong>Questões "Por quê?"</strong> para cada lacuna (sem julgamentos)
-                        <ul>
-                            <li>"Por que banco esperou 13 dias?"</li>
-                            <li>"O que foi feito nesses 8 dias?"</li>
-                        </ul>
-                    </li>
-                    <li><strong>Diferença sequência vs causalidade:</strong>
-                        <ul>
-                            <li>Sequência: cronologicamente correto</li>
-                            <li>Causalidade: relação causa-efeito existe?</li>
-                        </ul>
-                    </li>
-                    <li><strong>Conclusão:</strong> A sequência revela onde o sistema falhou</li>
-                </ul>
-
-                <h4>✅ Critérios de Sucesso</h4>
-                <ul>
-                    <li>✅ Ordena ≥95% dos eventos</li>
-                    <li>✅ Identifica ≥5 lacunas com duração</li>
-                    <li>✅ Classifica datas com ≥90% acurácia</li>
-                    <li>✅ Detecta ambas as contradições</li>
-                    <li>✅ Questiona investigativamente (sem julgamentos)</li>
-                    <li>✅ Diferencia sequência de causalidade</li>
-                    <li>✅ Sugere 8+ próximas etapas de investigação</li>
-                </ul>
-
-                <h4>🎯 Resultado Final</h4>
-                <p><strong>PROMPT 3 PASSOU quando:</strong> Descobre naturalmente (a partir dos dados caóticos) que há falhas de comunicação críticas entre banco e polícia, investigação parada por 8 dias, e dados contraditórios que indicam erros de processo.</p>
-
-                <h4>Por que Este Exercício Importa</h4>
-                <p>No mundo real, um investigador recebe:</p>
-                <ul>
-                    <li>Depoimentos (desorganizados)</li>
-                    <li>Extratos bancários (com datas)</li>
-                    <li>Comunicações (emails, mensagens)</li>
-                    <li>Perícias (com datas)</li>
-                    <li>Histórico de ligações (com datas)</li>
-                </ul>
-
-                <h3>Limitações</h3>
-                <p>⚠️ <strong>Não confundir sequência com causalidade:</strong></p>
-                <ul>
-                    <li>Só porque A ocorreu antes de B não significa A causou B</li>
-                    <li>Marque [SEQUÊNCIA INFERIDA] quando causalidade é dedução</li>
-                </ul>
-                <p>✅ <strong>Marcar incertezas:</strong></p>
-                <ul>
-                    <li>Datas aproximadas recebem [DATA APROXIMADA]</li>
-                    <li>Lacunas recebem [LACUNA: X dias]</li>
-                </ul>
-            </section>
-        </div>
-    </main>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        async function copyPrompt(id, btn) {
-            const el = document.getElementById(id);
-            if (!el) return;
-            const txt = el.innerText.trim();
-            try {
-                await navigator.clipboard.writeText(txt);
-                if (btn) {
-                    const old = btn.textContent;
-                    btn.textContent = 'Copiado!';
-                    setTimeout(() => { btn.textContent = old; }, 1200);
-                }
-            } catch (_) {}
-        }
-
-        document.body.classList.add('dark-mode');
-
-        const menuButton = document.getElementById('menu-toggle');
-        const mobileOverlay = document.getElementById('mobile-overlay');
-        const navLinks = document.querySelectorAll('#sidebar-nav a');
-
-        function setNavOpen(isOpen) {
-            document.body.classList.toggle('nav-open', isOpen);
-            menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        }
-
-        if (menuButton) {
-            menuButton.addEventListener('click', () => {
-                const isOpen = !document.body.classList.contains('nav-open');
-                setNavOpen(isOpen);
-            });
-        }
-
-        if (mobileOverlay) {
-            mobileOverlay.addEventListener('click', () => setNavOpen(false));
-        }
-
-        navLinks.forEach((link) => {
-            link.addEventListener('click', () => setNavOpen(false));
-        });
-    </script>
-</body>
-</html>
-                    <li>❌ <strong>Inventar</strong> (ESPECULATIVO/ALUCINAÇÃO) — sempre problema em investigação</li>
-                </ul>
-                <h3>O Desafio</h3>
-                <p>Você recebeu uma resposta de IA. Como saber se é segura usar em relatório oficial?</p>
-                <h3>Técnica de Prompt: Metacognição (Self-Critique) + Taxonomia de Confiabilidade</h3>
-                <p><strong>O que é:</strong></p>
-                <ul>
-                    <li><strong>Metacognição:</strong> Pedir ao modelo que <strong>questione sua própria resposta</strong> (modelo critica modelo)</li>
-                    <li><strong>Taxonomia V/I/E:</strong> Classificar cada afirmação em VERIFICÁVEL / INFERIDO / ESPECULATIVO</li>
-                    <li><strong>Confiança diferenciada:</strong> Marcar ALTA / MÉDIA / BAIXA para cada afirmação</li>
-                    <li><strong>Rastreamento de certeza:</strong> Documentar exatamente por que confia ou não em cada conclusão</li>
-                </ul>
-                <p><strong>Como funciona:</strong></p>
-                <ol>
-                    <li>Metacognição → Modelo não apenas responde, mas questiona suas próprias conclusões</li>
-                    <li>Taxonomia V/I/E → Diferencia fatos verificáveis de especulações (reduz alucinações)</li>
-                    <li>Confiança → Marca risco de cada afirmação para próximo analista decidir usar ou não</li>
-                    <li>Rastreamento → Transparência: "Por que é ESPECULATIVO? Porque X não está nos dados"</li>
-                </ol>
-                <p><strong>Por que funciona para validação crítica:</strong></p>
-                <ul>
-                    <li>IA frequentemente alucina sem avisar → Metacognição força auto-crítica</li>
-                    <li>Difícil distinguir VERIFICÁVEL de ESPECULATIVO visualmente → Taxonomia explícita protege</li>
-                    <li>Relatórios oficiais exigem rastreabilidade → Confiança documentada prova rigor</li>
-                    <li>Segurança investigativa exige desconfiança saudável → Modelo critica a si mesmo</li>
-                </ul>
-                <p><strong>Estratégia:</strong></p>
-                <ol>
-                    <li>Executa análise normalmente</li>
-                    <li><strong>Questiona cada afirmação</strong> contra documento original</li>
-                    <li><strong>Classifica por tipo:</strong></li>
-                </ol>
-                <p>   - ✅ VERIFICÁVEL = explícito no documento<br>
-   - ⚠️ INFERIDO = dedução lógica, mas não explícito<br>
-   - ❌ ESPECULATIVO = além dos dados, possível alucinação</p>
-                <ol>
-                    <li><strong>Atribui confiança:</strong></li>
-                </ol>
-                <p>   - ALTA = suportado por evidência clara<br>
-   - MÉDIA = lógica válida mas indireta<br>
-   - BAIXA = muita incerteza ou dependência de premissas frágeis</p>
-
-                <p><strong>Resposta de IA (com erros intencionais):</strong></p>
-                <pre id="base-a3-4">CRONOLOGIA:
-- 30/12/2023: Marisa Oliveira, agindo como agente de esquema criminoso
-  profissional, entregou documentação falsificada ao Banco XYZ
-- 2/1/2024: Vítima descobriu fraude e acionou Polícia Federal
-- 5/1/2024: Investigação foi aberta pela PF com prioridade máxima
-- 10/1/2024: Marisa Oliveira foi presa em operação conjunta
-
-PESSOAS:
-- Marisa Oliveira: Criminosa profissional
-- Sr. José da Silva: Corrupto que facilitava esquema (recebendo propina)
-- Sr. Carlos: Gerente conivente que permitiu fraude</pre>
-                <div class="prompt-actions">
-                    <button class="btn copy-btn" type="button" onclick="copyPrompt('base-a3-4', this)">Copiar Resposta IA</button>
-                </div>
-
-                <p><strong>Validação Crítica:</strong></p>
-                <pre id="prompt-a3-4">Você é supervisor de qualidade de análise investigativa.
-
-Leia esta resposta que foi gerada por IA e o DOCUMENTO ORIGINAL.
-
-Para CADA afirmação:
-✅ VERIFICÁVEL = explícito no documento
-⚠️ INFERIDO = dedução válida, não explícita
-❌ ESPECULATIVO = além dos dados (possível alucinação)
-
-Depois: CONFIANÇA alta/média/baixa</pre>
-                <div class="prompt-actions">
-                    <button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-a3-4', this)">Copiar Prompt</button>
-                    <a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-a3-4')">Testar no Gemini</a>
-                    <a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-a3-4')">Testar no Claude</a>
-                    <a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-a3-4')">Testar no Copilot</a>
-                    <a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-a3-4')">Testar no ChatGPT</a>
-                </div>
-
-                <p><strong>Resultado de Validação:</strong></p>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Afirmação</th>
-                                <th>Status</th>
-                                <th>Confiança</th>
-                                <th>Justificativa</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>"30/12 Marisa entregou documento"</td>
-                                <td>✅ VERIFICÁVEL</td>
-                                <td>ALTA</td>
-                                <td>Explícito em depoimento</td>
-                            </tr>
-                            <tr>
-                                <td>"Marisa = criminosa <strong>profissional</strong>"</td>
-                                <td>❌ ESPECULATIVO</td>
-                                <td>BAIXA</td>
-                                <td>Apenas intermediou 1 vez; "profissional" é invenção</td>
-                            </tr>
-                            <tr>
-                                <td>"2/1 vítima acionou <strong>Polícia Federal</strong>"</td>
-                                <td>❌ ESPECULATIVO</td>
-                                <td>MUITO BAIXA</td>
-                                <td>Depoimento diz "prestei queixa" em delegacia, não PF; data confirmada mas órgão inventado</td>
-                            </tr>
-                            <tr>
-                                <td>"5/1 investigação aberta pela PF"</td>
-                                <td>❌ ESPECULATIVO</td>
-                                <td>NENHUMA</td>
-                                <td>Data completamente inventada</td>
-                            </tr>
-                            <tr>
-                                <td>"10/1 Marisa foi presa"</td>
-                                <td>❌ ESPECULATIVO</td>
-                                <td>NENHUMA</td>
-                                <td>Sem qualquer menção a prisão</td>
-                            </tr>
-                            <tr>
-                                <td>"José = corrupto recebendo propina"</td>
-                                <td>❌ ESPECULATIVO</td>
-                                <td>BAIXA</td>
-                                <td>"Intermediador" é correto; "corrupto" e "propina" são invenções</td>
-                            </tr>
-                            <tr>
-                                <td>"Carlos = gerente conivente"</td>
-                                <td>⚠️ INFERIDO</td>
-                                <td>MÉDIA</td>
-                                <td>Carlos recebeu documentação, mas depoimento não diz se sabia ser falsa</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Conclusão da Validação</h3>
-                <p>🚨 <strong>ALUCINAÇÕES DETECTADAS:</strong></p>
-                <ul>
-                    <li>Datas inventadas (5/1, 10/1)</li>
-                    <li>Órgão inverso (PF vs delegacia local)</li>
-                    <li>Eventos não mencionados (prisão)</li>
-                    <li>Escalação absurda (intermediador → criminosa profissional)</li>
-                </ul>
-                <p>✅ <strong>USAR APENAS:</strong></p>
-                <ul>
-                    <li>Datas e nomes VERIFICÁVEIS</li>
-                    <li>Papéis básicos (intermediador, entregador)</li>
-                </ul>
-                <p>❌ <strong>REMOVER:</strong></p>
-                <ul>
-                    <li>Todas as inferências sobre motivação/criminosidade</li>
-                    <li>Todas as datas não suportadas</li>
-                    <li>Qualquer escalação sem evidência</li>
-                </ul>
-
-                <h3>Por Que Isso Funciona</h3>
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Elemento</th>
-                                <th>Benefício</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Metacognição</strong></td>
-                                <td>Força modelo a questionar a si mesmo</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Classificação (V/I/E)</strong></td>
-                                <td>Diferencia certeza de especulação</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Confiança indicada</strong></td>
-                                <td>Marca risco de cada afirmação</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Proteção contra alucinação</strong></td>
-                                <td>Previne conclusões prematuras em relatório oficial</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3>Limitações</h3>
-                <p>⚠️ <strong>Modelo pode errar na validação também:</strong></p>
-                <ul>
-                    <li>Às vezes marca VERIFICÁVEL quando está INFERIDO</li>
-                    <li>Use como <strong>primeira passagem</strong>; sempre revise manualmente contra documento original</li>
-                </ul>
-                <p>✅ <strong>Usar como procedimento em investigação:</strong></p>
-                <ul>
-                    <li>Toda resposta de IA recebe validação crítica antes de uso</li>
-                    <li>Documentar: O que foi verificado? O que falta investigar?</li>
-                </ul>
-            </section>
         </div>
     </main>
 
