@@ -1,11 +1,15 @@
 {
+  "/home/pl/projetos/aulas-engenharia-prompt/teste.py": {
+    "mtime": 1778123040.1109972,
+    "hash": "a6e7e3b07fb3507461476b953c554cb0"
+  },
   "/home/pl/projetos/aulas-engenharia-prompt/03_AULA3_EXERCICIOS.md": {
     "mtime": 1777853391.2376275,
     "hash": "aaed856f1aff80a9daf6e72ade334023"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/README.md": {
-    "mtime": 1777950075.5490453,
-    "hash": "5a8eec840a0d7b5d71ad7d7630dca4f3"
+    "mtime": 1777951175.0516315,
+    "hash": "b4fe2f025aa9ae1c4d30a4b72214fd87"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/AGENTS.md": {
     "mtime": 1777844959.7043166,
@@ -18,6 +22,10 @@
   "/home/pl/projetos/aulas-engenharia-prompt/index.html": {
     "mtime": 1777950017.6487212,
     "hash": "d71d1a32500d9119cd3b79cd0a1347a2"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/CLAUDE.md": {
+    "mtime": 1777950947.4496212,
+    "hash": "12801267a82ec9e1ef67319e24d5b04f"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico1.md": {
     "mtime": 1777914632.7494204,
@@ -50,5 +58,17 @@
   "/home/pl/projetos/aulas-engenharia-prompt/html/aula2-pratica.html": {
     "mtime": 1777853937.7278934,
     "hash": "5c98c11ba543632f5a7eb663dc68a59d"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/aulas-workshop-ia-juri/index.html": {
+    "mtime": 1778111351.466396,
+    "hash": "3f4b5ce415d0c2b85ed311cf6783a9f9"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/aulas-workshop-ia-juri/topico1.html": {
+    "mtime": 1778104933.2906826,
+    "hash": "5a9974bcd12a96e95d3ebdb23cc561f1"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/aulas-workshop-ia-juri/logo_base64.txt": {
+    "mtime": 1778101541.1940007,
+    "hash": "befbe3e5d0f1c9e2a519fc2d9f4046ec"
   }
 }
