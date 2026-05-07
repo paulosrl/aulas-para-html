@@ -29,211 +29,54 @@
         "confidence": "INFERRED",
         "confidence_score": 0.8,
         "source_file": "03_AULA3_EXERCICIOS.md"
+      },
+      {
+        "id": "lesson_content_ecosystem",
+        "label": "Lesson Content Ecosystem",
+        "nodes": [
+          "aula1_html",
+          "aula2_html",
+          "aula2_pratica_html",
+          "aula3_html",
+          "aula3_pratica_html"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "README.md"
+      },
+      {
+        "id": "shared_frontend_features",
+        "label": "Shared Frontend Features Across Lessons",
+        "nodes": [
+          "aula1_html",
+          "aula2_html",
+          "aula3_html",
+          "dark_mode_toggle_feature",
+          "copy_to_clipboard_feature",
+          "css_variables_theme"
+        ],
+        "relation": "implement",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "CLAUDE.md"
+      },
+      {
+        "id": "example_data_resources",
+        "label": "Example Data Resources for Lessons",
+        "nodes": [
+          "dados_topico1_md",
+          "dados_topico2_md",
+          "dados_topico3_md"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "dados-exemplo/"
       }
     ]
   },
   "nodes": [
-    {
-      "label": "teste.py",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L1",
-      "id": "teste_py",
-      "community": 0,
-      "norm_label": "teste.py"
-    },
-    {
-      "label": "CLASSIFICADOR KNN - VERSAO DIDATICA (SEM VALIDACAO CRUZADA)  ORDEM DE ENSINO DES",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L1",
-      "id": "aulas_engenharia_prompt_teste_rationale_1",
-      "community": 0,
-      "norm_label": "classificador knn - versao didatica (sem validacao cruzada)  ordem de ensino des"
-    },
-    {
-      "label": "carregar_dados()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L25",
-      "community": 0,
-      "norm_label": "carregar_dados()",
-      "id": "aulas_engenharia_prompt_teste_carregar_dados"
-    },
-    {
-      "label": "preparar_dados()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L34",
-      "community": 2,
-      "norm_label": "preparar_dados()",
-      "id": "aulas_engenharia_prompt_teste_preparar_dados"
-    },
-    {
-      "label": "buscar_melhor_k()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L58",
-      "community": 0,
-      "norm_label": "buscar_melhor_k()",
-      "id": "aulas_engenharia_prompt_teste_buscar_melhor_k"
-    },
-    {
-      "label": "avaliar_modelo()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L83",
-      "community": 3,
-      "norm_label": "avaliar_modelo()",
-      "id": "aulas_engenharia_prompt_teste_avaliar_modelo"
-    },
-    {
-      "label": "mostrar_resultados()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L107",
-      "community": 4,
-      "norm_label": "mostrar_resultados()",
-      "id": "aulas_engenharia_prompt_teste_mostrar_resultados"
-    },
-    {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "teste.py",
-      "source_location": "L138",
-      "community": 0,
-      "norm_label": "main()",
-      "id": "aulas_engenharia_prompt_teste_main"
-    },
-    {
-      "label": "Carrega o CSV remoto e remove linhas incompletas.      `dropna()` elimina regist",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L26",
-      "community": 0,
-      "norm_label": "carrega o csv remoto e remove linhas incompletas.      `dropna()` elimina regist",
-      "id": "aulas_engenharia_prompt_teste_rationale_26"
-    },
-    {
-      "label": "Prepara as entradas do modelo.      - X: todas as colunas de atributos (features",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L35",
-      "community": 2,
-      "norm_label": "prepara as entradas do modelo.      - x: todas as colunas de atributos (features",
-      "id": "aulas_engenharia_prompt_teste_rationale_35"
-    },
-    {
-      "label": "Seleciona o melhor numero de vizinhos (K).      Usa validacao cruzada K-Fold par",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L59",
-      "community": 0,
-      "norm_label": "seleciona o melhor numero de vizinhos (k).      usa validacao cruzada k-fold par",
-      "id": "aulas_engenharia_prompt_teste_rationale_59"
-    },
-    {
-      "label": "Avalia o modelo final com o K selecionado.      Retorna:     - previsoes de clas",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L84",
-      "community": 3,
-      "norm_label": "avalia o modelo final com o k selecionado.      retorna:     - previsoes de clas",
-      "id": "aulas_engenharia_prompt_teste_rationale_84"
-    },
-    {
-      "label": "Mostra o resumo final no terminal e o grafico da matriz de confusao.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L108",
-      "community": 4,
-      "norm_label": "mostra o resumo final no terminal e o grafico da matriz de confusao.",
-      "id": "aulas_engenharia_prompt_teste_rationale_108"
-    },
-    {
-      "label": "Carrega o CSV e remove linhas com valores ausentes.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L16",
-      "community": 0,
-      "norm_label": "carrega o csv e remove linhas com valores ausentes.",
-      "id": "aulas_engenharia_prompt_teste_rationale_16"
-    },
-    {
-      "label": "Separa X e y, codificando colunas categ\u00f3ricas quando necess\u00e1rio.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L21",
-      "community": 2,
-      "norm_label": "separa x e y, codificando colunas categoricas quando necessario.",
-      "id": "aulas_engenharia_prompt_teste_rationale_21"
-    },
-    {
-      "label": "Testa valores de K e retorna o melhor pela acur\u00e1cia m\u00e9dia.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L36",
-      "community": 0,
-      "norm_label": "testa valores de k e retorna o melhor pela acuracia media.",
-      "id": "aulas_engenharia_prompt_teste_rationale_36"
-    },
-    {
-      "label": "Gera previs\u00f5es por valida\u00e7\u00e3o cruzada e calcula m\u00e9tricas principais.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L50",
-      "community": 3,
-      "norm_label": "gera previsoes por validacao cruzada e calcula metricas principais.",
-      "id": "aulas_engenharia_prompt_teste_rationale_50"
-    },
-    {
-      "label": "Exibe resumo textual e gr\u00e1fico da matriz de confus\u00e3o.",
-      "file_type": "rationale",
-      "source_file": "teste.py",
-      "source_location": "L64",
-      "community": 4,
-      "norm_label": "exibe resumo textual e grafico da matriz de confusao.",
-      "id": "aulas_engenharia_prompt_teste_rationale_64"
-    },
-    {
-      "label": "HTML as Source of Truth Principle",
-      "file_type": "rationale",
-      "source_file": "README.md",
-      "source_location": "line 23-31",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 6,
-      "norm_label": "html as source of truth principle",
-      "id": "readme_html_as_source"
-    },
-    {
-      "label": "Offline-First Architecture",
-      "file_type": "rationale",
-      "source_file": "README.md",
-      "source_location": "line 107-113",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 6,
-      "norm_label": "offline-first architecture",
-      "id": "readme_offline_first"
-    },
-    {
-      "label": "Structured Didactic Pattern for Lessons",
-      "file_type": "rationale",
-      "source_file": "README.md",
-      "source_location": "line 91-105",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 1,
-      "norm_label": "structured didactic pattern for lessons",
-      "id": "readme_teaching_pattern"
-    },
     {
       "label": "Structured Data Extraction Technique",
       "file_type": "document",
@@ -243,9 +86,9 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 1,
-      "norm_label": "structured data extraction technique",
-      "id": "aula3_exercicios_structured_data"
+      "id": "aula3_exercicios_structured_data",
+      "community": 0,
+      "norm_label": "structured data extraction technique"
     },
     {
       "label": "Relationship Mapping Technique",
@@ -256,35 +99,9 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 1,
-      "norm_label": "relationship mapping technique",
-      "id": "aula3_exercicios_mapping"
-    },
-    {
-      "label": "Chronological Reconstruction Technique (Topic 3)",
-      "file_type": "document",
-      "source_file": "aula 4 - topico 3.md",
-      "source_location": "line 1-50",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 1,
-      "norm_label": "chronological reconstruction technique (topic 3)",
-      "id": "aula4_chronological_reconstruction"
-    },
-    {
-      "label": "Chain-of-Thought Prompting with Certainty Marking",
-      "file_type": "rationale",
-      "source_file": "aula 4 - topico 3.md",
-      "source_location": "line 12-43",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 1,
-      "norm_label": "chain-of-thought prompting with certainty marking",
-      "id": "aula4_chain_of_thought"
+      "id": "aula3_exercicios_mapping",
+      "community": 0,
+      "norm_label": "relationship mapping technique"
     },
     {
       "label": "Critical Validation Task",
@@ -295,35 +112,9 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 1,
-      "norm_label": "critical validation task",
-      "id": "aula3_exercicios_validation"
-    },
-    {
-      "label": "Index HTML Landing Page",
-      "file_type": "code",
-      "source_file": "index.html",
-      "source_location": "line 1-100",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 5,
-      "norm_label": "index html landing page",
-      "id": "index_html_page"
-    },
-    {
-      "label": "Graphify Knowledge Graph Documentation",
-      "file_type": "document",
-      "source_file": "AGENTS.md",
-      "source_location": "line 1-10",
-      "source_url": null,
-      "captured_at": null,
-      "author": "Paulo Lima",
-      "contributor": null,
-      "community": 7,
-      "norm_label": "graphify knowledge graph documentation",
-      "id": "agents_md_graphify"
+      "id": "aula3_exercicios_validation",
+      "community": 0,
+      "norm_label": "critical validation task"
     },
     {
       "label": "Bank Fraud Case Study (Lesson 3 Practical)",
@@ -334,9 +125,48 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 1,
-      "norm_label": "bank fraud case study (lesson 3 practical)",
-      "id": "aula3_fraud_case_study"
+      "id": "aula3_fraud_case_study",
+      "community": 0,
+      "norm_label": "bank fraud case study (lesson 3 practical)"
+    },
+    {
+      "label": "Graphify Knowledge Graph Documentation",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "line 1-10",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "agents_md_graphify",
+      "community": 6,
+      "norm_label": "graphify knowledge graph documentation"
+    },
+    {
+      "label": "Chronological Reconstruction Technique (Topic 3)",
+      "file_type": "document",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 1-50",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula4_chronological_reconstruction",
+      "community": 0,
+      "norm_label": "chronological reconstruction technique (topic 3)"
+    },
+    {
+      "label": "Chain-of-Thought Prompting with Certainty Marking",
+      "file_type": "rationale",
+      "source_file": "aula 4 - topico 3.md",
+      "source_location": "line 12-43",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula4_chain_of_thought",
+      "community": 0,
+      "norm_label": "chain-of-thought prompting with certainty marking"
     },
     {
       "label": "Coordinated Fraud Network Case Study",
@@ -347,283 +177,285 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
+      "id": "aula4_fraud_network_case",
+      "community": 0,
+      "norm_label": "coordinated fraud network case study"
+    },
+    {
+      "label": "Index HTML Landing Page",
+      "file_type": "code",
+      "source_file": "index.html",
+      "source_location": "line 1-100",
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "index_html_page",
+      "community": 7,
+      "norm_label": "index html landing page"
+    },
+    {
+      "label": "aulas-engenharia-prompt Project",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": "https://github.com/paulosrl/aulas-engenharia-prompt",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "readme_project",
       "community": 1,
-      "norm_label": "coordinated fraud network case study",
-      "id": "aula4_fraud_network_case"
+      "norm_label": "aulas-engenharia-prompt project"
     },
     {
-      "label": "GitHub Pages Publication Workflow",
-      "file_type": "rationale",
-      "source_file": "README.md",
-      "source_location": "line 44-59",
+      "label": "Developer Guide for Claude Code",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 5,
-      "norm_label": "github pages publication workflow",
-      "id": "readme_publication_workflow"
+      "id": "claude_md_developer_guide",
+      "community": 1,
+      "norm_label": "developer guide for claude code"
     },
     {
-      "label": "Prompt Template and Structural Pattern",
+      "label": "HTML as Source of Truth Design Principle",
       "file_type": "rationale",
-      "source_file": "README.md",
-      "source_location": "line 70-89",
+      "source_file": "CLAUDE.md",
+      "source_location": "Design Principles",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "html_as_source_of_truth",
+      "community": 1,
+      "norm_label": "html as source of truth design principle"
+    },
+    {
+      "label": "Offline-First Architecture Constraint",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "Restrictions & Constraints",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "offline_first_constraint",
+      "community": 1,
+      "norm_label": "offline-first architecture constraint"
+    },
+    {
+      "label": "Pedagogical Lesson Structure Pattern",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "Lesson Structure",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "pedagogical_lesson_pattern",
+      "community": 5,
+      "norm_label": "pedagogical lesson structure pattern"
+    },
+    {
+      "label": "Aula 1: Engenharia de Prompt para An\u00e1lises Investigativas",
+      "file_type": "document",
+      "source_file": "html/aula1.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula1_html",
+      "community": 2,
+      "norm_label": "aula 1: engenharia de prompt para analises investigativas"
+    },
+    {
+      "label": "Aula 2: Advanced Prompt Engineering Techniques",
+      "file_type": "document",
+      "source_file": "html/aula2.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula2_html",
+      "community": 3,
+      "norm_label": "aula 2: advanced prompt engineering techniques"
+    },
+    {
+      "label": "Aula 2 Pr\u00e1tica: Practical Exercises",
+      "file_type": "document",
+      "source_file": "html/aula2-pratica.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2-pratica.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula2_pratica_html",
+      "community": 3,
+      "norm_label": "aula 2 pratica: practical exercises"
+    },
+    {
+      "label": "Aula 3: Aplica\u00e7\u00e3o Pr\u00e1tica em An\u00e1lises Investigativas",
+      "file_type": "document",
+      "source_file": "html/aula3.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_html",
+      "community": 4,
+      "norm_label": "aula 3: aplicacao pratica em analises investigativas"
+    },
+    {
+      "label": "Aula 3 Pr\u00e1tica: Practical Exercises",
+      "file_type": "document",
+      "source_file": "html/aula3-pratica.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3-pratica.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "aula3_pratica_html",
+      "community": 4,
+      "norm_label": "aula 3 pratica: practical exercises"
+    },
+    {
+      "label": "Exemplo de Dados T\u00f3pico 1: Bank Fraud Investigation",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico1.md",
+      "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
+      "id": "dados_topico1_md",
+      "community": 2,
+      "norm_label": "exemplo de dados topico 1: bank fraud investigation"
+    },
+    {
+      "label": "Exemplo de Dados T\u00f3pico 2: Multi-person Fraud Network",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico2.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "dados_topico2_md",
+      "community": 3,
+      "norm_label": "exemplo de dados topico 2: multi-person fraud network"
+    },
+    {
+      "label": "Exemplo de Dados T\u00f3pico 3: Chronological Events Timeline",
+      "file_type": "document",
+      "source_file": "dados-exemplo/dados-topico3.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "dados_topico3_md",
+      "community": 4,
+      "norm_label": "exemplo de dados topico 3: chronological events timeline"
+    },
+    {
+      "label": "Intelig\u00eancia Artificial aplicada ao Tribunal do J\u00fari - MPPA Workshop",
+      "file_type": "document",
+      "source_file": "aulas-workshop-ia-juri/index.html",
+      "source_location": null,
+      "source_url": "https://paulosrl.github.io/aulas-engenharia-prompt/aulas-workshop-ia-juri/index.html",
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "workshop_ia_juri_index",
       "community": 5,
-      "norm_label": "prompt template and structural pattern",
-      "id": "readme_template_pattern"
+      "norm_label": "inteligencia artificial aplicada ao tribunal do juri - mppa workshop"
+    },
+    {
+      "label": "Workshop T\u00f3pico 1: AI in Jury Trial Analysis",
+      "file_type": "document",
+      "source_file": "aulas-workshop-ia-juri/topico1.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Paulo Lima",
+      "contributor": null,
+      "id": "workshop_topico1_html",
+      "community": 5,
+      "norm_label": "workshop topico 1: ai in jury trial analysis"
+    },
+    {
+      "label": "Dark Mode Toggle Implementation",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "dark_mode_toggle_feature",
+      "community": 3,
+      "norm_label": "dark mode toggle implementation"
+    },
+    {
+      "label": "Copy to Clipboard Function",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "copy_to_clipboard_feature",
+      "community": 2,
+      "norm_label": "copy to clipboard function"
+    },
+    {
+      "label": "GitHub Pages Automatic Deployment",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "Publishing & Deployment",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "github_pages_deployment",
+      "community": 1,
+      "norm_label": "github pages automatic deployment"
+    },
+    {
+      "label": "Prompt ID Naming Convention",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "HTML Template & Conventions",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "prompt_id_convention",
+      "community": 2,
+      "norm_label": "prompt id naming convention"
+    },
+    {
+      "label": "CSS Variables Theme System",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "Theme Colors",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "css_variables_theme",
+      "community": 4,
+      "norm_label": "css variables theme system"
     }
   ],
   "links": [
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_1",
-      "target": "teste_py"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_carregar_dados"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_preparar_dados"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_buscar_melhor_k"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_avaliar_modelo"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L63",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_mostrar_resultados"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L88",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "teste_py",
-      "target": "aulas_engenharia_prompt_teste_main"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L91",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_main",
-      "target": "aulas_engenharia_prompt_teste_carregar_dados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L26",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_26",
-      "target": "aulas_engenharia_prompt_teste_carregar_dados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_16",
-      "target": "aulas_engenharia_prompt_teste_carregar_dados"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L92",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_main",
-      "target": "aulas_engenharia_prompt_teste_preparar_dados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_35",
-      "target": "aulas_engenharia_prompt_teste_preparar_dados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_21",
-      "target": "aulas_engenharia_prompt_teste_preparar_dados"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L94",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_main",
-      "target": "aulas_engenharia_prompt_teste_buscar_melhor_k"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L59",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_59",
-      "target": "aulas_engenharia_prompt_teste_buscar_melhor_k"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_36",
-      "target": "aulas_engenharia_prompt_teste_buscar_melhor_k"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L95",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_main",
-      "target": "aulas_engenharia_prompt_teste_avaliar_modelo"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L84",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_84",
-      "target": "aulas_engenharia_prompt_teste_avaliar_modelo"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L50",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_50",
-      "target": "aulas_engenharia_prompt_teste_avaliar_modelo"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L97",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_main",
-      "target": "aulas_engenharia_prompt_teste_mostrar_resultados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L108",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_108",
-      "target": "aulas_engenharia_prompt_teste_mostrar_resultados"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "teste.py",
-      "source_location": "L64",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "aulas_engenharia_prompt_teste_rationale_64",
-      "target": "aulas_engenharia_prompt_teste_mostrar_resultados"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "README.md",
-      "source_location": "line 23-113",
-      "weight": 1.0,
-      "source": "readme_html_as_source",
-      "target": "readme_offline_first"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "README.md",
-      "source_location": "line 91-105",
-      "weight": 1.0,
-      "source": "readme_teaching_pattern",
-      "target": "aula3_exercicios_structured_data"
-    },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -655,6 +487,26 @@
       "target": "aula3_fraud_case_study"
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-209",
+      "weight": 1.0,
+      "source": "aula3_exercicios_validation",
+      "target": "aula3_fraud_case_study"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "03_AULA3_EXERCICIOS.md",
+      "source_location": "line 18-137",
+      "weight": 1.0,
+      "source": "aula3_fraud_case_study",
+      "target": "aula4_fraud_network_case"
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -678,41 +530,341 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "line 18-209",
-      "weight": 1.0,
-      "source": "aula3_exercicios_validation",
-      "target": "aula3_fraud_case_study"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
       "source_file": "README.md",
-      "source_location": "line 44-59",
+      "source_location": "Princ\u00edpio Fundamental",
       "weight": 1.0,
-      "source": "readme_publication_workflow",
-      "target": "index_html_page"
+      "source": "readme_project",
+      "target": "html_as_source_of_truth"
     },
     {
-      "relation": "rationale_for",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "line 70-89",
+      "source_location": "Restri\u00e7\u00f5es Offline-First",
       "weight": 1.0,
-      "source": "readme_template_pattern",
-      "target": "index_html_page"
+      "source": "readme_project",
+      "target": "offline_first_constraint"
     },
     {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.7,
-      "source_file": "03_AULA3_EXERCICIOS.md",
-      "source_location": "line 18-137",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
       "weight": 1.0,
-      "source": "aula3_fraud_case_study",
-      "target": "aula4_fraud_network_case"
+      "source": "readme_project",
+      "target": "aula1_html"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "readme_project",
+      "target": "aula2_html"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "readme_project",
+      "target": "aula2_pratica_html"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "readme_project",
+      "target": "aula3_html"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "readme_project",
+      "target": "aula3_pratica_html"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "Publica\u00e7\u00e3o P\u00fablica",
+      "weight": 1.0,
+      "source": "readme_project",
+      "target": "github_pages_deployment"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "Design Principles",
+      "weight": 1.0,
+      "source": "claude_md_developer_guide",
+      "target": "html_as_source_of_truth"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "Restrictions & Constraints",
+      "weight": 1.0,
+      "source": "claude_md_developer_guide",
+      "target": "offline_first_constraint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "Lesson Structure",
+      "weight": 1.0,
+      "source": "claude_md_developer_guide",
+      "target": "pedagogical_lesson_pattern"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "Publishing & Deployment",
+      "weight": 1.0,
+      "source": "claude_md_developer_guide",
+      "target": "github_pages_deployment"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "html/aula1.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "pedagogical_lesson_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "html/aula2.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "pedagogical_lesson_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "html/aula3.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "pedagogical_lesson_pattern"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "aulas-workshop-ia-juri/index.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "workshop_ia_juri_index",
+      "target": "pedagogical_lesson_pattern"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dados-exemplo/dados-topico1.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "dados_topico1_md"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "dark_mode_toggle_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "copy_to_clipboard_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "Theme Colors",
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "css_variables_theme"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "HTML Template & Conventions",
+      "weight": 1.0,
+      "source": "aula1_html",
+      "target": "prompt_id_convention"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "aula2_pratica_html",
+      "target": "aula2_html"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dados-exemplo/dados-topico2.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "dados_topico2_md"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "dark_mode_toggle_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "copy_to_clipboard_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "Theme Colors",
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "css_variables_theme"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "HTML Template & Conventions",
+      "weight": 1.0,
+      "source": "aula2_html",
+      "target": "prompt_id_convention"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "Status das Aulas",
+      "weight": 1.0,
+      "source": "aula3_pratica_html",
+      "target": "aula3_html"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dados-exemplo/dados-topico3.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "dados_topico3_md"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "dark_mode_toggle_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "JavaScript Features",
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "copy_to_clipboard_feature"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md",
+      "source_location": "Theme Colors",
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "css_variables_theme"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "HTML Template & Conventions",
+      "weight": 1.0,
+      "source": "aula3_html",
+      "target": "prompt_id_convention"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "aulas-workshop-ia-juri/topico1.html",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "workshop_topico1_html",
+      "target": "workshop_ia_juri_index"
     }
   ],
   "hyperedges": [
@@ -742,7 +894,51 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "03_AULA3_EXERCICIOS.md"
+    },
+    {
+      "id": "lesson_content_ecosystem",
+      "label": "Lesson Content Ecosystem",
+      "nodes": [
+        "aula1_html",
+        "aula2_html",
+        "aula2_pratica_html",
+        "aula3_html",
+        "aula3_pratica_html"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "id": "shared_frontend_features",
+      "label": "Shared Frontend Features Across Lessons",
+      "nodes": [
+        "aula1_html",
+        "aula2_html",
+        "aula3_html",
+        "dark_mode_toggle_feature",
+        "copy_to_clipboard_feature",
+        "css_variables_theme"
+      ],
+      "relation": "implement",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "CLAUDE.md"
+    },
+    {
+      "id": "example_data_resources",
+      "label": "Example Data Resources for Lessons",
+      "nodes": [
+        "dados_topico1_md",
+        "dados_topico2_md",
+        "dados_topico3_md"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "dados-exemplo/"
     }
   ],
-  "built_at_commit": "cacc0f02bce308d56d3b07109c98026a4dae8fa3"
+  "built_at_commit": "783913da305dea0ffe650d4f281e447e32ecde4e"
 }
