@@ -1,4 +1,8 @@
 {
+  "/home/pl/projetos/aulas-engenharia-prompt/scripts/build_topico.py": {
+    "mtime": 1778199224.3895037,
+    "hash": "eeec5d3d87cde464c85f3b1f1f8d9c47"
+  },
   "/home/pl/projetos/aulas-engenharia-prompt/03_AULA3_EXERCICIOS.md": {
     "mtime": 1777853391.2376275,
     "hash": "aaed856f1aff80a9daf6e72ade334023"
@@ -15,6 +19,14 @@
     "mtime": 1777943652.0079238,
     "hash": "1d05325bcc74e79f8d221573fede2fba"
   },
+  "/home/pl/projetos/aulas-engenharia-prompt/RESPONSIVIDADE_CHECKLIST.md": {
+    "mtime": 1778197413.2001963,
+    "hash": "59248ea453453a3c8408d334de14d9c0"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/PIPELINE_TOPICO.md": {
+    "mtime": 1778191274.4501703,
+    "hash": "95d1aedea00e2e809af72a0dbbee6a56"
+  },
   "/home/pl/projetos/aulas-engenharia-prompt/index.html": {
     "mtime": 1777950017.6487212,
     "hash": "d71d1a32500d9119cd3b79cd0a1347a2"
@@ -22,6 +34,10 @@
   "/home/pl/projetos/aulas-engenharia-prompt/CLAUDE.md": {
     "mtime": 1777950947.4496212,
     "hash": "12801267a82ec9e1ef67319e24d5b04f"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/menu.md": {
+    "mtime": 1778198170.840599,
+    "hash": "7929656a795741dabfc6f05a2c480939"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico1.md": {
     "mtime": 1777914632.7494204,
@@ -34,6 +50,14 @@
   "/home/pl/projetos/aulas-engenharia-prompt/dados-exemplo/dados-topico2.md": {
     "mtime": 1777939104.005972,
     "hash": "4c8150c51a5645b7f88fe65afef468cd"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/templates/topico.template.html": {
+    "mtime": 1778199388.9423134,
+    "hash": "7d7e3680c03320b950ec608510277c4f"
+  },
+  "/home/pl/projetos/aulas-engenharia-prompt/conteudo/topico1.md": {
+    "mtime": 1778191617.5539994,
+    "hash": "dd76b383e7f1d2ea04b83d8aa142520a"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/html/aula2.html": {
     "mtime": 1777947398.6828625,
@@ -60,8 +84,8 @@
     "hash": "3f4b5ce415d0c2b85ed311cf6783a9f9"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/aulas-workshop-ia-juri/topico1.html": {
-    "mtime": 1778104933.2906826,
-    "hash": "5a9974bcd12a96e95d3ebdb23cc561f1"
+    "mtime": 1778199398.829459,
+    "hash": "cfe4680984719ab1220162b1aa3d5364"
   },
   "/home/pl/projetos/aulas-engenharia-prompt/aulas-workshop-ia-juri/logo_base64.txt": {
     "mtime": 1778101541.1940007,
