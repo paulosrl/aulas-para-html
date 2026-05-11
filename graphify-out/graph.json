@@ -83,7 +83,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L1",
       "id": "build_topico_py",
-      "community": 4,
+      "community": 0,
       "norm_label": "build_topico.py"
     },
     {
@@ -92,7 +92,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L60",
       "id": "scripts_build_topico_card",
-      "community": 5,
+      "community": 4,
       "norm_label": "card"
     },
     {
@@ -101,7 +101,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L66",
       "id": "scripts_build_topico_parse_args",
-      "community": 1,
+      "community": 0,
       "norm_label": "parse_args()"
     },
     {
@@ -110,7 +110,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L95",
       "id": "scripts_build_topico_esc",
-      "community": 4,
+      "community": 7,
       "norm_label": "esc()"
     },
     {
@@ -119,7 +119,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L99",
       "id": "scripts_build_topico_inline_md",
-      "community": 4,
+      "community": 7,
       "norm_label": "inline_md()"
     },
     {
@@ -128,7 +128,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L108",
       "id": "scripts_build_topico_split_key_value_item",
-      "community": 5,
+      "community": 4,
       "norm_label": "split_key_value_item()"
     },
     {
@@ -137,7 +137,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L127",
       "id": "scripts_build_topico_classify_critical_paragraph",
-      "community": 5,
+      "community": 4,
       "norm_label": "classify_critical_paragraph()"
     },
     {
@@ -146,7 +146,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L152",
       "id": "scripts_build_topico_is_strategic_paragraph",
-      "community": 5,
+      "community": 4,
       "norm_label": "is_strategic_paragraph()"
     },
     {
@@ -155,7 +155,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L170",
       "id": "scripts_build_topico_clean_md_title",
-      "community": 3,
+      "community": 1,
       "norm_label": "clean_md_title()"
     },
     {
@@ -164,7 +164,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L182",
       "id": "scripts_build_topico_strip_leading_number",
-      "community": 3,
+      "community": 1,
       "norm_label": "strip_leading_number()"
     },
     {
@@ -182,7 +182,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L196",
       "id": "scripts_build_topico_pick_item_icon",
-      "community": 3,
+      "community": 1,
       "norm_label": "pick_item_icon()"
     },
     {
@@ -200,7 +200,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L230",
       "id": "scripts_build_topico_parse_markdown",
-      "community": 5,
+      "community": 4,
       "norm_label": "parse_markdown()"
     },
     {
@@ -209,7 +209,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L472",
       "id": "scripts_build_topico_render_cards",
-      "community": 3,
+      "community": 1,
       "norm_label": "render_cards()"
     },
     {
@@ -218,7 +218,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L509",
       "id": "scripts_build_topico_render_menu",
-      "community": 3,
+      "community": 1,
       "norm_label": "render_menu()"
     },
     {
@@ -227,7 +227,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L520",
       "id": "scripts_build_topico_parse_menu_md",
-      "community": 3,
+      "community": 1,
       "norm_label": "parse_menu_md()"
     },
     {
@@ -236,7 +236,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L545",
       "id": "scripts_build_topico_render_menu_from_labels",
-      "community": 1,
+      "community": 7,
       "norm_label": "render_menu_from_labels()"
     },
     {
@@ -245,7 +245,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L557",
       "id": "scripts_build_topico_render_topics_menu",
-      "community": 1,
+      "community": 0,
       "norm_label": "render_topics_menu()"
     },
     {
@@ -254,7 +254,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L590",
       "id": "scripts_build_topico_replace_between",
-      "community": 1,
+      "community": 0,
       "norm_label": "replace_between()"
     },
     {
@@ -263,7 +263,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L599",
       "id": "scripts_build_topico_normalize_data_uri",
-      "community": 4,
+      "community": 0,
       "norm_label": "normalize_data_uri()"
     },
     {
@@ -272,7 +272,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L606",
       "id": "scripts_build_topico_apply_global_page_rules",
-      "community": 4,
+      "community": 0,
       "norm_label": "apply_global_page_rules()"
     },
     {
@@ -281,7 +281,7 @@
       "source_file": "scripts/build_topico.py",
       "source_location": "L644",
       "id": "scripts_build_topico_main",
-      "community": 1,
+      "community": 0,
       "norm_label": "main()"
     },
     {
@@ -289,7 +289,7 @@
       "file_type": "code",
       "source_file": "build_topico.py",
       "source_location": "L56",
-      "community": 4,
+      "community": 0,
       "norm_label": "slug_title()",
       "id": "scripts_build_topico_slug_title"
     },
@@ -302,7 +302,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "structured data extraction technique",
       "id": "aula3_exercicios_structured_data"
     },
@@ -315,7 +315,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "relationship mapping technique",
       "id": "aula3_exercicios_mapping"
     },
@@ -328,7 +328,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "critical validation task",
       "id": "aula3_exercicios_validation"
     },
@@ -341,7 +341,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "bank fraud case study (lesson 3 practical)",
       "id": "aula3_fraud_case_study"
     },
@@ -367,7 +367,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "chronological reconstruction technique (topic 3)",
       "id": "aula4_chronological_reconstruction"
     },
@@ -380,7 +380,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "chain-of-thought prompting with certainty marking",
       "id": "aula4_chain_of_thought"
     },
@@ -393,7 +393,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 2,
+      "community": 3,
       "norm_label": "coordinated fraud network case study",
       "id": "aula4_fraud_network_case"
     },
@@ -419,7 +419,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "aulas-engenharia-prompt project",
       "id": "readme_project"
     },
@@ -432,7 +432,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "developer guide for claude code",
       "id": "claude_md_developer_guide"
     },
@@ -445,7 +445,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "html as source of truth design principle",
       "id": "html_as_source_of_truth"
     },
@@ -458,7 +458,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "offline-first architecture constraint",
       "id": "offline_first_constraint"
     },
@@ -484,7 +484,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 0,
+      "community": 2,
       "norm_label": "aula 1: engenharia de prompt para analises investigativas",
       "id": "aula1_html"
     },
@@ -497,7 +497,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 7,
+      "community": 2,
       "norm_label": "aula 2: advanced prompt engineering techniques",
       "id": "aula2_html"
     },
@@ -510,7 +510,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 7,
+      "community": 2,
       "norm_label": "aula 2 pratica: practical exercises",
       "id": "aula2_pratica_html"
     },
@@ -523,7 +523,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "aula 3: aplicacao pratica em analises investigativas",
       "id": "aula3_html"
     },
@@ -536,7 +536,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "aula 3 pratica: practical exercises",
       "id": "aula3_pratica_html"
     },
@@ -549,7 +549,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 0,
+      "community": 2,
       "norm_label": "exemplo de dados topico 1: bank fraud investigation",
       "id": "dados_topico1_md"
     },
@@ -562,7 +562,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 7,
+      "community": 2,
       "norm_label": "exemplo de dados topico 2: multi-person fraud network",
       "id": "dados_topico2_md"
     },
@@ -575,7 +575,7 @@
       "captured_at": null,
       "author": "Paulo Lima",
       "contributor": null,
-      "community": 0,
+      "community": 6,
       "norm_label": "exemplo de dados topico 3: chronological events timeline",
       "id": "dados_topico3_md"
     },
@@ -614,7 +614,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 2,
       "norm_label": "dark mode toggle implementation",
       "id": "dark_mode_toggle_feature"
     },
@@ -627,7 +627,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 2,
       "norm_label": "copy to clipboard function",
       "id": "copy_to_clipboard_feature"
     },
@@ -640,7 +640,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 6,
+      "community": 5,
       "norm_label": "github pages automatic deployment",
       "id": "github_pages_deployment"
     },
@@ -653,7 +653,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 7,
+      "community": 6,
       "norm_label": "prompt id naming convention",
       "id": "prompt_id_convention"
     },
@@ -666,7 +666,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 2,
       "norm_label": "css variables theme system",
       "id": "css_variables_theme"
     }
@@ -1848,5 +1848,5 @@
       "source_file": "dados-exemplo/"
     }
   ],
-  "built_at_commit": "83423a5751d7a30f203b195bbedea50ace759397"
+  "built_at_commit": "34294ee6632c2e4de632e233d8d4c79facd85290"
 }

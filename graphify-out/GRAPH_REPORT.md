@@ -1,7 +1,7 @@
 # Graph Report - aulas-engenharia-prompt  (2026-05-11)
 
 ## Corpus Check
-- 1 files · ~99,393 words
+- 1 files · ~99,352 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `83423a57`
+- Built from commit: `34294ee6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -61,36 +61,36 @@
 ## Communities (11 total, 2 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.32
-Nodes (8): Aula 1: Engenharia de Prompt para Análises Investigativas, Aula 3: Aplicação Prática em Análises Investigativas, Aula 3 Prática: Practical Exercises, Copy to Clipboard Function, CSS Variables Theme System, Exemplo de Dados Tópico 1: Bank Fraud Investigation, Exemplo de Dados Tópico 3: Chronological Events Timeline, Dark Mode Toggle Implementation
+Cohesion: 0.43
+Nodes (6): apply_global_page_rules(), main(), normalize_data_uri(), parse_args(), render_topics_menu(), replace_between()
 
 ### Community 1 - "Community 1"
-Cohesion: 0.33
-Nodes (7): assign_unique_icons(), main(), parse_args(), pick_icon(), render_menu_from_labels(), render_topics_menu(), replace_between()
+Cohesion: 0.46
+Nodes (8): assign_unique_icons(), clean_md_title(), parse_menu_md(), pick_icon(), pick_item_icon(), render_cards(), render_menu(), strip_leading_number()
 
 ### Community 2 - "Community 2"
+Cohesion: 0.32
+Nodes (8): Aula 1: Engenharia de Prompt para Análises Investigativas, Aula 2: Advanced Prompt Engineering Techniques, Aula 2 Prática: Practical Exercises, Copy to Clipboard Function, CSS Variables Theme System, Exemplo de Dados Tópico 1: Bank Fraud Investigation, Exemplo de Dados Tópico 2: Multi-person Fraud Network, Dark Mode Toggle Implementation
+
+### Community 3 - "Community 3"
 Cohesion: 0.33
 Nodes (7): Relationship Mapping Technique, Structured Data Extraction Technique, Critical Validation Task, Bank Fraud Case Study (Lesson 3 Practical), Chain-of-Thought Prompting with Certainty Marking, Chronological Reconstruction Technique (Topic 3), Coordinated Fraud Network Case Study
 
-### Community 3 - "Community 3"
-Cohesion: 0.6
-Nodes (6): clean_md_title(), parse_menu_md(), pick_item_icon(), render_cards(), render_menu(), strip_leading_number()
-
 ### Community 4 - "Community 4"
-Cohesion: 0.53
-Nodes (4): apply_global_page_rules(), esc(), inline_md(), normalize_data_uri()
-
-### Community 5 - "Community 5"
 Cohesion: 0.4
 Nodes (5): Card, classify_critical_paragraph(), is_strategic_paragraph(), parse_markdown(), split_key_value_item()
 
-### Community 6 - "Community 6"
+### Community 5 - "Community 5"
 Cohesion: 0.6
 Nodes (5): Developer Guide for Claude Code, GitHub Pages Automatic Deployment, HTML as Source of Truth Design Principle, Offline-First Architecture Constraint, aulas-engenharia-prompt Project
 
-### Community 7 - "Community 7"
+### Community 6 - "Community 6"
 Cohesion: 0.5
-Nodes (4): Aula 2: Advanced Prompt Engineering Techniques, Aula 2 Prática: Practical Exercises, Exemplo de Dados Tópico 2: Multi-person Fraud Network, Prompt ID Naming Convention
+Nodes (4): Aula 3: Aplicação Prática em Análises Investigativas, Aula 3 Prática: Practical Exercises, Exemplo de Dados Tópico 3: Chronological Events Timeline, Prompt ID Naming Convention
+
+### Community 7 - "Community 7"
+Cohesion: 0.67
+Nodes (3): esc(), inline_md(), render_menu_from_labels()
 
 ### Community 8 - "Community 8"
 Cohesion: 0.67
@@ -104,11 +104,11 @@ Nodes (3): Pedagogical Lesson Structure Pattern, Inteligência Artificial aplica
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `aulas-engenharia-prompt Project` connect `Community 6` to `Community 0`, `Community 7`?**
+- **Why does `aulas-engenharia-prompt Project` connect `Community 5` to `Community 2`, `Community 6`?**
   _High betweenness centrality (0.038) - this node is a cross-community bridge._
-- **Why does `Pedagogical Lesson Structure Pattern` connect `Community 8` to `Community 0`, `Community 6`, `Community 7`?**
+- **Why does `Pedagogical Lesson Structure Pattern` connect `Community 8` to `Community 2`, `Community 5`, `Community 6`?**
   _High betweenness centrality (0.035) - this node is a cross-community bridge._
-- **Why does `Aula 2: Advanced Prompt Engineering Techniques` connect `Community 7` to `Community 8`, `Community 0`, `Community 6`?**
+- **Why does `Aula 2: Advanced Prompt Engineering Techniques` connect `Community 2` to `Community 8`, `Community 5`, `Community 6`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **Are the 7 inferred relationships involving `Aula 2: Advanced Prompt Engineering Techniques` (e.g. with `Pedagogical Lesson Structure Pattern` and `Aula 2 Prática: Practical Exercises`) actually correct?**
   _`Aula 2: Advanced Prompt Engineering Techniques` has 7 INFERRED edges - model-reasoned connections that need verification._

@@ -44,9 +44,9 @@ A tarefa é **organizar**, **questionar lacunas**, e **apontar contradições** 
 
 ### Estudo de Caso: Fraude Bancária em Rede
 
-Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O aspecto crítico: **a investigação demorou 51 dias para começar**, e quando começou, ficou parada por 8 dias enquanto os criminosos continuavam ativos.
+Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O ponto central deste caso é como a análise cronológica dos fatos permitiu conectar os envolvidos, mapear a sequência de ações e identificar a dinâmica da fraude.
 
-Este é um caso real de investigação deficiente onde as autoridades falharam em comunicação e resposta rápida — exatamente o tipo de cenário que um investigador moderno enfrenta: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas.
+Este é um caso real que representa exatamente o tipo de desafio enfrentado por investigadores modernos: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas. O foco está em organizar esses dados com método para sustentar a apuração e orientar a solução do crime.
 
 ---
 

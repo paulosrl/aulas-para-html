@@ -239,8 +239,8 @@
             <section id="p2" class="caor-card">
                 <h2>TÓPICO 1: Reconstrução cronológica de fatos em casos investigativos</h2>
                 <h3>🔑 Técnica Empregada: Chain-of-Thought + Marcação de Certeza + Validação</h3>
-                <p><strong>O que:</strong> (1) Force raciocínio passo-a-passo (PASSO 1 → 2 → 3...), (2) diferencie [DATA CERTA] vs [APROXIMADA] vs [INCERTA], (3) valide se sequência é internamente consistente.</p>
-                <p><strong>Por que funciona aqui:</strong> Eventos chegam fora de ordem. CoT força ordem sistemática. Marcação diferencia fatos de deduções. Validação detecta contradições antes de conclusions. Lacunas marcadas mostram exatamente onde investigação tem gaps.</p>
+                <p><strong>O que:</strong> (1) conduzir o raciocínio em etapas (PASSO 1 → 2 → 3...), (2) diferenciar [DATA CERTA] vs [DATA APROXIMADA] vs [DATA INCERTA], (3) validar se a sequência é internamente consistente.</p>
+                <p><strong>Por que funciona aqui:</strong> Em casos com eventos fora de ordem, essa combinação organiza os fatos, separa evidência de inferência e detecta contradições antes da conclusão final.</p>
 
                 <h3>Técnica de Prompt: Detalhamento Completo</h3>
                 <p><strong>O que é:</strong></p>
@@ -251,17 +251,10 @@
                 </ul>
                 <p><strong>Como funciona:</strong></p>
                 <ol>
-                    <li>CoT (passo-a-passo) → Reduz erros de "pulo de lógica"; modelo tem que explicar raciocínio</li>
-                    <li>Marcação de certeza → Documenta confiança em cada data (não força certeza artificial)</li>
-                    <li>Validação → Modelo detecta contradições internas antes de entregar resposta</li>
+                    <li>CoT reduz "saltos lógicos" ao exigir explicitação do raciocínio</li>
+                    <li>A marcação de certeza documenta o nível de confiança de cada data</li>
+                    <li>A validação final identifica conflitos internos antes da resposta</li>
                 </ol>
-                <p><strong>Por que funciona para reconstrução cronológica:</strong></p>
-                <ul>
-                    <li>Eventos chegam fora de ordem → CoT força organização sistemática</li>
-                    <li>Fácil confundir "sequência" com "causalidade" → Marcação de certeza protege contra conclusões falsas</li>
-                    <li>Relatórios exigem transparência → Lacunas marcadas mostram exatamente onde investigação tem gaps</li>
-                    <li>Datas conflitantes causam confusão → Validação de consistência detecta contradições</li>
-                </ul>
                 <p><strong>Estratégia:</strong></p>
                 <ol>
                     <li><strong>Identificar todas as datas</strong> mencionadas (passo 1 do CoT)</li>
@@ -274,8 +267,8 @@
 
             <section id="p3" class="caor-card">
                 <h2>Estudo de Caso: Fraude Bancária em Rede</h2>
-                <p>Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O aspecto crítico: <strong>a investigação demorou 51 dias para começar</strong>, e quando começou, ficou parada por 8 dias enquanto os criminosos continuavam ativos.</p>
-                <p>Este é um caso real de investigação deficiente onde as autoridades falharam em comunicação e resposta rápida — exatamente o tipo de cenário que um investigador moderno enfrenta: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas.</p>
+                <p>Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O ponto central deste caso é como a análise cronológica dos fatos permitiu conectar os envolvidos, mapear a sequência de ações e identificar a dinâmica da fraude.</p>
+                <p>Este é um caso real que representa exatamente o tipo de desafio enfrentado por investigadores modernos: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas. O foco está em organizar esses dados com método para sustentar a apuração e orientar a solução do crime.</p>
 
                 <h3>Os Envolvidos</h3>
                 <p><strong>Criminosos:</strong></p>
@@ -453,7 +446,7 @@ entender o que falta saber.</pre>
             </section>
 
             <section id="p5" class="caor-card">
-                <h2>RO Que Esperamos do Resultado</h2>
+                <h2>Resultados esperados</h2>
                 <pre>## 📋 Output Principal: Timeline Reconstruída
 
 - **52 de 55 eventos** ordenados cronologicamente (do mais antigo ao mais recente)
