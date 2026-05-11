@@ -112,6 +112,34 @@
         .prompt-actions .copilot { background:#6b4dfc; color:#fff; }
         .prompt-actions .chatgpt { background:#10a37f; color:#fff; }
 
+        /* Agenda no mesmo estilo visual da Aula 1 */
+        .agenda-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            line-height: 1.2;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+        }
+        .agenda-card ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+        .agenda-card li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .agenda-card li::before {
+            content: "✓";
+            font-family: inherit;
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
         .mobile-header {
             display: none;
             position: fixed;
@@ -185,17 +213,14 @@
     <main class="main-content">
         <div class="content-container">
             <!-- SEÇÃO 1: ABERTURA -->
-            <section id="p1" class="caor-card">
+            <section id="p1" class="caor-card agenda-card">
                 <h2><i class="fas fa-calendar-alt"></i> Agenda da Aula 3</h2>
                 <ul>
-                    <li><strong>Contexto da Aula:</strong> Aplicação prática em análises investigativas.</li>
-                    <li><strong>Tópico 1:</strong> Análise estruturada de documentos investigativos.</li>
-                    <li><strong>Tópico 2:</strong> Reconhecimento de vínculos em redes.</li>
-                    <li><strong>Prática Aplicada:</strong> Uso de prompts estruturados com rastreabilidade e validação.</li>
+                    <li><strong>Contexto e Objetivo:</strong> Aplicação prática de IA em análises investigativas.</li>
+                    <li><strong>Análise de Documentos:</strong> Extração estruturada, contradições e lacunas.</li>
+                    <li><strong>Mapeamento de Vínculos:</strong> Taxonomia, força da evidência e rastreabilidade.</li>
+                    <li><strong>Aplicação Prática:</strong> Prompts operacionais para uso investigativo auditável.</li>
                 </ul>
-                <p><strong>Data:</strong> 04/05/2026</p>
-                <p><strong>Duração:</strong> 110 minutos</p>
-                <p><strong>Público:</strong> Profissionais da área pública (policiais, MP, Judiciário, auditores)</p>
             </section>
 
             <!-- SEÇÃO 2: OBJETIVOS -->
