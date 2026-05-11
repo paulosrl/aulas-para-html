@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 4 - Reconstrução Cronológica de Fatos</title>
+    <style>
+        :root {
+            --bg-main: #f3f4f6;
+            --accent: #C9A84C;
+            --text-main: #1e293b;
+            --card-bg: #ffffff;
+            --nav-text: #1e293b;
+            --table-border: #e2e8f0;
+            --nav-divider: rgba(15, 30, 58, 0.10);
+            --nav-hover: rgba(201,168,76,0.16);
+        }
+
+        body.dark-mode {
+            --bg-main: #0a1120;
+            --text-main: #f1f5f9;
+            --card-bg: #152238;
+            --nav-text: #f1f5f9;
+            --table-border: #2d3748;
+            --nav-divider: rgba(255,255,255,0.08);
+            --nav-hover: rgba(201,168,76,0.18);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: background 0.3s, color 0.3s; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg-main); color: var(--text-main); display: flex; min-height: 100vh; overflow-x: hidden; }
+
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-main) !important;
+            color: var(--nav-text);
+            position: fixed;
+            height: 100vh;
+            padding: 2rem 1.5rem;
+            border-right: 2px solid var(--accent);
+            z-index: 1000;
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .sidebar::-webkit-scrollbar { width: 0; height: 0; }
+        .sidebar-header { margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.6rem; }
+        .sidebar-headline { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; }
+        .sidebar-brand { background: var(--accent); color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 900; }
+        .sidebar-title { font-weight: 800; letter-spacing: 1px; color: var(--nav-text); }
+        .sidebar-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.76rem;
+            color: var(--nav-text);
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(201,168,76,0.08);
+            border: 1px solid var(--nav-divider);
+            border-radius: 999px;
+            padding: 0.36rem 0.65rem;
+            opacity: 0.9;
+            margin: 0 auto;
+        }
+        .sidebar-site:hover { background: var(--nav-hover); color: var(--accent); opacity: 1; }
+        .sidebar-site i { color: var(--accent); font-size: 0.72rem; }
+
+        .nav-group-title {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin: 1rem 0 0.45rem 0.6rem;
+            font-weight: 800;
+        }
+
+        .nav-l { display: flex; align-items: center; gap: 10px; padding: 10px; color: var(--nav-text); text-decoration: none; border-radius: 8px; margin-bottom: 5px; font-size: 0.75rem; border-bottom: 1px solid var(--nav-divider); }
+        .nav-l i { color: var(--accent); width: 15px; }
+        .nav-l:hover { background: var(--nav-hover); color: var(--accent); }
+        .nav-locked { opacity: 0.75; cursor: not-allowed; }
+        .nav-locked:hover { background: transparent; color: var(--nav-text); }
+        .nav-locked i:last-child { margin-left: auto; width: auto; color: var(--accent); opacity: 0.95; }
+        .nav-divider-line { border: 0; height: 1px; background: var(--nav-divider); margin: 0.75rem 0; }
+
+        .main-content { margin-left: 280px; flex: 1; padding: 3rem; display: flex; flex-direction: column; align-items: center; width: calc(100% - 280px); }
+        .content-container { width: 100%; max-width: 900px; }
+        .caor-card { background: var(--card-bg); border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; border-left: 6px solid var(--accent); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .caor-card h1, .caor-card h2, .caor-card h3, .caor-card h4 { color: var(--accent); margin-bottom: 1rem; }
+        .caor-card p, .caor-card li { line-height: 1.6; }
+        .caor-card ul, .caor-card ol { margin-left: 1.2rem; margin-bottom: 1rem; }
+        .caor-card code { background: rgba(201,168,76,0.15); padding: 2px 4px; border-radius: 4px; }
+        .table-wrapper { overflow-x: auto; margin: 1rem 0; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid var(--table-border); padding: 10px; text-align: left; vertical-align: top; }
+        th { background: rgba(201,168,76,0.12); }
+        pre {
+            white-space: pre-wrap;
+            background: rgba(0,0,0,0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid var(--table-border);
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        .prompt-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin: 10px 0 18px; }
+        .prompt-actions .btn { display:inline-flex; align-items:center; justify-content:center; text-decoration:none; border:1px solid transparent; padding:9px 12px; border-radius:8px; font-weight:700; cursor:pointer; min-width:140px; font-size: 0.85rem; }
+        .prompt-actions .copy-btn { background:var(--accent); color:#111; }
+        .prompt-actions .copy-btn:hover { filter:brightness(0.95); }
+        .prompt-actions .gemini { background:#1a73e8; color:#fff; }
+        .prompt-actions .claude { background:#d97757; color:#fff; }
+        .prompt-actions .copilot { background:#6b4dfc; color:#fff; }
+        .prompt-actions .chatgpt { background:#10a37f; color:#fff; }
+
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1100;
+            background: var(--bg-main);
+            color: var(--nav-text);
+            border-bottom: 2px solid var(--accent);
+            padding: 0.75rem 1rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+        .mobile-header-title { font-weight: 800; letter-spacing: 0.5px; font-size: 0.85rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .btn-menu { border: 2px solid var(--accent); background: transparent; color: var(--nav-text); border-radius: 10px; width: 42px; height: 42px; font-size: 1.2rem; cursor: pointer; line-height: 1; flex-shrink: 0; }
+        .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.45); z-index: 999; }
+        .btn-theme { position: fixed; top: 1rem; right: 1rem; z-index: 1100; background: var(--bg-main); color: var(--nav-text); border: 2px solid var(--accent); padding: 8px 12px; border-radius: 999px; font-weight: 800; cursor: pointer; }
+
+        @media (max-width: 768px) {
+            .mobile-header { display: flex; }
+            .sidebar { width: min(86vw, 320px); transform: translateX(-105%); transition: transform 0.3s ease; box-shadow: 10px 0 30px rgba(0, 0, 0, 0.35); }
+            body.nav-open .sidebar { transform: translateX(0); }
+            body.nav-open .mobile-overlay { display: block; }
+            .main-content { margin-left: 0; width: 100%; padding: 1rem; padding-top: 6rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="mobile-header">
+        <button class="btn-menu" id="menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">☰</button>
+        <span class="mobile-header-title">Aula 4</span>
+    </header>
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-headline">
+                <div class="sidebar-brand">IA</div>
+                <span class="sidebar-title">Prof. Paulo Lima</span>
+            </div>
+            <a class="sidebar-site" href="https://paulosrl.github.io/" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                <span>paulosrl.github.io</span>
+            </a>
+        </div>
+        <nav id="sidebar-nav">
+            <div class="nav-group-title">Curso</div>
+            <a href="../index.html" class="nav-l"><i class="fas fa-book-open"></i> Página inicial</a>
+            <hr class="nav-divider-line">
+            <div class="nav-group-title">Aula 4</div>
+            <a href="#p1" class="nav-l"><i class="fas fa-list-ol"></i> Agenda</a>
+            <a href="#p2" class="nav-l"><i class="fas fa-list-ol"></i> Técnica</a>
+            <a href="#p3" class="nav-l"><i class="fas fa-route"></i> Estudo de Caso</a>
+            <a href="#p4" class="nav-l"><i class="fas fa-file-alt"></i> Prompt 3</a>
+            <a href="#p5" class="nav-l"><i class="fas fa-project-diagram"></i> Resultado Esperado</a>
+            <hr class="nav-divider-line">
+            <div class="nav-group-title">Aulas</div>
+            <a href="aula1.html" class="nav-l"><i class="fas fa-book"></i> Aula 1</a>
+            <a href="aula2.html" class="nav-l"><i class="fas fa-book"></i> Aula 2</a>
+            <a href="aula3.html" class="nav-l"><i class="fas fa-book"></i> Aula 3</a>
+            <a href="aula4.html" class="nav-l"><i class="fas fa-book"></i> Aula 4</a>
+            <span class="nav-l nav-locked"><i class="fas fa-flag-checkered"></i> Encerramento do Curso</span>
+        </nav>
+    </aside>
+
+    <button class="btn-theme" onclick="toggleTheme()">🌓 TEMA</button>
+
+    <main class="main-content">
+        <div class="content-container">
+            <section id="p1" class="caor-card">
+                <h2><i class="fas fa-calendar-alt"></i> Agenda da Aula 4</h2>
+                <ul>
+                    <li><strong>Tópico Central:</strong> Reconstrução cronológica de fatos em casos investigativos.</li>
+                    <li><strong>Técnica:</strong> Chain-of-Thought + marcação de certeza + validação de consistência.</li>
+                    <li><strong>Estudo de Caso:</strong> Fraude bancária com lacunas e contradições temporais.</li>
+                    <li><strong>Aplicação Prática:</strong> Prompt 3 para timeline, lacunas, contradições e perguntas investigativas.</li>
+                    <li><strong>Fechamento:</strong> Critérios de sucesso e resultado esperado da análise.</li>
+                </ul>
+            </section>
+
+            <section id="p2" class="caor-card">
+                <h2>🔑 Técnica Empregada: Chain-of-Thought + Marcação de Certeza + Validação</h2>
+                <p><strong>O que:</strong> (1) Force raciocínio passo-a-passo (PASSO 1 → 2 → 3...), (2) diferencie [DATA CERTA] vs [APROXIMADA] vs [INCERTA], (3) valide se sequência é internamente consistente.</p>
+                <p><strong>Por que funciona aqui:</strong> Eventos chegam fora de ordem. CoT força ordem sistemática. Marcação diferencia fatos de deduções. Validação detecta contradições antes de conclusions. Lacunas marcadas mostram exatamente onde investigação tem gaps.</p>
+
+                <h3>Técnica de Prompt: Detalhamento Completo</h3>
+                <p><strong>O que é:</strong></p>
+                <ul>
+                    <li><strong>Chain-of-Thought (CoT):</strong> Forçar modelo a raciocinar em etapas ("Primeiro, identifique; depois, ordene; depois, valide")</li>
+                    <li><strong>Marcação de Certeza:</strong> Diferenciar [DATA CERTA] / [DATA APROXIMADA] / [DATA INCERTA]</li>
+                    <li><strong>Validação de Consistência:</strong> Pedir ao modelo que questione se sequência faz sentido</li>
+                </ul>
+                <p><strong>Como funciona:</strong></p>
+                <ol>
+                    <li>CoT (passo-a-passo) → Reduz erros de "pulo de lógica"; modelo tem que explicar raciocínio</li>
+                    <li>Marcação de certeza → Documenta confiança em cada data (não força certeza artificial)</li>
+                    <li>Validação → Modelo detecta contradições internas antes de entregar resposta</li>
+                </ol>
+                <p><strong>Por que funciona para reconstrução cronológica:</strong></p>
+                <ul>
+                    <li>Eventos chegam fora de ordem → CoT força organização sistemática</li>
+                    <li>Fácil confundir "sequência" com "causalidade" → Marcação de certeza protege contra conclusões falsas</li>
+                    <li>Relatórios exigem transparência → Lacunas marcadas mostram exatamente onde investigação tem gaps</li>
+                    <li>Datas conflitantes causam confusão → Validação de consistência detecta contradições</li>
+                </ul>
+                <p><strong>Estratégia:</strong></p>
+                <ol>
+                    <li><strong>Identificar todas as datas</strong> mencionadas (passo 1 do CoT)</li>
+                    <li><strong>Ordenar do mais antigo</strong> para mais recente (passo 2)</li>
+                    <li><strong>Marcar lacunas</strong> (períodos sem informação) (passo 3)</li>
+                    <li><strong>Validar consistência</strong> (se A ocorreu antes de B, dedução X faz sentido?) (passo 4)</li>
+                    <li><strong>Nível de certeza</strong> por data: [DATA CERTA] vs [DATA APROXIMADA] vs [DATA INCERTA] (passo 5)</li>
+                </ol>
+            </section>
+
+            <section id="p3" class="caor-card">
+                <h2>Estudo de Caso: Fraude Bancária em Rede</h2>
+                <p>Uma rede criminosa coordenada executou um esquema de fraude bancária entre dezembro de 2023 e março de 2024. O crime envolveu abertura de contas falsificadas em nome de três vítimas diferentes, seguida de saques não autorizados. O aspecto crítico: <strong>a investigação demorou 51 dias para começar</strong>, e quando começou, ficou parada por 8 dias enquanto os criminosos continuavam ativos.</p>
+                <p>Este é um caso real de investigação deficiente onde as autoridades falharam em comunicação e resposta rápida — exatamente o tipo de cenário que um investigador moderno enfrenta: informações fragmentadas, fora de ordem, com datas conflitantes e lacunas críticas.</p>
+
+                <h3>Os Envolvidos</h3>
+                <p><strong>Criminosos:</strong></p>
+                <ul>
+                    <li><strong>Sr. José da Silva</strong> — O operador. Faz as chamadas telefônicas oferecendo crédito pré-aprovado. Obtém os documentos pessoais das vítimas (CPF, RG) enganando-as sobre a suposta oferta de crédito.</li>
+                    <li><strong>Marisa Oliveira</strong> — A executora. Usa os documentos fornecidos para abrir contas bancárias falsificadas em nome das vítimas. Depois realiza os saques nas agências ou caixas eletrônicos.</li>
+                </ul>
+                <p><strong>Vítimas:</strong></p>
+                <ul>
+                    <li><strong>Anderson Silva</strong> — Vítima 1. Ligação de Sr. José em 30 de dezembro. Envia documentos em 31 de dezembro. Descobre saque em sua conta em 2 de janeiro.</li>
+                    <li><strong>Clara Silva</strong> — Vítima 2. Conta aberta em seu nome em 10 de janeiro. Descobre múltiplos saques em 17 de janeiro (total R$ 3.700).</li>
+                    <li><strong>Miguel Santos</strong> — Vítima 3. Descobre saques em 31 de janeiro (total R$ 5.200 em 5 saques diferentes).</li>
+                </ul>
+                <p><strong>Instituições:</strong></p>
+                <ul>
+                    <li><strong>Banco XYZ</strong> — Detecta anomalias quando o gerente Sr. Carlos nota. Tem informação completa em 7 de fevereiro (depoimento + perícia). MAS só alerta a polícia em 20 de fevereiro — 13 dias depois.</li>
+                    <li><strong>Polícia Civil</strong> — Recebe denúncia em 20 de fevereiro. Abre inquérito em 22 de fevereiro. Não progride. Polícia Federal assume em 1º de março.</li>
+                </ul>
+
+                <h3>Como o Crime Funcionou (Sequência Real)</h3>
+                <p><strong>Dezembro 2023 — Início:</strong><br>Sr. José faz ligações para pessoas desconhecidas oferecendo crédito pré-aprovado (golpe clássico). A vítima, confiante, envia seus documentos pessoais.</p>
+                <p><strong>Janeiro 2024 — Execução:</strong><br>Marisa recebe os documentos e usa-os para abrir contas bancárias em nome das vítimas. Ela não é uma estranha — ela realmente entra na agência, abre contas, e consegue aprovação (falha do banco aqui: documentação falsificada não foi detectada imediatamente).</p>
+                <p>Marisa então vai aos caixas eletrônicos e saca dinheiro usando os cartões gerados para essas contas falsificadas.</p>
+                <p><strong>Três saques documentados:</strong></p>
+                <ul>
+                    <li>Anderson: saque de R$ 1.500 em 2 de janeiro</li>
+                    <li>Clara: saque de R$ 2.000 em 11 de janeiro + outros (total R$ 3.700)</li>
+                    <li>Miguel: cinco saques não autorizados (total R$ 5.200)</li>
+                </ul>
+                <p><strong>Janeiro-Fevereiro — Descoberta Lenta:</strong><br>As vítimas só descobrem quando checam seus extratos bancários. Não é detecção automática. Isso leva dias ou semanas.</p>
+                <p>Anderson descobre em 2 de janeiro. Clara descobre em 17 de janeiro (15 dias depois). Miguel descobre em 31 de janeiro (29 dias depois).</p>
+                <p><strong>Fevereiro — Denúncia e Investigação Falha:</strong><br>As vítimas registram boletim de ocorrência. O banco convida todas para depoimento em 5 de fevereiro e recebe depoimento em 7 de fevereiro. Perícia examina os documentos falsificados em 10 de fevereiro. Auditoria interna identifica que TODAS as contas foram abertas por Marisa em 11 de fevereiro.</p>
+                <p>O banco tem tudo. Tem provas. Tem o padrão (todas as contas abiertas pela mesma pessoa). Tem os dados das vítimas.</p>
+                <p><strong>MAS a polícia só descobre em 20 de fevereiro — 13 dias depois.</strong></p>
+                <p>Por quê? Ninguém sabe. Aparentemente o banco não alertou imediatamente. Falha de comunicação.</p>
+                <p><strong>Março — Sem Progresso:</strong><br>Delegacia de Polícia Civil abre inquérito em 22 de fevereiro. Nada acontece pelos próximos 8 dias. Em 1º de março, Polícia Federal assume porque "pode envolver rede interstadual".</p>
+                <p>Durante esses 8 dias e depois, Sr. José continua fazendo ligações (última ligação conhecida é ~início de março para novo alvo que recusou).</p>
+                <p>Marisa desaparece ~meados de fevereiro. Nunca é localizada no caso.</p>
+            </section>
+
+            <section id="p4" class="caor-card">
+                <h2>O Que Precisa Ser Analisado com PROMPT 3</h2>
+                <p>Ler <strong>todos os eventos deste caso</strong>, mas <strong>completamente fora de ordem</strong>. Eventos são:</p>
+                <ul>
+                    <li>Datas de ligações</li>
+                    <li>Datas de saques</li>
+                    <li>Datas de descobertas</li>
+                    <li>Datas de depoimentos</li>
+                    <li>Datas de análises forenses</li>
+                    <li>Datas de comunicação entre instituições</li>
+                    <li>Algumas datas faltando completamente (quando Marisa desapareceu? quando Sr. José fez a última ligação exatamente?)</li>
+                </ul>
+                <p><strong>A tarefa do PROMPT é:</strong></p>
+                <ol>
+                    <li><strong>Reconstruir a sequência correta</strong> — Colocar os 55 eventos em ordem cronológica, do primeiro ao último.</li>
+                    <li><strong>Identificar lacunas</strong> — Entre o evento A e o evento B, quantos dias passaram SEM informação? Por exemplo:
+                        <ul>
+                            <li>Entre "Clara descobre fraude (17 de janeiro)" e "Clara registra denúncia (30 de janeiro)" há 13 dias. O que Clara fez nesse tempo? Por que esperou?</li>
+                            <li>Entre "Banco tem informação completa (7 de fevereiro)" e "Polícia é alertada (20 de fevereiro)" há 13 dias. Por quê?</li>
+                            <li>Entre "Inquérito aberto (22 de fevereiro)" e "PF assume (1º de março)" há 8 dias. O que aconteceu?</li>
+                        </ul>
+                    </li>
+                    <li><strong>Detectar contradições</strong> — O caso tem problemas internos:
+                        <ul>
+                            <li>Um evento diz que Marisa saca R$ 1.500 em 4 de janeiro, mas outro evento diz que ela abre a conta em 10 de janeiro. Como saca ANTES de abrir?</li>
+                            <li>Marisa desaparece ~meados de fevereiro, mas Sr. José continua ligando em março. Como um desaparece e o outro não?</li>
+                        </ul>
+                    </li>
+                    <li><strong>Formular questões investigativas</strong> — Para cada lacuna, pergunte:
+                        <ul>
+                            <li>Por que existe essa lacuna?</li>
+                            <li>O que deveria ter acontecido nesse período?</li>
+                            <li>O que o investigador deveria verificar?</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Você NÃO está julgando</strong> ("isso foi negligência"). Você está <strong>perguntando</strong> ("por que isso aconteceu? o que falta saber?").</p>
+
+                <h3>📖 Exemplo Prático Completo</h3>
+                <div class="prompt-actions">
+                    <a class="btn copy-btn" href="../dados-exemplo/dados-topico3.md" download="dados-topico3.md">Fazer download do anexo</a>
+                </div>
+
+                <h3>Prompt de Reconstrução</h3>
+                <pre id="prompt-a4-1">Você é um ANALISTA INVESTIGATIVO EXPERIENTE com 15 anos de experiência 
+em reconstrução de cronologias para casos complexos de fraude, corrupção 
+e crimes financeiros.
+
+Sua especialidade é pegar informações fragmentadas, desorganizadas e muitas 
+vezes contraditórias — como você recebe de depoimentos, extratos bancários, 
+comunicações e perícias — e transformá-las em uma SEQUÊNCIA TEMPORAL COERENTE 
+que revela padrões, lacunas críticas e inconsistências.
+
+Você trabalha para autoridades investigativas que precisam entender:
+- O QUÊ aconteceu e em que ordem
+- ONDE estão os gaps (informação faltando)
+- QUAIS contradições indicam dados errados ou falha de processo
+- POR QUÊ certos períodos têm silêncio investigativo
+
+Você é metódico, não faz julgamentos precipitados, e diferencia SEQUÊNCIA 
+TEMPORAL (ordem dos eventos) de CAUSALIDADE (relação causa-efeito).
+
+---
+
+PROCEDIMENTO:
+
+PASSO 1: Listar TODAS as datas mencionadas
+Extraia cada data ou referência temporal do material fornecido, mantendo 
+a classificação original: é uma data exata, uma aproximação, ou é incerta?
+
+PASSO 2: Ordenar cronologicamente
+Coloque todos os eventos em sequência do mais antigo para o mais recente.
+Marque eventos sem data clara para análise posterior.
+
+PASSO 3: Marcar LACUNAS
+Entre cada evento sucessivo, calcule quantos dias passaram sem informação.
+- [LACUNA: X dias] = intervalo com duração conhecida
+- [LACUNA: ~X dias] = intervalo aproximado
+
+PASSO 4: Classificar CERTEZA de cada data
+Para cada evento, classifique como:
+- [DATA CERTA] = explicitamente mencionada ("7 de fevereiro")
+- [DATA APROXIMADA] = inferida de contexto ("alguns dias depois", "uma semana após")
+- [DATA INCERTA] = ambígua ou não mencionada ("data desconhecida")
+
+PASSO 5: Validar ordem e causalidade
+Pergunta-se:
+- Evento A realmente ocorreu antes de Evento B?
+- Há contradições lógicas? (Exemplo: saque antes de abertura de conta?)
+- A sequência faz sentido narrativamente?
+
+NOTA IMPORTANTE: Sequência temporal ≠ Causalidade
+Exemplo: "Vítima descobriu fraude em 17 de janeiro, polícia foi alertada em 20 de fevereiro"
+- SEQUÊNCIA: Verdadeira (um antes do outro)
+- CAUSALIDADE: Não há — a descoberta NÃO causou o alerta imediato da polícia
+
+PASSO 6: Formatar timeline reconstituída
+Apresente a cronologia em formato claro com:
+- Data (classificação)
+- Evento
+- Lacuna até o próximo evento
+
+PASSO 7: Análise investigativa profunda
+Para cada lacuna significativa (&gt; 3 dias), questione:
+- O que se sabe ANTES dessa lacuna?
+- O que se sabe DEPOIS dessa lacuna?
+- QUESTÃO INVESTIGATIVA: Por que existe esse gap? O que deveria ter acontecido?
+- Como isso afetou a investigação?
+
+Identifique todas as contradições encontradas e relate quais precisam verificação.
+
+CONCLUSÃO: A sequência temporal é coerente? Quais pontos precisam clarificação?
+Quais lacunas são "normais" vs quais indicam falha de processo?
+
+---
+
+OUTPUT ESPERADO:
+
+1. Timeline cronológica formatada (eventos + datas + lacunas)
+2. Tabela de lacunas significativas (duração + questões)
+3. Lista de contradições detectadas
+4. Análise: sequência é coerente ou há problemas?
+5. Próximas etapas investigativas sugeridas (o que verificar)
+
+Lembre-se: Você está QUESTIONANDO, não julgando. Você está EXPONDO GAPS,
+não acusando de negligência. Sua função é fazer o investigador humano
+entender o que falta saber.</pre>
+                <div class="prompt-actions">
+                    <button class="btn copy-btn" type="button" onclick="copyPrompt('prompt-a4-1', this)">Copiar Prompt</button>
+                    <a class="btn gemini" target="_blank" rel="noopener noreferrer" href="https://gemini.google.com/app" onclick="copyPrompt('prompt-a4-1')">Testar no Gemini</a>
+                    <a class="btn claude" target="_blank" rel="noopener noreferrer" href="https://claude.ai/new" onclick="copyPrompt('prompt-a4-1')">Testar no Claude</a>
+                    <a class="btn copilot" target="_blank" rel="noopener noreferrer" href="https://copilot.microsoft.com/" onclick="copyPrompt('prompt-a4-1')">Testar no Copilot</a>
+                    <a class="btn chatgpt" target="_blank" rel="noopener noreferrer" href="https://chatgpt.com/" onclick="copyPrompt('prompt-a4-1')">Testar no ChatGPT</a>
+                </div>
+            </section>
+
+            <section id="p5" class="caor-card">
+                <h2>RO Que Esperamos do Resultado</h2>
+                <pre>## 📋 Output Principal: Timeline Reconstruída
+
+- **52 de 55 eventos** ordenados cronologicamente (do mais antigo ao mais recente)
+- Cada evento com **classificação de data:**
+  - [DATA CERTA] = mencionada explicitamente
+  - [DATA APROXIMADA] = inferida do contexto
+  - [DATA INCERTA] = não mencionada
+- **Lacunas marcadas** entre cada evento (duração em dias)
+
+---
+
+## ❌ Contradições a Detectar (2 críticas)
+
+- **Contradição 1:** Saque em 4 de janeiro, mas conta abre em 10 de janeiro
+  - Questão: Qual data está correta?
+
+- **Contradição 2:** Marisa desaparece ~meados de fevereiro, mas Sr. José continua ativo até ~março
+  - Questão: Como um desaparece e o outro não?
+
+---
+
+## ⚠️ Lacunas Significativas a Identificar
+
+- **Lacuna 1 (5 dias):** Gerente vê irregularidade (5/1) mas conta abre normalmente (10/1)
+
+- **Lacuna 2 (15-29 dias):** Vítimas descobrem em momentos completamente diferentes
+
+- **Lacuna Crítica 3 (13 dias):** Banco tem prova completa (11/2) → Polícia alerta (20/2)
+  - 🔴 Crime continua ativo nesse período
+
+- **Lacuna Crítica 4 (8 dias):** Inquérito aberto (22/2) → PF assume (1/3)
+  - 🔴 Sem progresso documentado
+
+---
+
+## 💡 Análise Investigativa Esperada
+
+- **Questões "Por quê?"** para cada lacuna (sem julgamentos)
+  - "Por que banco esperou 13 dias?"
+  - "O que foi feito nesses 8 dias?"
+
+- **Diferença sequência vs causalidade:**
+  - Sequência: cronologicamente correto
+  - Causalidade: relação causa-efeito existe?
+
+- **Conclusão:** A sequência revela onde o sistema falhou
+
+---
+
+## ✅ Critérios de Sucesso
+
+- ✅ Ordena ≥95% dos eventos
+- ✅ Identifica ≥5 lacunas com duração
+- ✅ Classifica datas com ≥90% acurácia
+- ✅ Detecta ambas as contradições
+- ✅ Questiona investigativamente (sem julgamentos)
+- ✅ Diferencia sequência de causalidade
+- ✅ Sugere 8+ próximas etapas de investigação
+
+---
+
+## 🎯 Resultado Final
+
+**PROMPT 3 PASSOU quando:** Descobre naturalmente (a partir dos dados caóticos) que há falhas de comunicação críticas entre banco e polícia, investigação parada por 8 dias, e dados contraditórios que indicam erros de processo.</pre>
+
+                <h3>Por que Este Exercício Importa</h3>
+                <p>No mundo real, um investigador recebe:</p>
+                <ul>
+                    <li>Depoimentos (desorganizados)</li>
+                    <li>Extratos bancários (com datas)</li>
+                    <li>Comunicações (emails, mensagens)</li>
+                    <li>Perícias (com datas)</li>
+                    <li>Histórico de ligações (com datas)</li>
+                </ul>
+
+                <h3>Limitações</h3>
+                <p>⚠️ <strong>Não confundir sequência com causalidade:</strong></p>
+                <ul>
+                    <li>Só porque A ocorreu antes de B não significa A causou B</li>
+                    <li>Marque [SEQUÊNCIA INFERIDA] quando causalidade é dedução</li>
+                </ul>
+                <p>✅ <strong>Marcar incertezas:</strong></p>
+                <ul>
+                    <li>Datas aproximadas recebem [DATA APROXIMADA]</li>
+                    <li>Lacunas recebem [LACUNA: X dias]</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        async function copyPrompt(id, btn) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const txt = el.innerText.trim();
+            try {
+                await navigator.clipboard.writeText(txt);
+                if (btn) {
+                    const old = btn.textContent;
+                    btn.textContent = 'Copiado!';
+                    setTimeout(() => { btn.textContent = old; }, 1200);
+                }
+            } catch (_) {}
+        }
+
+        document.body.classList.add('dark-mode');
+
+        const menuButton = document.getElementById('menu-toggle');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+        const navLinks = document.querySelectorAll('#sidebar-nav a');
+
+        function setNavOpen(isOpen) {
+            document.body.classList.toggle('nav-open', isOpen);
+            menuButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                const isOpen = !document.body.classList.contains('nav-open');
+                setNavOpen(isOpen);
+            });
+        }
+
+        if (mobileOverlay) {
+            mobileOverlay.addEventListener('click', () => setNavOpen(false));
+        }
+
+        navLinks.forEach((link) => {
+            link.addEventListener('click', () => setNavOpen(false));
+        });
+    </script>
+</body>
+</html>
