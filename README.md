@@ -2,23 +2,27 @@
 
 Material completo de ensino para **Engenharia de Prompt em Análises Investigativas** — um curso sobre técnicas estruturadas de uso de IA para investigadores, analistas e agentes da lei.
 
-Atualizado em: **2026-05-05**
+Atualizado em: **2026-05-12**
 
 ## Estrutura do Projeto
 
 ```text
 .
-├── index.html                          Página inicial (GitHub Pages)
 ├── html/                               Aulas e práticas (HTML final)
+│   ├── index.html                      Página inicial (GitHub Pages)
 │   ├── aula1.html
 │   ├── aula2.html
 │   ├── aula2-pratica.html
 │   ├── aula3.html
-│   └── aula3-pratica.html
-├── dados-exemplo/                      Dados para exercícios práticos
-│   ├── dados-topico1.md
-│   ├── dados-topico2.md
-│   └── dados-topico3.md
+│   ├── aula3-pratica.html
+│   ├── aula4.html
+│   ├── aula 4 - topico 3.md
+│   └── dados/                          Dados para exercícios práticos
+│       ├── dados-topico1.md
+│       ├── dados-topico2.md
+│       ├── dados-topico3.md
+│       ├── 12345-rif.zip
+│       └── RIF12345_Base_Relacional_Auditavel.xlsx
 ├── graphify-out/                       Grafo de conhecimento do projeto
 ├── AGENTS.md                           Instruções operacionais para agentes
 └── README.md (este arquivo)
@@ -30,7 +34,7 @@ Atualizado em: **2026-05-05**
 
 Cada página é um arquivo HTML completo e independente:
 - ✅ Contém CSS e JavaScript embutidos
-- ✅ Funciona offline, sem CDN ou dependências externas
+- ✅ Funciona offline para conteúdo principal
 - ✅ Abre diretamente no navegador
 - ✅ Versão única para desktop e mobile
 
@@ -43,7 +47,7 @@ Cada página é um arquivo HTML completo e independente:
 | **Prática Aula 2** | ✅ Disponível | [html/aula2-pratica.html](html/aula2-pratica.html) |
 | **Aula 3** | ✅ Completa | [html/aula3.html](html/aula3.html) |
 | **Prática Aula 3** | ✅ Disponível | [html/aula3-pratica.html](html/aula3-pratica.html) |
-| **Aula 4** | 🔒 Bloqueada | Em planejamento |
+| **Aula 4** | ✅ Completa | [html/aula4.html](html/aula4.html) |
 
 ## Como Editar uma Aula
 
@@ -82,7 +86,7 @@ Quando adicionar um novo prompt, use este padrão:
 **Convenção de IDs:**
 - `prompt-aX-Y` → prompts (aX = aula X, Y = sequência)
 - `base-aX-Y` → exemplos
-- `p1`, `p2`, `p3` → seções principais
+- `p1`, `p2`, `p3`... → seções principais
 
 ### Estrutura Didática
 
@@ -103,11 +107,11 @@ Cada aula segue este padrão:
 
 ### Restrições Offline-First
 
-- ❌ Sem CDN (Google Fonts, FontAwesome, Bootstrap, etc.)
+- ⚠️ Priorizar HTML autônomo e funcional sem backend
 - ❌ Sem JavaScript externo
-- ❌ Sem CSS externo
+- ⚠️ Evitar CSS externo (estado atual ainda usa Font Awesome via CDN em algumas páginas)
 - ❌ Sem imagens hospedadas
-- ✅ Tudo embutido em um único arquivo HTML
+- ⚠️ Quando houver CDN, manter fallback visual para uso offline
 
 ## Publicação Pública
 
@@ -115,22 +119,23 @@ O repositório é publicado automaticamente no GitHub Pages.
 
 ### 🌐 Acessar Agora
 
-**→ [https://paulosrl.github.io/aulas-engenharia-prompt/index.html](https://paulosrl.github.io/aulas-engenharia-prompt/index.html)**
+**→ [https://paulosrl.github.io/aulas-engenharia-prompt/html/index.html](https://paulosrl.github.io/aulas-engenharia-prompt/html/index.html)**
 
 ### Exemplos de acesso
 
-- Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/index.html`
+- Página inicial: `https://paulosrl.github.io/aulas-engenharia-prompt/html/index.html`
 - Aula 1: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula1.html`
 - Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2.html`
 - Prática Aula 2: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula2-pratica.html`
 - Aula 3: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3.html`
 - Prática Aula 3: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula3-pratica.html`
+- Aula 4: `https://paulosrl.github.io/aulas-engenharia-prompt/html/aula4.html`
 
 ## Manutenção do Repositório
 
-- Use `README.md` e `index.html` como referência pública da estrutura e do status das aulas.
+- Use `README.md` e `html/index.html` como referência pública da estrutura e do status das aulas.
 - Ao alterar aulas em `html/`, revise também a seção "Status das Aulas" neste arquivo.
-- Quando uma nova aula/prática for publicada, adicione o link no `index.html` e atualize a tabela de status.
+- Quando uma nova aula/prática for publicada, adicione o link no `html/index.html` e atualize a tabela de status.
 
 ## Requisitos para Publicação
 
@@ -143,7 +148,7 @@ Antes de marcar uma aula como completa:
 - [ ] Tabelas têm `<thead>` e `<tbody>`
 - [ ] Sem overflow em desktop ou mobile
 - [ ] Links internos funcionam
-- [ ] `index.html` atualizado com novo link
+- [ ] `html/index.html` atualizado com novo link
 
 ## Contribuindo
 

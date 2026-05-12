@@ -1,9 +1,16 @@
 ## graphify
 
-This project has a graphify knowledge graph at graphify-out/.
+This project uses Graphify outputs in `graphify-out/`.
 
 Rules:
-- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
-- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
-- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
-- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)
+- Before architecture/codebase answers, read `graphify-out/GRAPH_REPORT.md`.
+- For cross-module relations, prefer graph traversal commands:
+  - `graphify query "<question>"`
+  - `graphify path "<A>" "<B>"`
+  - `graphify explain "<concept>"`
+- After code changes, run `graphify update .`.
+- After documentation/content changes (`html/*.html`, `*.md`), run `/graphify --update` in the assistant.
+
+Current project layout (for link/path checks):
+- Main pages: `html/` (including `html/index.html`)
+- Exercise/support files: `html/dados/`
